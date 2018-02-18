@@ -6,16 +6,15 @@
         <small>Add / Edit User</small>
       </h1>
     </section>
-    
+
     <section class="content">
-    
+
         <div class="row">
             <!-- left column -->
             <div class="col-md-8">
               <!-- general form elements -->
-                
-                
-                
+
+
                 <div class="box box-primary">
                     <div class="box-header">
                         <h3 class="box-title">Enter User Details</h3>
@@ -25,19 +24,35 @@
                     <form role="form" id="addUser" action="<?php echo base_url() ?>addNewUser" method="post" role="form">
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-md-6">                                
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="fname">Full Name</label>
                                         <input type="text" class="form-control required" value="<?php echo set_value('fname'); ?>" id="fname" name="fname" maxlength="128">
                                     </div>
-                                    
+
                                 </div>
+
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="email">Email address</label>
                                         <input type="text" class="form-control required email" id="email" value="<?php echo set_value('email'); ?>" name="email" maxlength="128">
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="staff_id">Staff ID</label>
+                                        <input type="text" class="form-control required" id="staff_id" value="<?php echo set_value('staff_id'); ?>" name="staff_id" maxlength="15">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="store_id">Store ID</label>
+                                        <input type="text" class="form-control required" id="store_id" value="<?php echo set_value('store_id'); ?>" name="store_id" maxlength="5">
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -52,7 +67,36 @@
                                         <input type="password" class="form-control required equalTo" id="cpassword" name="cpassword" maxlength="20">
                                     </div>
                                 </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="finger_preference">Finger Preference</label>
+
+                                              <select class="form-control" name="finger_preference">
+                                                    <option value="LI">LEFT_INDEX</option>
+                                                    <option value="RI">RIGHT_INDEX</option>
+                                                    <option value="LT">LEFT_THUMB</option>
+                                                    <option value="RT">RIGHT_THUMB</option>
+                                                    <option value="LM">LEFT_MID</option>
+                                                    <option value="RM">RIGHT_MID</option>
+                                              </select>
+                                    </div>
+                                </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="desg">Select Designation :</label>
+                                                  <select class="form-control" name="desg">
+                                                        <option value="AP-I">AP - I</option>
+                                                        <option value="AP-II">AP- II</option>
+                                                        <option value="AP-III">AP - III</option>
+                                                        <option value="TA">TA</option>
+
+                                                  </select>
+                                        </div>
+                                </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -78,10 +122,50 @@
                                             ?>
                                         </select>
                                     </div>
-                                </div>    
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="dept">Select Department :</label>
+                                              <select class="form-control" name="dept">
+                                                    <option value="IT">IT</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="ECE">ECE</option>
+                                                    <option value="EEE">EEE</option>
+                                                    <option value="MECH">MECH</option>
+                                                    <option value="CIVIL">CIVIL</option>
+                                              </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="cadre">Select Cadre :</label>
+                                                  <select class="form-control" name="cadre">
+                                                        <option value="T">Teaching</option>
+                                                        <option value="NT">Non- Teaching</option>
+                                                  </select>
+                                        </div>
+
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="gender">Select Gender :</label>
+                                                  <select class="form-control" name="gender">
+                                                        <option value="M">Male</option>
+                                                        <option value="F">Female</option>
+                                                  </select>
+                                        </div>
+                                      </div>
+
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                            <label for="doj">Date Of Joining:</label>
+                                            <input type="date" class="form-control" placeholder="DOJ" id="doj" name="doj">
+                                        </div>
+                                    </div>
+
                             </div>
                         </div><!-- /.box-body -->
-    
+
                         <div class="box-footer">
                             <input type="submit" class="btn btn-primary" value="Submit" />
                             <input type="reset" class="btn btn-default" value="Reset" />
@@ -98,10 +182,10 @@
                 ?>
                 <div class="alert alert-danger alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <?php echo $this->session->flashdata('error'); ?>                    
+                    <?php echo $this->session->flashdata('error'); ?>
                 </div>
                 <?php } ?>
-                <?php  
+                <?php
                     $success = $this->session->flashdata('success');
                     if($success)
                     {
@@ -111,15 +195,15 @@
                     <?php echo $this->session->flashdata('success'); ?>
                 </div>
                 <?php } ?>
-                
+
                 <div class="row">
                     <div class="col-md-12">
                         <?php echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
     </section>
-    
+
 </div>
 <script src="<?php echo base_url(); ?>assets/js/addUser.js" type="text/javascript"></script>

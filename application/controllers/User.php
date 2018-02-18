@@ -20,7 +20,7 @@ class User extends BaseController
      */
     public function index()
     {
-        $this->global['pageTitle'] = 'CodeInsect : Dashboard';
+        $this->global['pageTitle'] = 'HumanRex: Dashboard';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
     }
@@ -67,7 +67,7 @@ class User extends BaseController
             $this->load->model('user_model');
             $data['roles'] = $this->user_model->getUserRoles();
 
-            $this->global['pageTitle'] = 'CodeInsect : Add New User';
+            $this->global['pageTitle'] = 'HumanRex : Add New User';
 
             $this->loadViews("addNew", $this->global, $data, NULL);
         }
