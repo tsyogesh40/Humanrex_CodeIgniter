@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 18, 2018 at 08:24 AM
+-- Generation Time: Feb 18, 2018 at 05:09 PM
 -- Server version: 5.7.21-0ubuntu0.17.10.1
 -- PHP Version: 7.1.11-0ubuntu0.17.10.1
 
@@ -327,9 +327,13 @@ INSERT INTO `staff_details` (`name`, `staff_id`, `store_id`, `finger_preference`
 ('Yogesh 2', '14it48', 6, 'LT', 'IT', 'AP-II', 'NT', 'M', 7373535614, 'tsyogesh40@gmail.com', '2018-02-28'),
 ('Yogesh 3', '14IT49', 3, 'LI', 'IT', 'AP-III', 'T', 'M', 7373535614, 'tsyogesh40@gmail.com', '2018-02-01'),
 ('Gokul T S', '14IT50', 7, 'LM', 'CSE', 'AP-II', 'T', 'M', 7373535614, 'tsgokult@gmail.com', '2018-02-02'),
+('Admin', 'IT01', 0, 'LI', 'IT', 'Admin', 'T', 'M', 7373535614, 'admin@vcet.ac.in', '2018-02-06'),
+('Manager', 'IT02', 0, 'LI', 'IT', 'AP-II', 'T', 'M', 7373535614, 'manager@vcet.ac.in', '2018-02-07'),
+('Employee', 'IT03', 0, 'LI', 'IT', 'AP-II', 'T', 'M', 7373535614, 'employee@vcet.ac.in', '2018-02-16'),
 ('Seema M', 'IT1223', 9, 'LM', 'IT', 'AP-II', 'T', 'F', 7373535614, 'developer@igniteddreamz.com', '2018-02-21'),
 ('Loganathan K', 'IT1237', 10, 'LI', 'IT', 'TA', 'T', 'M', 7373535614, 'muzzamil@gmail.com', '2018-02-20'),
 ('Perumal Raja R', 'IT1336', 11, 'LI', 'IT', 'HOD', 'T', 'M', 7373535614, 'tsyogesh40@gmail.com', '2018-02-14'),
+('HOD', 'ITHOD', 27, 'LI', 'IT', 'HOD', 'T', 'M', 7373535614, 'hod@vcet.ac.in', '2010-12-12'),
 ('Kannan ', 'ITNT1315', 12, 'LI', 'IT', 'System_admin', 'NT', 'M', 8778555898, 'mka@vcet.ac.in', '2013-06-03');
 
 -- --------------------------------------------------------
@@ -358,7 +362,18 @@ INSERT INTO `tbl_last_login` (`id`, `userId`, `sessionData`, `machineIp`, `userA
 (2, 2, '{\"role\":\"2\",\"roleText\":\"Manager\",\"name\":\"Manager\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-17 12:34:22'),
 (3, 3, '{\"role\":\"3\",\"roleText\":\"Employee\",\"name\":\"Employee\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-17 12:37:03'),
 (4, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-17 12:42:04'),
-(5, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-17 14:20:37');
+(5, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-17 14:20:37'),
+(6, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 09:38:44'),
+(7, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 09:52:23'),
+(8, 2, '{\"role\":\"2\",\"roleText\":\"Principal\",\"name\":\"Manager\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 10:35:59'),
+(9, 3, '{\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Employee\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 10:36:18'),
+(10, 1, '{\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 10:40:17'),
+(11, 1, '{\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 10:48:39'),
+(12, 9, '{\"staff_id\":null,\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 12:15:54'),
+(13, 9, '{\"staff_id\":null,\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 12:18:09'),
+(14, 1, '{\"staff_id\":\"IT01\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 12:29:03'),
+(15, 3, '{\"staff_id\":\"IT03\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Employee\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 12:33:07'),
+(16, 1, '{\"staff_id\":\"IT01\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 12:35:50');
 
 -- --------------------------------------------------------
 
@@ -379,6 +394,13 @@ CREATE TABLE `tbl_reset_password` (
   `updatedDtm` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_reset_password`
+--
+
+INSERT INTO `tbl_reset_password` (`id`, `email`, `activation_id`, `agent`, `client_ip`, `isDeleted`, `createdBy`, `createdDtm`, `updatedBy`, `updatedDtm`) VALUES
+(1, 'admin@example.com', 'jas1CcGokf483Nw', 'Chrome 64.0.3282.119', '::1', 0, 1, '2018-02-18 09:39:44', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -395,9 +417,10 @@ CREATE TABLE `tbl_roles` (
 --
 
 INSERT INTO `tbl_roles` (`roleId`, `role`) VALUES
-(1, 'System Administrator'),
-(2, 'Manager'),
-(3, 'Employee');
+(1, 'System Admin'),
+(2, 'Principal'),
+(3, 'HOD'),
+(4, 'Staff');
 
 -- --------------------------------------------------------
 
@@ -407,6 +430,7 @@ INSERT INTO `tbl_roles` (`roleId`, `role`) VALUES
 
 CREATE TABLE `tbl_users` (
   `userId` int(11) NOT NULL,
+  `staff_id` varchar(12) DEFAULT NULL,
   `email` varchar(128) NOT NULL COMMENT 'login email',
   `password` varchar(128) NOT NULL COMMENT 'hashed login password',
   `name` varchar(128) DEFAULT NULL COMMENT 'full name of user',
@@ -423,10 +447,10 @@ CREATE TABLE `tbl_users` (
 -- Dumping data for table `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`userId`, `email`, `password`, `name`, `mobile`, `roleId`, `isDeleted`, `createdBy`, `createdDtm`, `updatedBy`, `updatedDtm`) VALUES
-(1, 'admin@example.com', '$2y$10$6NOKhXKiR2SAgpFF2WpCkuRgYKlSqFJaqM0NgIM3PT1gKHEM5/SM6', 'System Administrator', '9890098900', 1, 0, 0, '2015-07-01 18:56:49', 1, '2018-01-05 05:56:34'),
-(2, 'manager@example.com', '$2y$10$quODe6vkNma30rcxbAHbYuKYAZQqUaflBgc4YpV9/90ywd.5Koklm', 'Manager', '9890098900', 2, 0, 1, '2016-12-09 17:49:56', 1, '2018-01-12 07:22:11'),
-(3, 'employee@example.com', '$2y$10$UYsH1G7MkDg1cutOdgl2Q.ZbXjyX.CSjsdgQKvGzAgl60RXZxpB5u', 'Employee', '9890098900', 3, 0, 1, '2016-12-09 17:50:22', 3, '2018-01-04 07:58:28');
+INSERT INTO `tbl_users` (`userId`, `staff_id`, `email`, `password`, `name`, `mobile`, `roleId`, `isDeleted`, `createdBy`, `createdDtm`, `updatedBy`, `updatedDtm`) VALUES
+(1, 'IT01', 'admin@vcet.ac.in', '$2y$10$UYsH1G7MkDg1cutOdgl2Q.ZbXjyX.CSjsdgQKvGzAgl60RXZxpB5u', 'System Administrator', '9890098900', 1, 0, 0, '2015-07-01 18:56:49', 1, '2018-01-05 05:56:34'),
+(2, 'IT02', 'manager@vcet.ac.in', '$2y$10$quODe6vkNma30rcxbAHbYuKYAZQqUaflBgc4YpV9/90ywd.5Koklm', 'Manager', '9890098900', 2, 0, 1, '2016-12-09 17:49:56', 1, '2018-01-12 07:22:11'),
+(3, 'IT03', 'employee@vcet.ac.in', '$2y$10$UYsH1G7MkDg1cutOdgl2Q.ZbXjyX.CSjsdgQKvGzAgl60RXZxpB5u', 'Employee', '9890098900', 3, 0, 1, '2016-12-09 17:50:22', 3, '2018-01-04 07:58:28');
 
 -- --------------------------------------------------------
 
@@ -495,7 +519,8 @@ CREATE TABLE `user_credentials` (
 
 INSERT INTO `user_credentials` (`name`, `staff_id`, `password`, `priority`, `last_login`, `email`) VALUES
 ('Yogesh T S', '14IT46', 'podalusu', 'A', '00:10:13', 'tsyogesh40@gmail.com'),
-('Yogesh 1', '14IT47', 'hi', 'S', '04:10:18', 'tsyogesh46@gmail.com');
+('Yogesh 1', '14IT47', 'hi', 'S', '04:10:18', 'tsyogesh46@gmail.com'),
+('HOD', 'ITHOD', 'zzzz', 'H', NULL, 'hod@vcet.ac.in');
 
 --
 -- Indexes for dumped tables
@@ -625,22 +650,22 @@ ALTER TABLE `user_credentials`
 -- AUTO_INCREMENT for table `tbl_last_login`
 --
 ALTER TABLE `tbl_last_login`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `tbl_reset_password`
 --
 ALTER TABLE `tbl_reset_password`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_roles`
 --
 ALTER TABLE `tbl_roles`
-  MODIFY `roleId` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT 'role id', AUTO_INCREMENT=4;
+  MODIFY `roleId` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT 'role id', AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Constraints for dumped tables
 --

@@ -20,7 +20,7 @@ class User extends BaseController
      */
     public function index()
     {
-        $this->global['pageTitle'] = 'CodeInsect : Dashboard';
+        $this->global['pageTitle'] = 'HumanRex: Dashboard';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
     }
@@ -67,7 +67,7 @@ class User extends BaseController
             $this->load->model('user_model');
             $data['roles'] = $this->user_model->getUserRoles();
 
-            $this->global['pageTitle'] = 'CodeInsect : Add New User';
+            $this->global['pageTitle'] = 'HumanRex : Add New User';
 
             $this->loadViews("addNew", $this->global, $data, NULL);
         }
@@ -106,10 +106,14 @@ class User extends BaseController
 
             $this->form_validation->set_rules('fname','Full Name','trim|required|max_length[128]');
             $this->form_validation->set_rules('email','Email','trim|required|valid_email|max_length[128]');
+            $this->form_validation->set_rules('staff_id','Staff ID','trim|required|max_length[128]');
+            $this->form_validation->set_rules('store_id','Store ID','trim|required|max_length[5]');
             $this->form_validation->set_rules('password','Password','required|max_length[20]');
             $this->form_validation->set_rules('cpassword','Confirm Password','trim|required|matches[password]|max_length[20]');
             $this->form_validation->set_rules('role','Role','trim|required|numeric');
             $this->form_validation->set_rules('mobile','Mobile Number','required|min_length[10]');
+            $this->form_validation->set_rules('doj','Date Of Joining','required');
+
 
             if($this->form_validation->run() == FALSE)
             {
@@ -119,14 +123,42 @@ class User extends BaseController
             {
                 $name = ucwords(strtolower($this->security->xss_clean($this->input->post('fname'))));
                 $email = $this->security->xss_clean($this->input->post('email'));
+                $staff_id= $this->security->xss_clean($this->input->post('staff_id'));
+                $store_id= $this->security->xss_clean($this->input->post('store_id'));
                 $password = $this->input->post('password');
                 $roleId = $this->input->post('role');
+                $finger_preference=$this->input->post('finger_preference');
+                $desg=$this->input->post('desg');
+                $dept=$this->input->post('dept');
+                $cadre=$this->input->post('cadre');
+                $gender=$this->input->post('gender');
+                $doj=$this->input->post('doj');
                 $mobile = $this->security->xss_clean($this->input->post('mobile'));
 
-                $userInfo = array('email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId, 'name'=> $name,
+
+                $userInfo = array('staff_id'=>$staff_id,'email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId, 'name'=> $name,
                                     'mobile'=>$mobile, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
+                $data = array(
+                    'name' =>$name,
+                    'staff_id'=>$staff_id,
+                    'store_id'=>$store_id,
+                    'finger_preference'=>$finger_preference,
+                    'department'=>$dept,
+                    'designation'=>$desg,
+                    'cadre'=>$cadre,
+                    'gender'=>$gender,
+                    'phone'=>$mobile,
+                    'email'=>$email,
+                    'DOJ'=>$doj
+                              );
+
+                $counter=array('staff_id'=>$staff_id,'name'=>$name,'count'=>0,'late_days'=>0);
 
                 $this->load->model('user_model');
+                //inserting datas
+                $result_details=$this->user_model->user_register($data);
+                $result_counter=$this->user_model->counter_init($counter);
+                //inserting user credentials
                 $result = $this->user_model->addNewUser($userInfo);
 
                 if($result > 0)
