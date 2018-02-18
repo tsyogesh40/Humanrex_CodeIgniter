@@ -41,7 +41,7 @@
           <br><br><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human Rex</h3>
 				</div>
 
-				<form class="login100-form validate-form" method="post" action="<?=base_url()?>user1/login_verify">
+				<form class="login100-form validate-form" method="post" action="<?php echo base_url(); ?>loginMe">
 					<span class="login100-form-title">
 						Login Here !
 					</span>
@@ -56,43 +56,39 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pswd" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<?php
-					//log message
-              $success_msg= $this->session->flashdata('success_msg');
-              $error_msg= $this->session->flashdata('error_msg');
-
-                  if($success_msg){
-                    ?>
-                    <div class="alert alert-success">
-                      <?php echo $success_msg; ?>
-                    </div>
-                  <?php
-                  }
-                  else if($error_msg){
-                    ?>
-                    <div class="alert alert-danger">
-                      <?php echo $error_msg; ?>
-                    </div>
-                    <?php
-                  }
-                ?>
-								<?php
-								//log message
-										$msg= $this->session->flashdata('logout_msg');
-												if($msg){
-													?>
-													<div class="alert alert-success">
-														<?php echo $msg; ?>
-													</div>
-												<?php
-											}?>
+					<?php $this->load->helper('form'); ?>
+	        <div class="row">
+	            <div class="col-md-12">
+	                <?php echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
+	            </div>
+	        </div>
+	        <?php
+	        $this->load->helper('form');
+	        $error = $this->session->flashdata('error');
+	        if($error)
+	        {
+	            ?>
+	            <div class="alert alert-danger alert-dismissable">
+	                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	                <?php echo $error; ?>
+	            </div>
+	        <?php }
+	        $success = $this->session->flashdata('success');
+	        if($success)
+	        {
+	            ?>
+	            <div class="alert alert-success alert-dismissable">
+	                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	                <?php echo $success; ?>
+	            </div>
+	        <?php } ?>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">

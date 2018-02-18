@@ -54,7 +54,7 @@ class User1 extends CI_Controller
         if($role=='A')
         {
         //$this->load->view('admin/admin');
-        redirect('user/admin_panel');
+        redirect('/dashboard');
         //$this->session->set_flashdata('success_msg', 'Login Successful!');
         }
         else if($role=='S')
@@ -66,7 +66,7 @@ class User1 extends CI_Controller
         }
         else if($role=='H')
         {
-          $this->hod_panel($result['staff_id']);
+          redirect('/dashboard');
           //$this->session->set_flashdata('success_msg', 'Login Successful!');
         }
       }
@@ -212,7 +212,7 @@ class User1 extends CI_Controller
                       $this->user_model->user_credentials($credentials);
                       $this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
 
-                      redirect('user/login');
+                      redirect('user1/login');
                     }
                     else{
                       echo 'Id exists';

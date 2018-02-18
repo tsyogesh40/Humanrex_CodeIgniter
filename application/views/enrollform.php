@@ -23,7 +23,7 @@
 </div>
 
 <div class="container">
-    <form action="<?=base_url()?>user/register" method="POST">
+    <form action="<?=base_url()?>user1/register" method="POST">
            <?php //echo validation_errors();?>
         <div class="form-group">
             <label for="usr">Name:</label>
