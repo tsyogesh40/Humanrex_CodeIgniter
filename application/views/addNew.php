@@ -11,7 +11,7 @@
 
         <div class="row">
             <!-- left column -->
-            <div class="col-md-8">
+            <div class="col-md-10">
               <!-- general form elements -->
 
 
@@ -39,21 +39,57 @@
                                         <input type="text" class="form-control required email" id="email" value="<?php echo set_value('email'); ?>" name="email" maxlength="128">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="staff_id">Staff ID</label>
-                                        <input type="text" class="form-control required" id="staff_id" value="<?php echo set_value('staff_id'); ?>" name="staff_id" maxlength="15">
-                                    </div>
-                                </div>
+                            </div>
 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="store_id">Store ID</label>
-                                        <input type="text" class="form-control required" id="store_id" value="<?php echo set_value('store_id'); ?>" name="store_id" maxlength="5">
-                                    </div>
-                                </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="staff_id">Staff ID</label>
+                                      <input type="text" class="form-control required" id="staff_id" value="<?php echo set_value('staff_id'); ?>" name="staff_id" maxlength="15">
+                                  </div>
+                              </div>
+
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="store_id">Store ID</label>
+                                      <input type="text" class="form-control required" id="store_id" value="<?php echo set_value('store_id'); ?>" name="store_id" maxlength="5">
+                                  </div>
+                              </div>
 
                             </div>
+
+                            <div class="row">
+
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="finger_preference">Finger Preference</label>
+
+                                            <select class="form-control" name="finger_preference">
+                                                  <option value="LI">LEFT_INDEX</option>
+                                                  <option value="RI">RIGHT_INDEX</option>
+                                                  <option value="LT">LEFT_THUMB</option>
+                                                  <option value="RT">RIGHT_THUMB</option>
+                                                  <option value="LM">LEFT_MID</option>
+                                                  <option value="RM">RIGHT_MID</option>
+                                            </select>
+                                  </div>
+                              </div>
+
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="desg">Select Designation :</label>
+                                                <select class="form-control" name="desg">
+                                                      <option value="AP-I">AP - I</option>
+                                                      <option value="AP-II">AP- II</option>
+                                                      <option value="AP-III">AP - III</option>
+                                                      <option value="TA">TA</option>
+
+                                                </select>
+                                      </div>
+                              </div>
+                            </div>
+
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -67,63 +103,39 @@
                                         <input type="password" class="form-control required equalTo" id="cpassword" name="cpassword" maxlength="20">
                                     </div>
                                 </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="finger_preference">Finger Preference</label>
-
-                                              <select class="form-control" name="finger_preference">
-                                                    <option value="LI">LEFT_INDEX</option>
-                                                    <option value="RI">RIGHT_INDEX</option>
-                                                    <option value="LT">LEFT_THUMB</option>
-                                                    <option value="RT">RIGHT_THUMB</option>
-                                                    <option value="LM">LEFT_MID</option>
-                                                    <option value="RM">RIGHT_MID</option>
-                                              </select>
-                                    </div>
-                                </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="desg">Select Designation :</label>
-                                                  <select class="form-control" name="desg">
-                                                        <option value="AP-I">AP - I</option>
-                                                        <option value="AP-II">AP- II</option>
-                                                        <option value="AP-III">AP - III</option>
-                                                        <option value="TA">TA</option>
-
-                                                  </select>
-                                        </div>
-                                </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="mobile">Mobile Number</label>
-                                        <input type="text" class="form-control required digits" id="mobile" value="<?php echo set_value('mobile'); ?>" name="mobile" maxlength="10">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="role">Role</label>
-                                        <select class="form-control required" id="role" name="role">
-                                            <option value="0">Select Role</option>
-                                            <?php
-                                            if(!empty($roles))
-                                            {
-                                                foreach ($roles as $rl)
-                                                {
-                                                    ?>
-                                                    <option value="<?php echo $rl->roleId ?>" <?php if($rl->roleId == set_value('role')) {echo "selected=selected";} ?>><?php echo $rl->role ?></option>
-                                                    <?php
-                                                }
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
 
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="mobile">Mobile Number</label>
+                                          <input type="text" class="form-control required digits" id="mobile" value="<?php echo set_value('mobile'); ?>" name="mobile" maxlength="10">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="role">Role</label>
+                                          <select class="form-control required" id="role" name="role">
+                                              <option value="0">Select Role</option>
+                                              <?php
+                                              if(!empty($roles))
+                                              {
+                                                  foreach ($roles as $rl)
+                                                  {
+                                                      ?>
+                                                      <option value="<?php echo $rl->roleId ?>" <?php if($rl->roleId == set_value('role')) {echo "selected=selected";} ?>><?php echo $rl->role ?></option>
+                                                      <?php
+                                                  }
+                                              }
+                                              ?>
+                                          </select>
+                                      </div>
+                                  </div>
+
+                            </div>
+
+                          <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="dept">Select Department :</label>
@@ -136,6 +148,7 @@
                                                     <option value="CIVIL">CIVIL</option>
                                               </select>
                                     </div>
+                                  </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -145,7 +158,10 @@
                                                         <option value="NT">Non- Teaching</option>
                                                   </select>
                                         </div>
+                                      </div>
+                            </div>
 
+                            <div class="row">
                                       <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="gender">Select Gender :</label>
@@ -159,11 +175,12 @@
                                     <div class="col-md-6">
                                       <div class="form-group">
                                             <label for="doj">Date Of Joining:</label>
-                                            <input type="date" class="form-control" placeholder="DOJ" id="doj" name="doj">
+                                            <input type="date" class="form-control" placeholder="DOJ" id="doj" name="doj" value="<?php echo set_value('doj'); ?>">
                                         </div>
                                     </div>
+                                </div>
 
-                            </div>
+
                         </div><!-- /.box-body -->
 
                         <div class="box-footer">

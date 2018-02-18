@@ -94,11 +94,7 @@ public function select_range($staff_id,$from,$to)
         return false;
       }
   }
-  //inserting user credentials
-  public function user_credentials($credentials)
-  {
-    $this->db->insert('user_credentials',$credentials);
-  }
+
 
   //checking for existing staff id
   public function staff_id_check($staff_id)
@@ -117,12 +113,6 @@ public function select_range($staff_id,$from,$to)
   }
 
 
-  //register new staff
-  public function staff_register($data)
-  {
-    $res=$this->db->insert('staff_details',$data);
-
-  }
 
 
     //----------------------------login model end----------------
@@ -221,7 +211,33 @@ public function select_range($staff_id,$from,$to)
 
         return $insert_id;
     }
+    //intializing counter table
+    function counter_init($counter_data)
+    {
+      $this->db->trans_start();
+      $this->db->insert('counter', $counter_data);
 
+      $insert_id = $this->db->insert_id();
+
+      $this->db->trans_complete();
+
+      return $insert_id;
+    }
+
+    //register new staff (table:staff_details)
+    public function user_register($data)
+    {
+
+      $this->db->trans_start();
+      $this->db->insert('staff_details',$data);
+
+      $insert_id = $this->db->insert_id();
+
+      $this->db->trans_complete();
+
+      return $insert_id;
+
+    }
     /**
      * This function used to get user information by id
      * @param number $userId : This is user id
