@@ -68,9 +68,17 @@ class Login extends CI_Controller
             if(!empty($result))
             {
                 $lastLogin = $this->login_model->lastLoginInfo($result->userId);
-
+                $timings=$this->login_model->temp_entry_details($result->staff_id);
+                $datas=$this->login_model->fetch_details($result->staff_id);
                 $sessionArray = array('userId'=>$result->userId,
                                       'staff_id'=>$result->staff_id,
+                                      'in_time'=>$timings['in_time'],
+                                      'out_time'=>$timings['out_time'],
+                                      'date'=>$timings['date'],
+                                      'status'=>$timings['status'],
+                                      'phone'=>$datas['phone'],
+                                      'designation'=>$datas['designation'],
+                                      'email'=>$datas['email'],
                                         'role'=>$result->roleId,
                                         'roleText'=>$result->role,
                                         'name'=>$result->name,
@@ -85,7 +93,7 @@ class Login extends CI_Controller
                 $loginInfo = array("userId"=>$result->userId, "sessionData" => json_encode($sessionArray), "machineIp"=>$_SERVER['REMOTE_ADDR'], "userAgent"=>getBrowserAgent(), "agentString"=>$this->agent->agent_string(), "platform"=>$this->agent->platform());
 
                 $this->login_model->lastLogin($loginInfo);
-                
+
 
                 redirect('/dashboard');
             }

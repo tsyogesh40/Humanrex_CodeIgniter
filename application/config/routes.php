@@ -63,6 +63,14 @@ $route['userListing'] = 'user/userListing';
 $route['userListing/(:num)'] = "user/userListing/$1";
 $route['addNew'] = "user/addNew";
 
+
+$route['history']="user/select_by_id";
+$route['history_all']="user/select_by_range";
+$route['select']="user/select";
+$route['profile']="user/profile";
+$route['edit-profile']="user/edit_profile";
+
+
 $route['addNewUser'] = "user/addNewUser";
 $route['editOld'] = "user/editOld";
 $route['editOld/(:num)'] = "user/editOld/$1";

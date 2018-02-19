@@ -30,6 +30,41 @@ class Login_model extends CI_Model
         }
     }
 
+
+    //fetching data from temp_entry - Intime n outtime
+
+    //fetching attendence details
+public function temp_entry_details($staff_id)
+{
+  $date= date('Y-m-d');
+  $this->db->select('*');
+  $this->db->from('temp_entry');
+  $this->db->where('staff_id',$staff_id);
+  $this->db->where('date',$date);
+  if($res=$this->db->get())
+  {
+    return $res->row_array();
+  }
+  else {
+    return false;
+  }
+}
+
+// this below function is to fetch datas from the staff_details
+public function fetch_details($staff_id)
+  {
+    $this->db->select('*');
+    $this->db->from('staff_details');
+    $this->db->where('staff_id',$staff_id);
+    if($res=$this->db->get())
+    {
+      return $res->row_array();
+    }
+    else {
+      return false;
+    }
+  }
+
     /**
      * This function used to check email exists or not
      * @param {string} $email : This is users email id

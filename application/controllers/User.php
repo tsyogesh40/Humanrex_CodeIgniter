@@ -25,6 +25,73 @@ class User extends BaseController
         $this->loadViews("dashboard", $this->global, NULL , NULL);
     }
 
+    //This function is used to display the profile details
+    public function profile()
+    {
+        $this->global['pageTitle'] = 'HumanRex: My profile';
+        $staff_id=$this->session->userdata('staff_id');
+        //$user_details=$this->user_model->profile_details($staff_id);
+        $this->loadViews("profile", $this->global, NULL, NULL);
+
+    }
+    //this controller is for Update the user profile in staff page
+    public function edit_profile()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Profile Updation';
+      $staff_id=$this->session->userdata('staff_id');
+      $data=array('phone'=>$this->input->post('phone'));
+      $update_result=$this->user_model->edit_profile($staff_id,$data);
+      redirect('logout');
+      //$this->loadviews("profile",$this->global,NULL,NULL);
+
+    }
+
+    //Below function is used to display the select page
+    public function select()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Select Date';
+      $this->loadviews("select_date",$this->global,NULL,NULL);
+    }
+
+
+    //select by ID
+  public function select_by_id()
+  {
+    $this->global['pageTitle'] = 'HumanRex: History';
+    $date=$this->input->post('date');
+    $staff_id=$this->session->userdata('staff_id');
+    $result=$this->user_model->select_id($date,$staff_id);
+    if($result!=false)
+    {
+      $data['history']=$result;
+    }
+    else {
+      $data['history'] = "No record found !";
+    }
+      //$this->load->view('history',$data);
+    $this->loadviews("history",$this->global,$data,NULL);
+    //  print_r($data);
+  }
+
+  //select my range
+  public function select_by_range()
+  {
+    $this->global['pageTitle'] = 'HumanRex: History';
+    $from=$this->input->post('from_date');
+    $to=$this->input->post('to_date');
+    $staff_id=$this->session->userdata('staff_id');
+    $result=$this->user_model->select_range($staff_id,$from,$to);
+    if($result!=false)
+    {
+      $data['history']=$result;
+    }
+    else {
+      $data['history'] = "No record found !";
+    }
+    $this->loadviews("history",$this->global,$data,NULL);
+
+  }
+
     /**
      * This function is used to load the user list
      */
@@ -47,7 +114,7 @@ class User extends BaseController
 
             $data['userRecords'] = $this->user_model->userListing($searchText, $returns["page"], $returns["segment"]);
 
-            $this->global['pageTitle'] = 'CodeInsect : User Listing';
+            $this->global['pageTitle'] = 'HumanRex : User Listing';
 
             $this->loadViews("users", $this->global, $data, NULL);
         }

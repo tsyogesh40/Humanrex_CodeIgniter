@@ -3,7 +3,13 @@
 class User_model extends CI_Model
 {
   //----------------------login model-----------------------------
+  //updating the profile in staff page
+  public function edit_profile($staff_id,$data)
+  {
+    $this->db->where('staff_id',$staff_id);
+    $this->db->update('staff_details',$data);
 
+  }
   //fetching attendence details
   public function staff_entry($staff_id)
   {
@@ -20,18 +26,6 @@ class User_model extends CI_Model
       return false;
     }
   }
-//update details in staffs page
-public function update_details($datas,$staff_id)
-{
-  $pass=array('password'=>$datas['password']);
-  $phone=array('phone'=>$datas['phone']);
-  //updating phone no in staff details
-  $this->db->where('staff_id',$staff_id);
-  $this->db->update('staff_details',$phone);
-  //updating password in user_credentails
-  $this->db->where('staff_id',$staff_id);
-  $this->db->update('user_credentials',$pass);
-}
 //select by date
 public function select_id($date,$staff_id)
 {
@@ -205,11 +199,11 @@ public function select_range($staff_id,$from,$to)
         $this->db->trans_start();
         $this->db->insert('tbl_users', $userInfo);
 
-        $insert_id = $this->db->insert_id();
+        $insert_id1 = $this->db->insert_id();
 
         $this->db->trans_complete();
 
-        return $insert_id;
+        return $insert_id1;
     }
     //intializing counter table
     function counter_init($counter_data)
@@ -217,11 +211,10 @@ public function select_range($staff_id,$from,$to)
       $this->db->trans_start();
       $this->db->insert('counter', $counter_data);
 
-      $insert_id = $this->db->insert_id();
+      $insert_id2 = $this->db->insert_id();
 
       $this->db->trans_complete();
-
-      return $insert_id;
+      return $insert_id2;
     }
 
     //register new staff (table:staff_details)
@@ -231,11 +224,11 @@ public function select_range($staff_id,$from,$to)
       $this->db->trans_start();
       $this->db->insert('staff_details',$data);
 
-      $insert_id = $this->db->insert_id();
+      $insert_id3 = $this->db->insert_id();
 
       $this->db->trans_complete();
 
-      return $insert_id;
+      return $insert_id3;
 
     }
     /**
