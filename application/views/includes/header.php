@@ -104,15 +104,15 @@
               </a>
             </li>
             <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-plane"></i>
-                <span>New Task</span>
+              <a href="<?php echo base_url();?>select" >
+                <i class="fa fa-bar-chart"></i>
+                <span>My History</span>
               </a>
             </li>
             <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-ticket"></i>
-                <span>My Tasks</span>
+              <a href="<?php echo base_url();?>profile" >
+                <i class="ion ion-person-add"></i>
+                <span>My Profile</span>
               </a>
             </li>
             <?php
