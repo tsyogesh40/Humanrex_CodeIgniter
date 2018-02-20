@@ -71,7 +71,7 @@
                                       <form action="<?php echo base_url()?>edit-profile" class="form-inline" method="post">
                                         <div class="form-group">
                                           <label for="phone">Phone:&nbsp;&nbsp;&nbsp;</label>
-                                            <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $this->session->userdata('phone')?>">
+                                            <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $phone;?>">
                                         </div>
                                         <br><br>
                                         <button type="submit" class="btn btn-danger">Update Profile</button>

@@ -10,6 +10,7 @@ class User_model extends CI_Model
     $this->db->update('staff_details',$data);
 
   }
+
   //fetching attendence details
   public function staff_entry($staff_id)
   {
@@ -73,6 +74,7 @@ public function select_range($staff_id,$from,$to)
       return false;
     }
   }
+
   public  function login($email,$pswd)
   {
       $this->db->select('*');
