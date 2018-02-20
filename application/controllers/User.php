@@ -16,7 +16,7 @@ class User extends BaseController
     }
 
     /**
-     * This function used to load the first screen of the user
+     * This function used to load the first screen of the user  6380116472
      */
     public function index()
     {
@@ -30,8 +30,8 @@ class User extends BaseController
     {
         $this->global['pageTitle'] = 'HumanRex: My profile';
         $staff_id=$this->session->userdata('staff_id');
-        //$user_details=$this->user_model->profile_details($staff_id);
-        $this->loadViews("profile", $this->global, NULL, NULL);
+        $user_details=$this->user_model->fetch_details($staff_id);
+        $this->loadViews("profile", $this->global, $user_details, NULL);
 
     }
     //this controller is for Update the user profile in staff page
@@ -41,8 +41,8 @@ class User extends BaseController
       $staff_id=$this->session->userdata('staff_id');
       $data=array('phone'=>$this->input->post('phone'));
       $update_result=$this->user_model->edit_profile($staff_id,$data);
-      redirect('logout');
-      //$this->loadviews("profile",$this->global,NULL,NULL);
+      $user_details=$this->user_model->fetch_details($staff_id);
+      $this->loadviews("profile",$this->global,$user_details,NULL);
 
     }
 

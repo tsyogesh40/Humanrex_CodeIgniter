@@ -116,13 +116,13 @@
               </a>
             </li>
             <?php
-            if($role == ROLE_ADMIN || $role == ROLE_MANAGER)
+            if($role == ROLE_ADMIN || $role == ROLE_PRINCIPAL )
             {
             ?>
             <li class="treeview">
               <a href="#" >
                 <i class="fa fa-thumb-tack"></i>
-                <span>Task Status</span>
+                <span>Reports</span>
               </a>
             </li>
             <li class="treeview">
@@ -139,7 +139,7 @@
             <li class="treeview">
               <a href="<?php echo base_url(); ?>userListing">
                 <i class="fa fa-users"></i>
-                <span>Users</span>
+                <span>Users<?php ?></span>
               </a>
             </li>
             <li class="treeview">
