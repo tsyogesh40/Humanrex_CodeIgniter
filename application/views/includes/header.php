@@ -115,37 +115,109 @@
                 <span>My Profile</span>
               </a>
             </li>
+            <li class="treeview">
+              <a href="#request" data-toggle="collapse" >
+                <i class="fa fa-flag-o"></i>
+                <span>Request</span>
+              </a>
+              <div id="request" class="collapse">
+              <ul>
+                <br>
+                <li class="treeview">
+                  <a href="<?php echo base_url();?>profile" >
+                    <i class="fa fa-edit"></i>
+                    <span>Apply Permission/ OD / Leave</span>
+                  </a>
+                </li>
+                <br>
+                <li class="treeview">
+                  <a href="<?php echo base_url();?>profile" >
+                    <i class="fa fa-spinner"></i>
+                    <span>Application Status</span>
+                  </a>
+                </li>
+                <br>
+              </ul>
+              </div>
+            </li>
             <?php
             if($role == ROLE_ADMIN || $role == ROLE_PRINCIPAL )
             {
             ?>
             <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-thumb-tack"></i>
+              <a href="#reports" data-toggle="collapse">
+                <i class="fa fa-files-o"></i>
                 <span>Reports</span>
               </a>
+              <div id="reports" class="collapse">
+                <ul class="dropdown">
+                  <li class="treeview">
+                    <a href="#" ><br>
+                      <i class="fa fa-calendar"></i>
+                      <span>Today</span>
+                    </a>
+                  </li>
+                  <br>
+                  <li class="treeview">
+                    <a href="#" >
+                      <i class="fa fa-bar-chart"></i>
+                      <span>History</span>
+                    </a>
+                  </li>
+                  <br>
+                  <li class="treeview">
+                    <a href="#" >
+                      <i class="fa fa-line-chart"></i>
+                      <span>Consolidated</span>
+                    </a>
+                  </li>
+                  <br>
+                  <li class="treeview">
+                    <a href="#" >
+                      <i class="fa fa-plane"></i>
+                      <span>Leave / OD /Late /Permission</span>
+                    </a>
+                  </li>
+                </ul>
+                <br>
+              </div>
             </li>
-            <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-upload"></i>
-                <span>Task Uploads</span>
-              </a>
-            </li>
+
             <?php
             }
             if($role == ROLE_ADMIN)
             {
             ?>
+            <li class="header">ADMINISTRATION</li>
             <li class="treeview">
-              <a href="<?php echo base_url(); ?>userListing">
+              <a href="#users" data-toggle="collapse">
                 <i class="fa fa-users"></i>
-                <span>Users<?php ?></span>
+                <span>Users</span>
               </a>
             </li>
+            <div id="users" class="collapse">
+              <ul>
+                <br>
+                <li class="treeview">
+                  <a href="<?php echo base_url(); ?>userListing" >
+                    <i class="fa fa-gear"></i>
+                    <span>User Management</span>
+                  </a>
+                </li>
+                <br>
+                <li class="treeview">
+                  <a href="#">
+                    <i class="fa fa-file-text-o"></i>
+                    <span> Permission / OD / Leave </span>
+                  </a>
+                </li>
+                <br>
+              </ul>
+            </div>
             <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-files-o"></i>
-                <span>Reports</span>
+              <a href="#">
+                <i class="fa fa-unlink"></i>
+                <span>Alter College time</span>
               </a>
             </li>
             <?php
