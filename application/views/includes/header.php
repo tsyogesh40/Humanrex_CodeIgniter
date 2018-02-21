@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title><?php echo $pageTitle; ?></title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!--table CSS-->
+    <link href="<?php echo base_url(); ?>assets/table.css" rel="stylesheet" type="text/css" />
     <!-- Bootstrap 3.3.4 -->
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- FontAwesome 4.3.0 -->
@@ -141,11 +143,59 @@
               </div>
             </li>
             <?php
+            if($role==ROLE_HOD)
+              {
+            ?>
+            <li class="header">HOD Panel</li>
+            <li class="treeview">
+              <a href="#reports" data-toggle="collapse" title="Used to view Staffs Periodic reports">
+                <i class="fa fa-files-o"></i>
+                <span>Reports</span>
+              </a>
+              <div id="reports" class="collapse">
+                <ul class="dropdown">
+                  <li class="treeview" title="Gives Detailed report for all staffs about Today ">
+                    <a href="<?php echo base_url()?>staff-today" ><br>
+                      <i class="fa fa-calendar"></i>
+                      <span>Today</span>
+                    </a>
+                  </li>
+                  <br>
+                  <li class="treeview">
+                    <a href="<?php echo base_url()?>staff-history" >
+                      <i class="fa fa-bar-chart"></i>
+                      <span>History</span>
+                    </a>
+                  </li>
+                  <br>
+                  <li class="treeview">
+                    <a href="#" >
+                      <i class="fa fa-line-chart"></i>
+                      <span>Consolidated</span>
+                    </a>
+                  </li>
+                  <br>
+                  <li class="treeview">
+                    <a href="#" >
+                      <i class="fa fa-plane"></i>
+                      <span>Leave / OD /Late /Permission</span>
+                    </a>
+                  </li>
+                </ul>
+                <br>
+              </div>
+            </li>
+
+
+          <?php } ?>
+
+            <?php
             if($role == ROLE_ADMIN || $role == ROLE_PRINCIPAL )
             {
             ?>
+            <li class="header">Principal Panel</li>
             <li class="treeview">
-              <a href="#reports" data-toggle="collapse">
+              <a href="#reports" data-toggle="collapse tooltip" title="Used to view Staffs Periodic reports">
                 <i class="fa fa-files-o"></i>
                 <span>Reports</span>
               </a>
