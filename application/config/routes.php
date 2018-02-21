@@ -72,7 +72,9 @@ $route['edit-profile']="user/edit_profile";
 
 //hod Panel
 $route['staff-today']='hod/staff_today';
+$route['staff-history-view']='hod/staff_history_view';
 $route['staff-history']="hod/staff_history";
+
 
 $route['addNewUser'] = "user/addNewUser";
 $route['editOld'] = "user/editOld";

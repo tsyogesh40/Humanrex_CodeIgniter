@@ -2,7 +2,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-bar-chart"></i> Today's Status
+        <i class="fa fa-calendar"></i> Today's Status
         <small><?php echo date("d/m/Y");?></small>
       </h1>
     </section>

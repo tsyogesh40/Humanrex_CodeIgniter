@@ -17,6 +17,7 @@ class Hod_model extends CI_Model
         return false;
       }
   }
+
   public function staff_today($dept)
   {
       $date=date('Y-m-d');
@@ -33,8 +34,45 @@ class Hod_model extends CI_Model
       return false;
     }
   }
-  public function staff_history($dept)
+  public function staff_history($dept,$cadre,$from,$to)
   {
+    //this is used to select tables
+    if($dept=='IT')
+    {
+      $table='IT_entry';
+    }
+    else if($dept=='CSE')
+    {
+      $table='CSE_entry';
+    }
+    else if($dept=='EEE')
+    {
+      $table='EEE_entry';
+    }
+    else if($dept=='ECE')
+    {
+      $table='ECE_entry';
+    }
+    else if($dept=='MECH')
+    {
+      $table='MECH_entry';
+    }
+    else if($dept=='CIVIL')
+    {
+      $table='CIVIL_entry';
+    }
+    //Condition base on cadre
+    $condition = "cadre =" . "'" . $cadre . "'";
+    $this->db->select('*');
+    $this->db->from($table);
+    $this->db->where($condition);
+    if($res=$this->db->get())
+    {
+      return $res->result();
+    }
+    else {
+      return false;
+    }
 
   }
 

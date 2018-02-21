@@ -2,7 +2,6 @@
 
 require APPPATH . '/libraries/BaseController.php';
 
-
 class Hod extends BaseController
 {
     /**
@@ -34,13 +33,36 @@ class Hod extends BaseController
     }
 
     //for viewing details of staffs history
+    public function staff_history_view()
+    {
+
+      $this->global['pageTitle'] = 'HumanRex: Fetch Staff History ';
+      $this->loadViews("hod/history",$this->global,NULL,NULL);
+    }
+
     public function staff_history()
     {
-      $this->global['pageTitle'] = 'HumanRex: Staff History';
+      $this->global['pageTitle'] = 'HumanRex: History Page';
       $staff_id=$this->session->userdata('staff_id');
 
-      $user_details=$this->hod_model->fetch_details($dept['department']);
-      $this->loadViews("hod/today", $this->global, $user_details, NULL);
+      //hod/history.php form inputs
+      $cadre=$this->input->post('cadre');
+      $from_date=$this->input->post('from_date');
+      $to_date=$this->input->post('to_date');
+
+      $datas=array('cadre'=>$cadre,'from'=>$from_date,'to'=>$to_date);
+
+      $dept=$this->hod_model->view_dept($staff_id);
+      $result=$this->hod_model->staff_history($dept['department'],$cadre,$from_date,$to_date);
+      if($result!=false)
+      {
+        $data['history']=$result;
+        $data['info']=$datas;
+      }
+      else {
+        $data['history']='No Records Found !';
+      }
+      $this->loadViews("hod/history_result", $this->global,$data, NULL);
     }
 
   }

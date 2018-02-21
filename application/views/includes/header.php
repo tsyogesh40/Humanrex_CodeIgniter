@@ -162,7 +162,7 @@
                   </li>
                   <br>
                   <li class="treeview">
-                    <a href="<?php echo base_url()?>staff-history" >
+                    <a href="<?php echo base_url()?>staff-history-view" >
                       <i class="fa fa-bar-chart"></i>
                       <span>History</span>
                     </a>
