@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 18, 2018 at 05:09 PM
+-- Generation Time: Feb 22, 2018 at 12:05 PM
 -- Server version: 5.7.21-0ubuntu0.17.10.1
 -- PHP Version: 7.1.11-0ubuntu0.17.10.1
 
@@ -19,25 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `admin_panel`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin_credentials`
---
-
-CREATE TABLE `admin_credentials` (
-  `name` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin_credentials`
---
-
-INSERT INTO `admin_credentials` (`name`, `password`) VALUES
-('yogesh', '123456'),
-('tsyogesh@gmail.com', '123456');
 
 -- --------------------------------------------------------
 
@@ -116,14 +97,15 @@ CREATE TABLE `counter` (
 
 INSERT INTO `counter` (`staff_id`, `name`, `count`, `late_days`) VALUES
 ('14IT34', 'Murali ', 1, 1),
-('14IT46', 'Yogesh T S', 3, 3),
-('14IT47', 'Yogesh 1', 2, 6),
+('14IT46', 'Yogesh T S', 0, 4),
+('14IT47', 'Yogesh 1', 3, 7),
 ('14it48', 'Yogesh 2', 3, 3),
 ('14IT49', 'Yogesh 3', 1, 1),
 ('14IT50', 'Gokul T S', 1, 1),
 ('IT1223', 'Seema M', 1, 1),
 ('IT1237', 'Loganathan K', 2, 2),
-('ITNT1315', 'Kannan ', 1, 1);
+('ITNT1315', 'Kannan ', 1, 1),
+('ITST33', 'Staff', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -253,14 +235,40 @@ CREATE TABLE `IT_entry` (
   `name` varchar(60) NOT NULL,
   `staff_id` varchar(12) NOT NULL,
   `store_id` int(11) NOT NULL,
-  `in_time` time NOT NULL,
-  `outtime` time NOT NULL,
+  `in_time` time DEFAULT NULL,
+  `out_time` time DEFAULT NULL,
   `p_value` int(11) NOT NULL,
-  `status` enum('LATE','ONTME') NOT NULL,
+  `status` enum('LATE','ONTIME') NOT NULL,
   `date` date NOT NULL,
   `semester` enum('ODD','EVEN') NOT NULL,
   `year` year(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `IT_entry`
+--
+
+INSERT INTO `IT_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time`, `out_time`, `p_value`, `status`, `date`, `semester`, `year`) VALUES
+('NT', 'Yogesh 1', '14IT47', 4, '18:36:29', '18:40:31', 1, 'LATE', '2018-02-02', 'ODD', 2018),
+('NT', 'Yogesh 2', '14it48', 6, '19:01:29', '19:24:28', 1, 'LATE', '2018-02-02', 'ODD', 2018),
+('T', 'Yogesh TS ', '14IT46', 2, '19:05:48', '19:06:28', 1, 'LATE', '2018-02-02', 'ODD', 2018),
+('T', 'Yogesh 3', '14IT49', 3, '19:08:33', '19:08:59', 1, 'LATE', '2018-02-02', 'ODD', 2018),
+('NT', 'Yogesh 1', '14IT47', 4, '09:20:45', NULL, 1, 'ONTIME', '2018-02-05', 'ODD', 2018),
+('T', 'Murali ', '14IT34', 8, '09:24:54', '09:25:52', 2, 'LATE', '2018-02-05', 'ODD', 2018),
+('T', 'Seema M', 'IT1223', 9, '13:31:46', '14:07:54', 2, 'LATE', '2018-02-05', 'ODD', 2018),
+('T', 'Yogesh TS ', '14IT46', 2, '13:44:35', NULL, 1, 'LATE', '2018-02-05', 'ODD', 2018),
+('T', 'Loganathan K', 'IT1237', 10, '13:58:25', '11:45:05', 2, 'LATE', '2018-02-05', 'ODD', 2018),
+('NT', 'Yogesh 2', '14it48', 6, '14:14:25', NULL, 1, 'LATE', '2018-02-05', 'ODD', 2018),
+('NT', 'Kannan ', 'ITNT1315', 12, '11:44:20', NULL, 1, 'LATE', '2018-02-06', 'ODD', 2018),
+('T', 'Loganathan K', 'IT1237', 10, '11:44:52', '11:45:05', 2, 'LATE', '2018-02-06', 'ODD', 2018),
+('NT', 'Yogesh 1', '14IT47', 4, '11:48:25', NULL, 1, 'LATE', '2018-02-06', 'ODD', 2018),
+('NT', 'Yogesh 2', '14it48', 6, '12:01:42', NULL, 1, 'LATE', '2018-02-06', 'ODD', 2018),
+('NT', 'Yogesh 1', '14IT47', 4, '16:54:01', NULL, 1, 'LATE', '2018-02-07', 'ODD', 2018),
+('T', 'Yogesh TS ', '14IT46', 2, '16:54:21', NULL, 1, 'LATE', '2018-02-07', 'ODD', 2018),
+('NT', 'Yogesh 1', '14IT47', 4, '09:33:25', NULL, 1, 'ONTIME', '2018-02-13', 'ODD', 2018),
+('NT', 'Yogesh 1', '14IT47', 4, '11:55:03', '11:55:19', 1, 'LATE', '2018-02-19', 'ODD', 2018),
+('T', 'Yogesh TS ', '14IT46', 2, '11:55:29', '11:55:32', 0, 'LATE', '2018-02-19', 'ODD', 2018),
+('T', 'Staff', 'ITST33', 18, '08:00:00', '16:00:00', 2, 'ONTIME', '2018-02-19', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -299,6 +307,22 @@ CREATE TABLE `overall_presence` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `permission`
+--
+
+CREATE TABLE `permission` (
+  `date` date NOT NULL,
+  `staff_id` varchar(12) NOT NULL,
+  `in_time` time NOT NULL,
+  `mid_time` time NOT NULL,
+  `out_time` time NOT NULL,
+  `type` enum('PER','LEV','OD') DEFAULT NULL,
+  `Reason` varchar(1000) NOT NULL DEFAULT 'Not Given '
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `staff_details`
 --
 
@@ -329,12 +353,13 @@ INSERT INTO `staff_details` (`name`, `staff_id`, `store_id`, `finger_preference`
 ('Gokul T S', '14IT50', 7, 'LM', 'CSE', 'AP-II', 'T', 'M', 7373535614, 'tsgokult@gmail.com', '2018-02-02'),
 ('Admin', 'IT01', 0, 'LI', 'IT', 'Admin', 'T', 'M', 7373535614, 'admin@vcet.ac.in', '2018-02-06'),
 ('Manager', 'IT02', 0, 'LI', 'IT', 'AP-II', 'T', 'M', 7373535614, 'manager@vcet.ac.in', '2018-02-07'),
-('Employee', 'IT03', 0, 'LI', 'IT', 'AP-II', 'T', 'M', 7373535614, 'employee@vcet.ac.in', '2018-02-16'),
+('HOD', 'IT03', 0, 'LI', 'IT', 'AP-II', 'T', 'M', 7373535614, 'hod@vcet.ac.in', '2018-02-16'),
 ('Seema M', 'IT1223', 9, 'LM', 'IT', 'AP-II', 'T', 'F', 7373535614, 'developer@igniteddreamz.com', '2018-02-21'),
 ('Loganathan K', 'IT1237', 10, 'LI', 'IT', 'TA', 'T', 'M', 7373535614, 'muzzamil@gmail.com', '2018-02-20'),
 ('Perumal Raja R', 'IT1336', 11, 'LI', 'IT', 'HOD', 'T', 'M', 7373535614, 'tsyogesh40@gmail.com', '2018-02-14'),
 ('HOD', 'ITHOD', 27, 'LI', 'IT', 'HOD', 'T', 'M', 7373535614, 'hod@vcet.ac.in', '2010-12-12'),
-('Kannan ', 'ITNT1315', 12, 'LI', 'IT', 'System_admin', 'NT', 'M', 8778555898, 'mka@vcet.ac.in', '2013-06-03');
+('Kannan ', 'ITNT1315', 12, 'LI', 'IT', 'System_admin', 'NT', 'M', 8778555898, 'mka@vcet.ac.in', '2013-06-03'),
+('Dummy', 'ITST33', 18, 'LI', 'IT', 'AP-I', 'T', 'M', 8667763095, 'staff@gmail.com', '2006-12-12');
 
 -- --------------------------------------------------------
 
@@ -373,7 +398,39 @@ INSERT INTO `tbl_last_login` (`id`, `userId`, `sessionData`, `machineIp`, `userA
 (13, 9, '{\"staff_id\":null,\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 12:18:09'),
 (14, 1, '{\"staff_id\":\"IT01\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 12:29:03'),
 (15, 3, '{\"staff_id\":\"IT03\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Employee\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 12:33:07'),
-(16, 1, '{\"staff_id\":\"IT01\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 12:35:50');
+(16, 1, '{\"staff_id\":\"IT01\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 12:35:50'),
+(17, 3, '{\"staff_id\":\"IT03\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Employee\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-18 21:54:56'),
+(18, 1, '{\"staff_id\":\"IT01\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 11:10:10'),
+(19, 11, '{\"staff_id\":\"ITST33\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Staff\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 11:14:50'),
+(20, 11, '{\"staff_id\":\"ITST33\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"9876543241\",\"designation\":\"AP-I\",\"email\":\"staff@gmail.com\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Staff\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 11:58:06'),
+(21, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Admin\",\"email\":\"admin@vcet.ac.in\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 12:03:02'),
+(22, 11, '{\"staff_id\":\"ITST33\",\"in_time\":\"08:00:00\",\"out_time\":\"16:00:00\",\"date\":\"2018-02-19\",\"status\":\"ONTIME\",\"phone\":\"9876543241\",\"designation\":\"AP-I\",\"email\":\"staff@gmail.com\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 12:03:59'),
+(23, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Admin\",\"email\":\"admin@vcet.ac.in\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 13:42:17'),
+(24, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Admin\",\"email\":\"admin@vcet.ac.in\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 13:43:26'),
+(25, 11, '{\"staff_id\":\"ITST33\",\"in_time\":\"08:00:00\",\"out_time\":\"16:00:00\",\"date\":\"2018-02-19\",\"status\":\"ONTIME\",\"phone\":\"9876543241\",\"designation\":\"AP-I\",\"email\":\"staff@gmail.com\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 14:00:36'),
+(26, 11, '{\"staff_id\":\"ITST33\",\"in_time\":\"08:00:00\",\"out_time\":\"16:00:00\",\"date\":\"2018-02-19\",\"status\":\"ONTIME\",\"phone\":\"9876543241\",\"designation\":\"AP-I\",\"email\":\"staff@gmail.com\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 15:13:50'),
+(27, 11, '{\"staff_id\":\"ITST33\",\"in_time\":\"08:00:00\",\"out_time\":\"16:00:00\",\"date\":\"2018-02-19\",\"status\":\"ONTIME\",\"phone\":\"9876543240\",\"designation\":\"AP-I\",\"email\":\"staff@gmail.com\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 16:57:49'),
+(28, 11, '{\"staff_id\":\"ITST33\",\"in_time\":\"08:00:00\",\"out_time\":\"16:00:00\",\"date\":\"2018-02-19\",\"status\":\"ONTIME\",\"phone\":\"9876543111\",\"designation\":\"AP-I\",\"email\":\"staff@gmail.com\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 20:58:59'),
+(29, 11, '{\"staff_id\":\"ITST33\",\"in_time\":\"08:00:00\",\"out_time\":\"16:00:00\",\"date\":\"2018-02-19\",\"status\":\"ONTIME\",\"phone\":\"987654319\",\"designation\":\"AP-I\",\"email\":\"staff@gmail.com\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 20:59:32'),
+(30, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Admin\",\"email\":\"admin@vcet.ac.in\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 21:46:07'),
+(31, 11, '{\"staff_id\":\"ITST33\",\"in_time\":\"08:00:00\",\"out_time\":\"16:00:00\",\"date\":\"2018-02-19\",\"status\":\"ONTIME\",\"phone\":\"8667763095\",\"designation\":\"AP-I\",\"email\":\"staff@gmail.com\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 21:47:02'),
+(32, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Admin\",\"email\":\"admin@vcet.ac.in\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 22:08:51'),
+(33, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Admin\",\"email\":\"admin@vcet.ac.in\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 22:10:25'),
+(34, 11, '{\"staff_id\":\"ITST33\",\"in_time\":\"08:00:00\",\"out_time\":\"16:00:00\",\"date\":\"2018-02-19\",\"status\":\"ONTIME\",\"phone\":\"8667763095\",\"designation\":\"AP-I\",\"email\":\"staff@gmail.com\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 22:10:46'),
+(35, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Admin\",\"email\":\"admin@vcet.ac.in\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-19 22:12:05'),
+(36, 11, '{\"staff_id\":\"ITST33\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"8667763095\",\"designation\":\"AP-I\",\"email\":\"staff@gmail.com\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-20 11:17:06'),
+(37, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Admin\",\"email\":\"admin@vcet.ac.in\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-20 14:34:46'),
+(38, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Admin\",\"email\":\"admin@vcet.ac.in\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-20 19:03:00'),
+(39, 3, '{\"staff_id\":\"IT03\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"AP-II\",\"email\":\"employee@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Hod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-20 19:04:39'),
+(40, 11, '{\"staff_id\":\"ITST33\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"8667763095\",\"designation\":\"AP-I\",\"email\":\"staff@gmail.com\",\"role\":\"4\",\"roleText\":\"Staff\",\"name\":\"Dummy\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-20 19:23:08'),
+(41, 2, '{\"staff_id\":\"IT02\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"AP-II\",\"email\":\"manager@vcet.ac.in\",\"role\":\"2\",\"roleText\":\"Principal\",\"name\":\"Principal\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-20 19:27:49'),
+(42, 3, '{\"staff_id\":\"IT03\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"AP-II\",\"email\":\"employee@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Hod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-20 21:33:02'),
+(43, 3, '{\"staff_id\":\"IT03\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"AP-II\",\"email\":\"employee@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Hod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-21 07:58:49'),
+(44, 3, '{\"staff_id\":\"IT03\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"AP-II\",\"email\":\"hod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Hod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-21 14:31:57'),
+(45, 3, '{\"staff_id\":\"IT03\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"AP-II\",\"email\":\"hod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Hod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-22 07:40:16'),
+(46, 3, '{\"staff_id\":\"IT03\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"AP-II\",\"email\":\"hod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Hod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-22 11:06:34'),
+(47, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Admin\",\"email\":\"admin@vcet.ac.in\",\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-22 11:31:29'),
+(48, 3, '{\"staff_id\":\"IT03\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"AP-II\",\"email\":\"hod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Hod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-22 11:35:01');
 
 -- --------------------------------------------------------
 
@@ -448,9 +505,10 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`userId`, `staff_id`, `email`, `password`, `name`, `mobile`, `roleId`, `isDeleted`, `createdBy`, `createdDtm`, `updatedBy`, `updatedDtm`) VALUES
-(1, 'IT01', 'admin@vcet.ac.in', '$2y$10$UYsH1G7MkDg1cutOdgl2Q.ZbXjyX.CSjsdgQKvGzAgl60RXZxpB5u', 'System Administrator', '9890098900', 1, 0, 0, '2015-07-01 18:56:49', 1, '2018-01-05 05:56:34'),
-(2, 'IT02', 'manager@vcet.ac.in', '$2y$10$quODe6vkNma30rcxbAHbYuKYAZQqUaflBgc4YpV9/90ywd.5Koklm', 'Manager', '9890098900', 2, 0, 1, '2016-12-09 17:49:56', 1, '2018-01-12 07:22:11'),
-(3, 'IT03', 'employee@vcet.ac.in', '$2y$10$UYsH1G7MkDg1cutOdgl2Q.ZbXjyX.CSjsdgQKvGzAgl60RXZxpB5u', 'Employee', '9890098900', 3, 0, 1, '2016-12-09 17:50:22', 3, '2018-01-04 07:58:28');
+(1, 'IT01', 'admin@vcet.ac.in', '$2y$10$j9HPTqIJOp0/9TbRA5T8A.oIF6SxeC5b4xsXPBCOKX8iLwomItcya', 'System Administrator', '9890098900', 1, 0, 0, '2015-07-01 18:56:49', 1, '2018-02-19 12:03:18'),
+(2, 'IT02', 'principal@vcet.ac.in', '$2y$10$BiOJkC9tvq3HLzFy/RvlGOusiNhR8JDbQTupHBD0Ykg0w82QNPs9y', 'Principal', '9890098900', 2, 0, 1, '2016-12-09 17:49:56', 1, '2018-02-20 19:03:59'),
+(3, 'IT03', 'hod@vcet.ac.in', '$2y$10$GwugH1cXuh9ySGxFQWv61OVDv8vzQNi4PjSB8Q3kLI2kLFGzc0gFm', 'Hod', '9890098900', 3, 0, 1, '2016-12-09 17:50:22', 1, '2018-02-20 19:04:21'),
+(11, 'ITST33', 'staff@gmail.com', '$2y$10$F6Szbg/XjOQVjScajGSHvO74IlS1mw.QY9QFKWwq5B1eBGnXK4pvi', 'Dummy', '9876543241', 4, 0, 1, '2018-02-19 11:12:02', 1, '2018-02-19 12:03:46');
 
 -- --------------------------------------------------------
 
@@ -479,24 +537,27 @@ CREATE TABLE `temp_entry` (
 --
 
 INSERT INTO `temp_entry` (`cadre`, `name`, `staff_id`, `store_id`, `dept`, `in_time`, `out_time`, `p_value`, `no_of_entry`, `status`, `date`, `semester`, `year`) VALUES
-('NT', 'Yogesh 1', '14IT47', 4, 'IT', '18:36:29', '18:40:31', 1, 2, 'LATE', '2018-02-02', 'ODD', 2018),
-('NT', 'Yogesh 2', '14it48', 6, 'IT', '19:01:29', '19:24:28', 1, 2, 'LATE', '2018-02-02', 'ODD', 2018),
-('T', 'Yogesh TS ', '14IT46', 2, 'IT', '19:05:48', '19:06:28', 1, 2, 'LATE', '2018-02-02', 'ODD', 2018),
-('T', 'Yogesh 3', '14IT49', 3, 'IT', '19:08:33', '19:08:59', 1, 2, 'LATE', '2018-02-02', 'ODD', 2018),
-('T', 'Gokul T S', '14IT50', 7, 'CSE', '19:21:53', '19:22:19', 1, 2, 'LATE', '2018-02-02', 'ODD', 2018),
-('NT', 'Yogesh 1', '14IT47', 4, 'IT', '09:20:45', NULL, 1, 1, 'ONTIME', '2018-02-05', 'ODD', 2018),
-('T', 'Murali ', '14IT34', 8, 'IT', '09:24:54', '09:25:52', 2, 2, 'LATE', '2018-02-05', 'ODD', 2018),
-('T', 'Seema M', 'IT1223', 9, 'IT', '13:31:46', '14:07:54', 2, 2, 'LATE', '2018-02-05', 'ODD', 2018),
-('T', 'Yogesh TS ', '14IT46', 2, 'IT', '13:44:35', NULL, 1, 1, 'LATE', '2018-02-05', 'ODD', 2018),
-('T', 'Loganathan K', 'IT1237', 10, 'IT', '13:58:25', '11:45:05', 2, 2, 'LATE', '2018-02-05', 'ODD', 2018),
-('NT', 'Yogesh 2', '14it48', 6, 'IT', '14:14:25', NULL, 1, 1, 'LATE', '2018-02-05', 'ODD', 2018),
+('NT', 'Yogesh 1', '14IT47', 4, 'IT', '18:36:29', '18:40:31', 1, 2, 'LATE', '2018-02-21', 'ODD', 2018),
+('NT', 'Yogesh 2', '14it48', 6, 'IT', '19:01:29', '19:24:28', 1, 2, 'LATE', '2018-02-21', 'ODD', 2018),
+('T', 'Yogesh TS ', '14IT46', 2, 'IT', '19:05:48', '19:06:28', 1, 2, 'LATE', '2018-02-21', 'ODD', 2018),
+('T', 'Yogesh 3', '14IT49', 3, 'IT', '19:08:33', '19:08:59', 1, 2, 'LATE', '2018-02-21', 'ODD', 2018),
+('T', 'Gokul T S', '14IT50', 7, 'CSE', '19:21:53', '19:22:19', 1, 2, 'LATE', '2018-02-21', 'ODD', 2018),
+('NT', 'Yogesh 1', '14IT47', 4, 'IT', '09:20:45', NULL, 1, 1, 'ONTIME', '2018-02-22', 'ODD', 2018),
+('T', 'Murali ', '14IT34', 8, 'IT', '09:24:54', '09:25:52', 2, 2, 'LATE', '2018-02-22', 'ODD', 2018),
+('T', 'Seema M', 'IT1223', 9, 'IT', '13:31:46', '14:07:54', 2, 2, 'LATE', '2018-02-22', 'ODD', 2018),
+('T', 'Yogesh TS ', '14IT46', 2, 'IT', '13:44:35', NULL, 1, 1, 'LATE', '2018-02-22', 'ODD', 2018),
+('T', 'Loganathan K', 'IT1237', 10, 'IT', '13:58:25', '11:45:05', 2, 2, 'LATE', '2018-02-22', 'ODD', 2018),
+('NT', 'Yogesh 2', '14it48', 6, 'IT', '14:14:25', NULL, 1, 1, 'LATE', '2018-02-22', 'ODD', 2018),
 ('NT', 'Kannan ', 'ITNT1315', 12, 'IT', '11:44:20', NULL, 1, 1, 'LATE', '2018-02-06', 'ODD', 2018),
 ('T', 'Loganathan K', 'IT1237', 10, 'IT', '11:44:52', '11:45:05', 2, 2, 'LATE', '2018-02-06', 'ODD', 2018),
 ('NT', 'Yogesh 1', '14IT47', 4, 'IT', '11:48:25', NULL, 1, 1, 'LATE', '2018-02-06', 'ODD', 2018),
 ('NT', 'Yogesh 2', '14it48', 6, 'IT', '12:01:42', NULL, 1, 1, 'LATE', '2018-02-06', 'ODD', 2018),
 ('NT', 'Yogesh 1', '14IT47', 4, 'IT', '16:54:01', NULL, 1, 1, 'LATE', '2018-02-07', 'ODD', 2018),
 ('T', 'Yogesh TS ', '14IT46', 2, 'IT', '16:54:21', NULL, 1, 1, 'LATE', '2018-02-07', 'ODD', 2018),
-('NT', 'Yogesh 1', '14IT47', 4, 'IT', '09:33:25', NULL, 1, 1, 'ONTIME', '2018-02-13', 'ODD', 2018);
+('NT', 'Yogesh 1', '14IT47', 4, 'IT', '09:33:25', NULL, 1, 1, 'ONTIME', '2018-02-13', 'ODD', 2018),
+('NT', 'Yogesh 1', '14IT47', 4, 'IT', '11:55:03', '11:55:19', 1, 2, 'LATE', '2018-02-19', 'ODD', 2018),
+('T', 'Yogesh TS ', '14IT46', 2, 'IT', '11:55:29', '11:55:32', 0, 2, 'LATE', '2018-02-19', 'ODD', 2018),
+('T', 'Staff', 'ITST33', 18, 'IT', '08:00:00', '16:00:00', 2, 2, 'ONTIME', '2018-02-19', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -600,6 +661,12 @@ ALTER TABLE `overall_presence`
   ADD KEY `staffid_ref_overall_presence` (`staff_id`);
 
 --
+-- Indexes for table `permission`
+--
+ALTER TABLE `permission`
+  ADD KEY `staffid_ref_permission` (`staff_id`);
+
+--
 -- Indexes for table `staff_details`
 --
 ALTER TABLE `staff_details`
@@ -650,7 +717,7 @@ ALTER TABLE `user_credentials`
 -- AUTO_INCREMENT for table `tbl_last_login`
 --
 ALTER TABLE `tbl_last_login`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `tbl_reset_password`
 --
@@ -665,7 +732,7 @@ ALTER TABLE `tbl_roles`
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Constraints for dumped tables
 --
@@ -729,6 +796,12 @@ ALTER TABLE `MECH_entry`
 --
 ALTER TABLE `overall_presence`
   ADD CONSTRAINT `staffid_ref_overall_presence` FOREIGN KEY (`staff_id`) REFERENCES `staff_details` (`staff_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `permission`
+--
+ALTER TABLE `permission`
+  ADD CONSTRAINT `staffid_ref_permission` FOREIGN KEY (`staff_id`) REFERENCES `staff_details` (`staff_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `temp_entry`

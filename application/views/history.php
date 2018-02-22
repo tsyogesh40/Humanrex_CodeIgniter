@@ -24,7 +24,8 @@
                   {
                       echo'
                       <div class="container">
-                        <table class="table table-striped table-responsive">
+                      <div class=" table-responsive" >
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
                                   <th>DATE</th>
@@ -54,6 +55,7 @@
                                       }
                                     echo'        </tbody>
                                   </table>
+                                  </div>
                             </div>';
                     }
                     else

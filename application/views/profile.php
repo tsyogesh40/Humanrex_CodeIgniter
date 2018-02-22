@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-bar-chart"></i> View History
-        <small>For a date or Range of Dates</small>
+        <i class="ion ion-person-add"></i> My Profile
+        <small>View or Edit Profile</small>
       </h1>
     </section>
 
