@@ -53,9 +53,33 @@
                                 {
                                   echo '<tr>
                                    <td>'.$val->name.'</td>';
-                                  echo '<td>'.$val->staff_id.'</td>
-                                    </tr>';
+                                  echo '<td>'.$val->staff_id.'</td>';
+                                    foreach($dates as $val1)
+                                    {
+                                      foreach($history as $val2)
+                                      {
+                                        if($val2->p_value==1)
+                                        {  $str='Half day Present'; }
+                                        else if($val2->p_value==2)
+                                        {  $str='Full day Present'; }
+                                        else if($val2->p_value==0)
+                                        {  $str='leave'; }
+
+                                        //if($val1->date<=$info['from']&&$val1->date>=$info['to'])
+                                        {
+                                          if($val1->date==$val2->date && $val2->name==$val->name)
+                                          echo '<td>'.$str.'</td>';
+                                          else if($val->name==$val2->name && $val1->date!=$val2->date)
+                                        echo '<td>AB</td>';
+
+
+                                        }
+                                        }
+                                    }
+
+                                  echo '</tr>';
                                 }
+
 
                                 echo'        </tbody>
                                     </table>
