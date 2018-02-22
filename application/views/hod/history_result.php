@@ -20,8 +20,7 @@
                     </div><!-- /.box-header -->
 
                     <?php
-                    //print_r($history);
-
+                    //print_r($dates);
                     if($history!='No Records Found !')
                     {
                       if($info['cadre']=='T')
@@ -31,6 +30,7 @@
                       else {
                         $str='Non-Teaching Staffs';
                       }
+
                         echo'
                         <div class="container">
                         <div class=" table-responsive">
@@ -41,7 +41,7 @@
                                   <tr>
                                     <th>Staff Name</th>
                                     <th>Staff Id</th>';
-                                  foreach($history as $value)
+                                  foreach($dates as $value)
                                   {
                                     echo '<th>'.$value->date.'</th>';
                                   }
@@ -49,26 +49,15 @@
                                 </thead>
                                 <tbody>';
                                 //print_r($history);
+                                foreach($staff_id as $val)
+                                {
+                                  echo '<tr>
+                                   <td>'.$val->name.'</td>';
+                                  echo '<td>'.$val->staff_id.'</td>
+                                    </tr>';
+                                }
 
-                                  foreach($history as $value)
-                                    {
-                                      echo'  <tr>
-                                                <td><b>'.$value->name.'</b></td>
-                                                <td>'.$value->staff_id.'</td>';
-                                                foreach($history as $value)
-                                                {
-                                                  $val=$value->p_value;
-                                                  if($val==1)
-                                                    $str="Half day present";
-                                                  else if($val==2)
-                                                    $str="Full day present";
-                                                  echo '<td>'.$str.'</td>';
-                                                }
-
-                                        echo '</tr>';
-                                            }
-
-                                      echo'        </tbody>
+                                echo'        </tbody>
                                     </table>
                                     </div>
                               </div>';

@@ -51,13 +51,17 @@ class Hod extends BaseController
       $to_date=$this->input->post('to_date');
 
       $datas=array('cadre'=>$cadre,'from'=>$from_date,'to'=>$to_date);
-
       $dept=$this->hod_model->view_dept($staff_id);
       $result=$this->hod_model->staff_history($dept['department'],$cadre,$from_date,$to_date);
+      //to get unique dates for printing table header
+      $unique_dates=$this->hod_model->view_dates($dept['department'],$cadre,$from_date,$to_date);
+      $unique_id=$this->hod_model->view_id($dept['department'],$cadre);
       if($result!=false)
       {
         $data['history']=$result;
         $data['info']=$datas;
+        $data['dates']=$unique_dates;
+        $data['staff_id']=$unique_id;
       }
       else {
         $data['history']='No Records Found !';

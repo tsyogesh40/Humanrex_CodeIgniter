@@ -195,7 +195,7 @@
             ?>
             <li class="header">Principal Panel</li>
             <li class="treeview">
-              <a href="#reports" data-toggle="collapse tooltip" title="Used to view Staffs Periodic reports">
+              <a href="#reports" data-toggle="collapse" title="Used to view Staffs Periodic reports">
                 <i class="fa fa-files-o"></i>
                 <span>Reports</span>
               </a>
