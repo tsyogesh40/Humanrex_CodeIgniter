@@ -19,7 +19,7 @@
                         <h3 class="box-title"> </h3>
                     </div><!-- /.box-header -->
                     <?php
-
+                    
                   if($today!="No record found !")
                   {
 

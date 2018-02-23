@@ -60,7 +60,8 @@ class User extends BaseController
     $this->global['pageTitle'] = 'HumanRex: History';
     $date=$this->input->post('date');
     $staff_id=$this->session->userdata('staff_id');
-    $result=$this->user_model->select_id($date,$staff_id);
+    $dept=$this->user_model->view_dept($staff_id);
+    $result=$this->user_model->select_id($dept['department'],$date,$staff_id);
     if($result!=false)
     {
       $data['history']=$result;
@@ -80,7 +81,8 @@ class User extends BaseController
     $from=$this->input->post('from_date');
     $to=$this->input->post('to_date');
     $staff_id=$this->session->userdata('staff_id');
-    $result=$this->user_model->select_range($staff_id,$from,$to);
+    $dept=$this->user_model->view_dept($staff_id);
+    $result=$this->user_model->select_range($dept['department'],$staff_id,$from,$to);
     if($result!=false)
     {
       $data['history']=$result;
@@ -220,15 +222,17 @@ class User extends BaseController
                               );
 
                 $counter=array('staff_id'=>$staff_id,'name'=>$name,'count'=>0,'late_days'=>0);
-
+                $presence=array('name'=>$name,'staff_id'=>$staff_id,'dept'=>$dept);
                 $this->load->model('user_model');
                 //inserting datas
                 $result_details=$this->user_model->user_register($data);
                 $result_counter=$this->user_model->counter_init($counter);
+                //inserting data into table overall_presence
+                $result_overall_presence=$this->user_model->overall_presence($presence);
                 //inserting user credentials
                 $result = $this->user_model->addNewUser($userInfo);
 
-                if($result > 0)
+                if($result !=' ')
                 {
                     $this->session->set_flashdata('success', 'New User created successfully');
                 }

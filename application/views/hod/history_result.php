@@ -48,7 +48,9 @@
                                   echo '</tr>
                                 </thead>
                                 <tbody>';
-                                //print_r($history);
+                                print_r($dates);
+                                echo'<br><br>';
+                                print_r($history);
                                 foreach($staff_id as $val)
                                 {
                                   echo '<tr>
@@ -58,24 +60,28 @@
                                     {
                                       foreach($history as $val2)
                                       {
-                                        if($val2->p_value==1)
-                                        {  $str='Half day Present'; }
-                                        else if($val2->p_value==2)
-                                        {  $str='Full day Present'; }
-                                        else if($val2->p_value==0)
-                                        {  $str='leave'; }
 
-                                        //if($val1->date<=$info['from']&&$val1->date>=$info['to'])
-                                        {
-                                          if($val1->date==$val2->date && $val2->name==$val->name)
-                                          echo '<td>'.$str.'</td>';
-                                          else if($val->name==$val2->name && $val1->date!=$val2->date)
-                                        echo '<td>AB</td>';
+                                        if($val->staff_id==$val2->staff_id)
+                                          {
+
+                                            if($val2->p_value==1)
+                                            {  $str='Half day Present'; }
+                                            else if($val2->p_value==2)
+                                            {  $str='Full day Present'; }
+                                            else if($val2->p_value==0)
+                                            {  $str='leave'; }
 
 
+                                            if($val1->date==$val2->date )
+                                            {
+                                              echo '<td>'.$str.'</td>';
+
+                                            }
+                                            else if($val1->date!=$val2->date)
+                                              echo '<td>1</td>';
+                                            }
                                         }
-                                        }
-                                    }
+                                      }
 
                                   echo '</tr>';
                                 }

@@ -14,6 +14,42 @@ class Hod extends BaseController
         $this->isLoggedIn();
     }
 
+    public function staff_consolidated()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Staff Consolidated Report ';
+      $staff_id=$this->session->userdata('staff_id');
+
+      //hod/consolidated.php form inputs
+      $cadre=$this->input->post('cadre');
+      $from_date=$this->input->post('from_date');
+      $to_date=$this->input->post('to_date');
+
+      $dept=$this->hod_model->view_dept($staff_id);
+      $info=array('cadre'=>$cadre,'from'=>$from_date,'to'=>$to_date,'dept'=>$dept['department']);
+      $data=$this->hod_model->staff_consolidated($dept['department'],$cadre,$from_date,$to_date);
+      $unique_id=$this->hod_model->view_id($dept['department'],$cadre);
+      $total_days=$this->hod_model->total_days($dept['department'],$cadre,$from_date,$to_date);
+      if($data!=false)
+      {
+        $result['datas']=$data;
+        $result['details']=$unique_id;
+        $result['info']=$info;
+        $result['total_days']=$total_days;
+      }
+      else
+      {
+        $result['datas']='No record found !';
+      }
+      $this->loadViews("hod/consolidated_result", $this->global, $result, NULL);
+
+    }
+    //view for HOD/ Staff- consolidated view
+    public function staff_consolidated_view()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Staff Consolidated Report ';
+      $this->loadViews("hod/consolidated",$this->global,NULL,NULL);
+    }
+
     //for viewing details of current day
      public function staff_today()
     {
@@ -35,7 +71,6 @@ class Hod extends BaseController
     //for viewing details of staffs history
     public function staff_history_view()
     {
-
       $this->global['pageTitle'] = 'HumanRex: Fetch Staff History ';
       $this->loadViews("hod/history",$this->global,NULL,NULL);
     }
@@ -62,6 +97,7 @@ class Hod extends BaseController
         $data['info']=$datas;
         $data['dates']=$unique_dates;
         $data['staff_id']=$unique_id;
+
       }
       else {
         $data['history']='No Records Found !';
