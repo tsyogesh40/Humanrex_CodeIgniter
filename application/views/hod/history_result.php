@@ -48,14 +48,44 @@
                                   echo '</tr>
                                 </thead>
                                 <tbody>';
-                                //print_r($history);
+                                print_r($dates);
+                                echo'<br><br>';
+                                print_r($history);
                                 foreach($staff_id as $val)
                                 {
                                   echo '<tr>
                                    <td>'.$val->name.'</td>';
-                                  echo '<td>'.$val->staff_id.'</td>
-                                    </tr>';
+                                  echo '<td>'.$val->staff_id.'</td>';
+                                    foreach($dates as $val1)
+                                    {
+                                      foreach($history as $val2)
+                                      {
+
+                                        if($val->staff_id==$val2->staff_id)
+                                          {
+
+                                            if($val2->p_value==1)
+                                            {  $str='Half day Present'; }
+                                            else if($val2->p_value==2)
+                                            {  $str='Full day Present'; }
+                                            else if($val2->p_value==0)
+                                            {  $str='leave'; }
+
+
+                                            if($val1->date==$val2->date )
+                                            {
+                                              echo '<td>'.$str.'</td>';
+
+                                            }
+                                            else if($val1->date!=$val2->date)
+                                              echo '<td>1</td>';
+                                            }
+                                        }
+                                      }
+
+                                  echo '</tr>';
                                 }
+
 
                                 echo'        </tbody>
                                     </table>

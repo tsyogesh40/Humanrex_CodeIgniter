@@ -74,6 +74,8 @@ $route['edit-profile']="user/edit_profile";
 $route['staff-today']='hod/staff_today';
 $route['staff-history-view']='hod/staff_history_view';
 $route['staff-history']="hod/staff_history";
+$route['staff-consolidated-view']="hod/staff_consolidated_view";
+$route['staff-consolidated']="hod/staff_consolidated";
 
 
 $route['addNewUser'] = "user/addNewUser";

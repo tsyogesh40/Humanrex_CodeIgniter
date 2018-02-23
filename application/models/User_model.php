@@ -2,6 +2,55 @@
 
 class User_model extends CI_Model
 {
+
+  // This Model is used to view the History about the staffs! In HOD panel
+  public function view_dept($staff_id)
+  {
+      $this->db->select('department');
+      $this->db->from('staff_details');
+      $this->db->where('staff_id',$staff_id);
+      if($res=$this->db->get())
+      {
+        return $res->row_array();
+      }
+      else {
+        return false;
+      }
+  }
+
+
+  //Switches various dept table
+  public function select_dept_table($dept)
+  {
+    if($dept=='IT')
+    {
+      $table='IT_entry';
+    }
+    else if($dept=='CSE')
+    {
+      $table='CSE_entry';
+    }
+    else if($dept=='EEE')
+    {
+      $table='EEE_entry';
+    }
+    else if($dept=='ECE')
+    {
+      $table='ECE_entry';
+    }
+    else if($dept=='MECH')
+    {
+      $table='MECH_entry';
+    }
+    else if($dept=='CIVIL')
+    {
+      $table='CIVIL_entry';
+    }
+    return $table;
+  }
+
+
+
   //----------------------login model-----------------------------
   //updating the profile in staff page
   public function edit_profile($staff_id,$data)
@@ -9,6 +58,19 @@ class User_model extends CI_Model
     $this->db->where('staff_id',$staff_id);
     $this->db->update('staff_details',$data);
 
+  }
+  //Intializing the Overall presence table
+  public function overall_presence($datas)
+  {
+
+    $this->db->trans_start();
+    $this->db->insert('overall_presence',$datas);
+
+    $insert_id3 = $this->db->insert_id();
+
+    $this->db->trans_complete();
+
+    return $insert_id3;
   }
 
   //fetching attendence details
@@ -28,10 +90,11 @@ class User_model extends CI_Model
     }
   }
 //select by date
-public function select_id($date,$staff_id)
+public function select_id($dept,$date,$staff_id)
 {
+  $table=$this->select_dept_table($dept);
   $this->db->select('*');
-  $this->db->from('temp_entry');
+  $this->db->from($table);
   $this->db->where('staff_id',$staff_id);
   $this->db->where('date',$date);
   if($res=$this->db->get())
@@ -44,12 +107,13 @@ public function select_id($date,$staff_id)
 }
 
 //select by range
-public function select_range($staff_id,$from,$to)
+public function select_range($dept,$staff_id,$from,$to)
 {
   //$this->db->query('select * from temp_entry where staff_id='.$staff_id.' and (date between '.$from.' and '.$to.')');
+  $table=$this->select_dept_table($dept);
   $condition="date between"."'".$from."'"."and"."'".$to."'";
   $this->db->select('*');
-  $this->db->from('temp_entry');
+  $this->db->from($table);
   $this->db->where('staff_id',$staff_id);
   $this->db->where($condition);
   if($history=$this->db->get())
@@ -74,23 +138,6 @@ public function select_range($staff_id,$from,$to)
       return false;
     }
   }
-
-  public  function login($email,$pswd)
-  {
-      $this->db->select('*');
-      $this->db->from('user_credentials');
-      $this->db->where('email',$email);
-      $this->db->where('password',$pswd);
-
-      if($query=$this->db->get())
-      {
-        return $query->row_array();
-      }
-      else{
-        return false;
-      }
-  }
-
 
   //checking for existing staff id
   public function staff_id_check($staff_id)

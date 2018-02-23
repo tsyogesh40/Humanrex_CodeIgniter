@@ -169,7 +169,7 @@
                   </li>
                   <br>
                   <li class="treeview">
-                    <a href="#" >
+                    <a href="<?php echo base_url()?>staff-consolidated-view" >
                       <i class="fa fa-line-chart"></i>
                       <span>Consolidated</span>
                     </a>
