@@ -76,6 +76,8 @@ $route['staff-history-view']='hod/staff_history_view';
 $route['staff-history']="hod/staff_history";
 $route['staff-consolidated-view']="hod/staff_consolidated_view";
 $route['staff-consolidated']="hod/staff_consolidated";
+$route['staff-permission-view']="hod/staff_permission_view";
+$route['staff-permission']="hod/staff_permission";
 
 
 $route['addNewUser'] = "user/addNewUser";

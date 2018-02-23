@@ -176,7 +176,7 @@
                   </li>
                   <br>
                   <li class="treeview">
-                    <a href="#" >
+                    <a href="<?php echo base_url()?>staff-permission-view" >
                       <i class="fa fa-plane"></i>
                       <span>Leave / OD /Late /Permission</span>
                     </a>
@@ -223,7 +223,7 @@
                   </li>
                   <br>
                   <li class="treeview">
-                    <a href="#" >
+                    <a href="<?php echo base_url()?>staff-permission-view" >
                       <i class="fa fa-plane"></i>
                       <span>Leave / OD /Late /Permission</span>
                     </a>

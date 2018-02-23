@@ -79,7 +79,8 @@
                                       <div class="form-group">
                                           <label for="desg">Select Designation :</label>
                                                 <select class="form-control" name="desg">
-                                                      <option value="P">Professor</option>
+                                                      <option value="Professor">Professor</option>
+                                                      <option value="Associate Professor">Associate Professor</option>
                                                       <option value="AP-I">AP - I</option>
                                                       <option value="AP-II">AP- II</option>
                                                       <option value="AP-III">AP - III</option>

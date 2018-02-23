@@ -23,8 +23,8 @@
                       <h3>Choose Date and Cadre</h3><br>
                       <form class="form-horizontal" action="<?php echo base_url()?>staff-consolidated" method="post">
                         <div class="form-group">
-                          <label for="sel1" class="control-label col-sm-2">Select Cadre:</label>
-                          <div class="col-sm-4 col-xs-10">
+                          <label for="sel1" class="control-label col-sm-2  col-xs-4">Select Cadre:</label>
+                          <div class="col-sm-4  col-xs-6">
                           <select class="form-control" id="sel1" name="cadre">
                             <option value="T">Teaching</option>
                             <option value="NT">Non-Teaching</option>
@@ -32,14 +32,14 @@
                         </div>
                         </div>
                         <div class="form-group">
-                            <label for="date" class="control-label col-sm-2">From:&nbsp;</label>
-                            <div class="col-sm-4 col-xs-10">
+                            <label for="date" class="control-label  col-xs-4 col-sm-2">From:&nbsp;</label>
+                            <div class="col-sm-4 col-xs-6">
                             <input type="date" class="form-control" id="date1" name="from_date">
                             </div>
                           </div>
                           <div class="form-group">
-                              <label for="date" class="control-label col-sm-2">To:&nbsp;</label>
-                              <div class="col-sm-4 col-xs-10">
+                              <label for="date" class="control-label col-sm-2 col-xs-4">To:&nbsp;</label>
+                              <div class="col-sm-4 col-xs-6">
                               <input type="date" class="form-control" id="date2" name="to_date">
                             </div>
                           </div>

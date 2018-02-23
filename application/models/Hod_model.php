@@ -3,6 +3,24 @@
 class Hod_model extends CI_Model
 {
 
+  //function for staff_permission in hod_panel
+  public function staff_permission($dept,$cadre,$date)
+  {
+    $table=$this->select_dept_table($dept);
+    $condition = "cadre =" . "'" . $cadre . "'";
+    $this->db->select('*');
+    $this->db->from($table);
+    $this->db->where($condition);
+    $this->db->where('date',$date);
+    if($res=$this->db->get())
+    {
+      return $res->result();
+    }
+    else {
+      return false;
+    }
+  }
+
   //function to find the total days
   public function total_days($dept,$cadre,$from,$to)
   {
