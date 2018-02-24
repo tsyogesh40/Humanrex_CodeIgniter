@@ -3,6 +3,24 @@
 class Hod_model extends CI_Model
 {
 
+  //function for staff_permission in hod_panel
+  public function staff_permission($dept,$cadre,$date)
+  {
+    $table=$this->select_dept_table($dept);
+    $condition = "cadre =" . "'" . $cadre . "'";
+    $this->db->select('*');
+    $this->db->from($table);
+    $this->db->where($condition);
+    $this->db->where('date',$date);
+    if($res=$this->db->get())
+    {
+      return $res->result();
+    }
+    else {
+      return false;
+    }
+  }
+
   //function to find the total days
   public function total_days($dept,$cadre,$from,$to)
   {
@@ -46,31 +64,53 @@ class Hod_model extends CI_Model
   //Switches various dept table
   public function select_dept_table($dept)
   {
-    if($dept=='IT')
-    {
-      $table='IT_entry';
-    }
-    else if($dept=='CSE')
-    {
-      $table='CSE_entry';
-    }
-    else if($dept=='EEE')
-    {
-      $table='EEE_entry';
-    }
-    else if($dept=='ECE')
-    {
-      $table='ECE_entry';
-    }
-    else if($dept=='MECH')
-    {
-      $table='MECH_entry';
-    }
-    else if($dept=='CIVIL')
-    {
-      $table='CIVIL_entry';
-    }
-    return $table;
+
+      if($dept=='IT')
+      {
+        $table='IT_entry';
+      }
+      else if($dept=='CSE')
+      {
+        $table='CSE_entry';
+      }
+      else if($dept=='EEE')
+      {
+        $table='EEE_entry';
+      }
+      else if($dept=='ECE')
+      {
+        $table='ECE_entry';
+      }
+      else if($dept=='MECH')
+      {
+        $table='MECH_entry';
+      }
+      else if($dept=='CIVIL')
+      {
+        $table='CIVIL_entry';
+      }
+      else if($dept=='PHYSICS')
+      {
+        $table='PHYSICS_entry';
+      }
+      else if($dept=='CHEMISTRY')
+      {
+        $table='CHEMISTRY_entry';
+      }
+      else if($dept=='MATHS')
+      {
+        $table='MATHS_entry';
+      }
+      else if($dept=='ENGLISH')
+      {
+          $table='ENGLISH_entry';
+      }
+      else if($dept=='OFFICE')
+      {
+          $table='OFFICE_entry';
+      }
+
+      return $table;
   }
 
   // This Model is used to view the History about the staffs! In HOD panel

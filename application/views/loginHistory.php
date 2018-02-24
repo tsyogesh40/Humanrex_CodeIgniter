@@ -20,7 +20,7 @@
               <input id="searchText" type="text" name="searchText" value="<?php echo $searchText; ?>" class="form-control" placeholder="Search Text"/>
             </div>
             <div class="col-md-1 form-group">
-              <button type="submit" class="btn btn-md btn-default btn-block searchList pull-right"><i class="fa fa-search"></i></button> 
+              <button type="submit" class="btn btn-md btn-default btn-block searchList pull-right"><i class="fa fa-search"></i></button>
             </div>
           </form>
         </div>
@@ -32,7 +32,9 @@
                     <div class="box-tools">
                     </div>
                 </div><!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
+                <div class="box-body  no-padding">
+                  <div class="container">
+                  <div class="table-responsive">
                   <table class="table table-hover">
                     <tr>
                       <th>Session Data</th>
@@ -61,7 +63,8 @@
                     }
                     ?>
                   </table>
-                  
+                </div>
+              </div>
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
                     <?php echo $this->pagination->create_links(); ?>
@@ -75,7 +78,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function(){
         jQuery('ul.pagination li a').click(function (e) {
-            e.preventDefault();            
+            e.preventDefault();
             var link = jQuery(this).get(0).href;
             jQuery("#searchList").attr("action", link);
             jQuery("#searchList").submit();

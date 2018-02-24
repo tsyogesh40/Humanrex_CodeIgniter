@@ -13,6 +13,39 @@ class Hod extends BaseController
         $this->load->model('hod_model');
         $this->isLoggedIn();
     }
+    //function to render the view for lev/od/late/permission
+    public function staff_permission_view()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Staffs Prior Permissions ';
+      $this->loadViews("hod/permission",$this->global,NULL,NULL);
+    }
+
+    //function to display the permssion results
+    public function staff_permission()
+    {
+    $this->global['pageTitle'] = 'HumanRex: Report for Prior Permissions ';
+    $staff_id=$this->session->userdata('staff_id');
+
+    //hod/permission.php form inputs
+    $cadre=$this->input->post('cadre');
+    $date=$this->input->post('date');
+    $dept=$this->hod_model->view_dept($staff_id);
+    $info=array('cadre'=>$cadre,'date'=>$date,'dept'=>$dept['department']);
+    $data=$this->hod_model->staff_permission($dept['department'],$cadre,$date);
+
+    if($data!=false)
+    {
+      $result['datas']=$data;
+      $result['info']=$info;
+    }
+    else
+    {
+      $result['datas']='No Records Found !';
+    }
+    $this->loadViews("hod/permission_result", $this->global, $result, NULL);
+
+    }
+
 
     public function staff_consolidated()
     {
@@ -38,7 +71,7 @@ class Hod extends BaseController
       }
       else
       {
-        $result['datas']='No record found !';
+        $result['datas']='No Records Found !';
       }
       $this->loadViews("hod/consolidated_result", $this->global, $result, NULL);
 

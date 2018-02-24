@@ -8,6 +8,7 @@ class User extends BaseController
     /**
      * This is default constructor of the class
      */
+
     public function __construct()
     {
         parent::__construct();
@@ -205,7 +206,7 @@ class User extends BaseController
                 $mobile = $this->security->xss_clean($this->input->post('mobile'));
 
 
-                $userInfo = array('staff_id'=>$staff_id,'email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId, 'name'=> $name,
+                $userInfo = array('staff_id'=>$staff_id,'dept'=>$dept,'email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId, 'name'=> $name,
                                     'mobile'=>$mobile, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
                 $data = array(
                     'name' =>$name,
@@ -222,6 +223,7 @@ class User extends BaseController
                               );
 
                 $counter=array('staff_id'=>$staff_id,'name'=>$name,'count'=>0,'late_days'=>0);
+
                 $presence=array('name'=>$name,'staff_id'=>$staff_id,'dept'=>$dept);
                 $this->load->model('user_model');
                 //inserting datas
@@ -266,8 +268,9 @@ class User extends BaseController
 
             $data['roles'] = $this->user_model->getUserRoles();
             $data['userInfo'] = $this->user_model->getUserInfo($userId);
-
-            $this->global['pageTitle'] = 'CodeInsect : Edit User';
+            //print_r($data);
+            $data['info']=$this->user_model->getstaffinfo($data['userInfo'][0]->staff_id);
+            $this->global['pageTitle'] = 'HumanRex : Edit User';
 
             $this->loadViews("editOld", $this->global, $data, NULL);
         }
@@ -295,6 +298,11 @@ class User extends BaseController
             $this->form_validation->set_rules('cpassword','Confirm Password','matches[password]|max_length[20]');
             $this->form_validation->set_rules('role','Role','trim|required|numeric');
             $this->form_validation->set_rules('mobile','Mobile Number','required|min_length[10]');
+            $this->form_validation->set_rules('staff_id','Staff ID','trim|required|max_length[128]');
+            $this->form_validation->set_rules('store_id','Store ID','trim|required|max_length[5]');
+            $this->form_validation->set_rules('mobile','Mobile Number','required|min_length[10]');
+            $this->form_validation->set_rules('doj','Date Of Joining','required');
+
 
             if($this->form_validation->run() == FALSE)
             {
@@ -307,23 +315,47 @@ class User extends BaseController
                 $password = $this->input->post('password');
                 $roleId = $this->input->post('role');
                 $mobile = $this->security->xss_clean($this->input->post('mobile'));
+                $staff_id= $this->security->xss_clean($this->input->post('staff_id'));
+                $store_id= $this->security->xss_clean($this->input->post('store_id'));
+                $finger_preference=$this->input->post('finger_preference');
+                $desg=$this->input->post('desg');
+                $dept=$this->input->post('dept');
+                $cadre=$this->input->post('cadre');
+                $gender=$this->input->post('gender');
+                $doj=$this->input->post('doj');
+
 
                 $userInfo = array();
 
                 if(empty($password))
                 {
-                    $userInfo = array('email'=>$email, 'roleId'=>$roleId, 'name'=>$name,
+                    $userInfo = array('staff_id'=>$staff_id,'dept'=>$dept,'email'=>$email, 'roleId'=>$roleId, 'name'=>$name,
                                     'mobile'=>$mobile, 'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
+
                 }
                 else
                 {
-                    $userInfo = array('email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId,
+                    $userInfo = array('staff_id'=>$staff_id,'dept'=>$dept,'email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId,
                         'name'=>ucwords($name), 'mobile'=>$mobile, 'updatedBy'=>$this->vendorId,
                         'updatedDtm'=>date('Y-m-d H:i:s'));
                 }
 
-                $result = $this->user_model->editUser($userInfo, $userId);
+                $data = array(
+                    'name' =>$name,
+                    'staff_id'=>$staff_id,
+                    'store_id'=>$store_id,
+                    'finger_preference'=>$finger_preference,
+                    'department'=>$dept,
+                    'designation'=>$desg,
+                    'cadre'=>$cadre,
+                    'gender'=>$gender,
+                    'phone'=>$mobile,
+                    'email'=>$email,
+                    'DOJ'=>$doj
+                              );
 
+                $result = $this->user_model->editUser($userInfo, $userId,$staff_id,$data);
+                //$result_staff_details=$this->user_model->editstaff_details($staff_id,$data);
                 if($result == true)
                 {
                     $this->session->set_flashdata('success', 'User updated successfully');
@@ -366,7 +398,7 @@ class User extends BaseController
      */
     function loadChangePass()
     {
-        $this->global['pageTitle'] = 'CodeInsect : Change Password';
+        $this->global['pageTitle'] = 'HumanRex : Change Password';
 
         $this->loadViews("changePassword", $this->global, NULL, NULL);
     }
@@ -419,7 +451,7 @@ class User extends BaseController
      */
     function pageNotFound()
     {
-        $this->global['pageTitle'] = 'CodeInsect : 404 - Page Not Found';
+        $this->global['pageTitle'] = 'HumanRex : 404 - Page Not Found';
 
         $this->loadViews("404", $this->global, NULL, NULL);
     }
@@ -456,7 +488,7 @@ class User extends BaseController
 
             $data['userRecords'] = $this->user_model->loginHistory($userId, $searchText, $fromDate, $toDate, $returns["page"], $returns["segment"]);
 
-            $this->global['pageTitle'] = 'CodeInsect : User Login History';
+            $this->global['pageTitle'] = 'HumanRex : User Login History';
 
             $this->loadViews("loginHistory", $this->global, $data, NULL);
         }

@@ -35,6 +35,8 @@
                     <tr>
                       <th>Id</th>
                       <th>Name</th>
+                      <th>Staff ID</th>
+                      <th>Dept</th>
                       <th>Email</th>
                       <th>Mobile</th>
                       <th>Role</th>
@@ -49,11 +51,13 @@
                     <tr>
                       <td><?php echo $record->userId ?></td>
                       <td><?php echo $record->name ?></td>
+                      <td><?php echo $record->staff_id ?></td>
+                      <td><?php echo $record->dept ?></td>
                       <td><?php echo $record->email ?></td>
                       <td><?php echo $record->mobile ?></td>
                       <td><?php echo $record->role ?></td>
                       <td class="text-center">
-                          <a class="btn btn-sm btn-primary" href="<?= base_url().'login-history/'.$record->userId; ?>" title="Login history"><i class="fa fa-history"></i></a> | 
+                          <a class="btn btn-sm btn-primary" href="<?= base_url().'login-history/'.$record->userId; ?>" title="Login history"><i class="fa fa-history"></i></a> |
                           <a class="btn btn-sm btn-info" href="<?php echo base_url().'editOld/'.$record->userId; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
                           <a class="btn btn-sm btn-danger deleteUser" href="#" data-userid="<?php echo $record->userId; ?>" title="Delete"><i class="fa fa-trash"></i></a>
                       </td>
@@ -63,7 +67,7 @@
                     }
                     ?>
                   </table>
-                  
+
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
                     <?php echo $this->pagination->create_links(); ?>
@@ -77,8 +81,8 @@
 <script type="text/javascript">
     jQuery(document).ready(function(){
         jQuery('ul.pagination li a').click(function (e) {
-            e.preventDefault();            
-            var link = jQuery(this).get(0).href;            
+            e.preventDefault();
+            var link = jQuery(this).get(0).href;
             var value = link.substring(link.lastIndexOf('/') + 1);
             jQuery("#searchList").attr("action", baseURL + "userListing/" + value);
             jQuery("#searchList").submit();

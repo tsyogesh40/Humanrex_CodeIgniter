@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title><?php echo $pageTitle; ?></title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!--table CSS-->
-    <link href="<?php echo base_url(); ?>assets/table.css" rel="stylesheet" type="text/css" />
+    <!--table CSS
+    <link href="<?php echo base_url(); ?>assets/table.css" rel="stylesheet" type="text/css" />-->
     <!-- Bootstrap 3.3.4 -->
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- FontAwesome 4.3.0 -->
@@ -176,7 +176,7 @@
                   </li>
                   <br>
                   <li class="treeview">
-                    <a href="#" >
+                    <a href="<?php echo base_url()?>staff-permission-view" >
                       <i class="fa fa-plane"></i>
                       <span>Leave / OD /Late /Permission</span>
                     </a>
@@ -202,7 +202,7 @@
               <div id="reports" class="collapse">
                 <ul class="dropdown">
                   <li class="treeview">
-                    <a href="#" ><br>
+                    <a href="<?php echo base_url()?>history" ><br>
                       <i class="fa fa-calendar"></i>
                       <span>Today</span>
                     </a>
@@ -223,7 +223,7 @@
                   </li>
                   <br>
                   <li class="treeview">
-                    <a href="#" >
+                    <a href="<?php echo base_url()?>staff-permission-view" >
                       <i class="fa fa-plane"></i>
                       <span>Leave / OD /Late /Permission</span>
                     </a>

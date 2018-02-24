@@ -76,6 +76,17 @@ $route['staff-history-view']='hod/staff_history_view';
 $route['staff-history']="hod/staff_history";
 $route['staff-consolidated-view']="hod/staff_consolidated_view";
 $route['staff-consolidated']="hod/staff_consolidated";
+$route['staff-permission-view']="hod/staff_permission_view";
+$route['staff-permission']="hod/staff_permission";
+
+//principal and admin panel
+$route['today']='principal/today';
+$route['history-view']='principal/history_view';
+$route['history']='principal/history';
+$route['consolidated-view']="prinicipal/consolidated_view";
+$route['consolidated']="principal/consolidated";
+$route['permission-view']="principal/permission_view";
+$route['permission']="principal/permission";
 
 
 $route['addNewUser'] = "user/addNewUser";
