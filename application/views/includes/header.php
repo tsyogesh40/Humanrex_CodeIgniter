@@ -202,7 +202,7 @@
               <div id="reports" class="collapse">
                 <ul class="dropdown">
                   <li class="treeview">
-                    <a href="#" ><br>
+                    <a href="<?php echo base_url()?>history" ><br>
                       <i class="fa fa-calendar"></i>
                       <span>Today</span>
                     </a>
