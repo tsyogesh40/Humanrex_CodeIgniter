@@ -75,21 +75,25 @@
                                   </div>
                               </div>
 
-                                  <div class="col-md-6">
-                                      <div class="form-group">
-                                          <label for="desg">Select Designation :</label>
-                                                <select class="form-control" name="desg">
-                                                      <option value="Professor">Professor</option>
-                                                      <option value="Associate Professor">Associate Professor</option>
-                                                      <option value="AP-I">AP - I</option>
-                                                      <option value="AP-II">AP- II</option>
-                                                      <option value="AP-III">AP - III</option>
-                                                      <option value="TA">TA</option>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="dept">Select Department :</label>
+                                            <select class="form-control" name="dept">
+                                                  <option value="IT">IT</option>
+                                                  <option value="CSE">CSE</option>
+                                                  <option value="ECE">ECE</option>
+                                                  <option value="EEE">EEE</option>
+                                                  <option value="MECH">MECH</option>
+                                                  <option value="PHYSICS">PHYSICS</option>
+                                                  <option value="CHEMSITRY">CHEMISTRY</option>
+                                                  <option value="MATHS">MATHS</option>
+                                                  <option value="ENGLISH">ENGLISH</option>
+                                                  <option value="OFFICE">OFFICE</option>
 
                                                 </select>
+                                          </div>
                                       </div>
-                              </div>
-                            </div>
+                                    </div>
 
 
                             <div class="row">
@@ -138,19 +142,6 @@
                             </div>
 
                           <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="dept">Select Department :</label>
-                                              <select class="form-control" name="dept">
-                                                    <option value="IT">IT</option>
-                                                    <option value="CSE">CSE</option>
-                                                    <option value="ECE">ECE</option>
-                                                    <option value="EEE">EEE</option>
-                                                    <option value="MECH">MECH</option>
-                                                    <option value="CIVIL">CIVIL</option>
-                                              </select>
-                                    </div>
-                                  </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -161,6 +152,25 @@
                                                   </select>
                                         </div>
                                       </div>
+
+                                      <div class="col-md-6">
+                                          <div class="form-group">
+                                              <label for="desg">Select Designation :</label>
+                                                    <select class="form-control" name="desg">
+                                                          <option value="Professor">Professor</option>
+                                                          <option value="Associate Professor">Associate Professor</option>
+                                                          <option value="AP-I">AP - I</option>
+                                                          <option value="AP-II">AP- II</option>
+                                                          <option value="AP-III">AP - III</option>
+                                                          <option value="TA">TA</option>
+                                                          <option value="SYSTEM ADMIN">System Admin</option>
+                                                          <option value="LAB INSTRUCTOR">Lab INSTRUCTOR</option>
+                                                          <option value="LAB ATTENDER">Lab ATTENDER</option>
+
+                                                    </select>
+                                          </div>
+                                  </div>
+
                             </div>
 
                             <div class="row">

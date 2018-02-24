@@ -46,6 +46,27 @@ class User_model extends CI_Model
     {
       $table='CIVIL_entry';
     }
+    else if($dept=='PHYSICS')
+    {
+      $table='PHYSICS_entry';
+    }
+    else if($dept=='CHEMISTRY')
+    {
+      $table='CHEMISTRY_entry';
+    }
+    else if($dept=='MATHS')
+    {
+      $table='MATHS_entry';
+    }
+    else if($dept=='ENGLISH')
+    {
+        $table='ENGLISH_entry';
+    }
+    else if($dept=='OFFICE')
+    {
+        $table='OFFICE_entry';
+    }
+
     return $table;
   }
 
@@ -161,12 +182,13 @@ public function select_range($dept,$staff_id,$from,$to)
     //----------------------------login model end----------------
     function userListingCount($searchText = '')
     {
-        $this->db->select('BaseTbl.userId, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, Role.role');
+        $this->db->select('BaseTbl.userId,BaseTbl.dept,BaseTbl.staff_id, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, Role.role');
         $this->db->from('tbl_users as BaseTbl');
         $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
         if(!empty($searchText)) {
             $likeCriteria = "(BaseTbl.email  LIKE '%".$searchText."%'
                             OR  BaseTbl.name  LIKE '%".$searchText."%'
+                            OR  BaseTbl.staff_id LIKE '%".$searchText."%'
                             OR  BaseTbl.mobile  LIKE '%".$searchText."%')";
             $this->db->where($likeCriteria);
         }
@@ -186,12 +208,13 @@ public function select_range($dept,$staff_id,$from,$to)
      */
     function userListing($searchText = '', $page, $segment)
     {
-        $this->db->select('BaseTbl.userId, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, Role.role');
+        $this->db->select('BaseTbl.userId,BaseTbl.dept,BaseTbl.staff_id, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, Role.role');
         $this->db->from('tbl_users as BaseTbl');
         $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
         if(!empty($searchText)) {
             $likeCriteria = "(BaseTbl.email  LIKE '%".$searchText."%'
                             OR  BaseTbl.name  LIKE '%".$searchText."%'
+                            OR  BaseTbl.staff_id LIKE '%".$searchText."%'
                             OR  BaseTbl.mobile  LIKE '%".$searchText."%')";
             $this->db->where($likeCriteria);
         }
@@ -287,7 +310,7 @@ public function select_range($dept,$staff_id,$from,$to)
      */
     function getUserInfo($userId)
     {
-        $this->db->select('userId, name, email, mobile, roleId');
+        $this->db->select('userId, staff_id,dept,name, email, mobile, roleId');
         $this->db->from('tbl_users');
         $this->db->where('isDeleted', 0);
 		$this->db->where('roleId !=', 1);
@@ -296,21 +319,36 @@ public function select_range($dept,$staff_id,$from,$to)
 
         return $query->result();
     }
-
+    function getstaffinfo($staff_id)
+    {
+      $this->db->select('*');
+      $this->db->from('staff_details');
+      $this->db->where('staff_id',$staff_id);
+      if($res=$this->db->get())
+      {
+        return $res->result();
+      }
+      else {
+        return false;
+      }
+    }
 
     /**
      * This function is used to update the user information
      * @param array $userInfo : This is users updated information
      * @param number $userId : This is user id
      */
-    function editUser($userInfo, $userId)
+    function editUser($userInfo, $userId,$staff_id,$data)
     {
         $this->db->where('userId', $userId);
         $this->db->update('tbl_users', $userInfo);
 
+        //this is used to update the user in the staff_details table
+        $this->db->where('staff_id',$staff_id);
+        $this->db->update('staff_details',$data);
+
         return TRUE;
     }
-
 
 
     /**
