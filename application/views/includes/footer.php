@@ -2,9 +2,9 @@
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>HumanrRex</b> Version 1.0
+          <b>HumanRex</b> Version 1.0
         </div>
-        <strong>Copyright &copy; 2018-2019 <a href="<?php echo base_url(); ?>">HumanRex</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2018-2019 <a href=""></a>.</strong> All rights reserved.
     </footer>
 
     <!-- jQuery UI 1.11.2 -->

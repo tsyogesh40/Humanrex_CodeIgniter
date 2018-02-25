@@ -14,10 +14,17 @@
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
+    <!-- Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
     <style>
+    /* Don't print link hrefs */
+    @media print {
+      a[href]:after {
+          content: none
+        }
+      }
+
     	.error{
     		color:red;
     		font-weight: normal;
@@ -202,14 +209,14 @@
               <div id="reports" class="collapse">
                 <ul class="dropdown">
                   <li class="treeview">
-                    <a href="<?php echo base_url()?>history" ><br>
+                    <a href="<?php echo base_url()?>today" ><br>
                       <i class="fa fa-calendar"></i>
                       <span>Today</span>
                     </a>
                   </li>
                   <br>
                   <li class="treeview">
-                    <a href="#" >
+                    <a href="<?php echo base_url()?>history-view" >
                       <i class="fa fa-bar-chart"></i>
                       <span>History</span>
                     </a>
