@@ -48,7 +48,7 @@ if(!empty($userInfo))
             <!-- left column -->
             <div class="col-md-10">
               <!-- general form elements -->
-              
+
                 <div class="box box-primary">
                     <div class="box-header">
                         <h3 class="box-title">Enter User Details</h3>
@@ -102,6 +102,7 @@ if(!empty($userInfo))
                                       <label for="finger_preference">Finger Preference</label>
 
                                             <select class="form-control" name="finger_preference">
+                                                <option value="<?php echo $finger_preference ;?>"><?php echo $finger_preference ;?></option>
                                                   <option value="LI">LEFT_INDEX</option>
                                                   <option value="RI">RIGHT_INDEX</option>
                                                   <option value="LT">LEFT_THUMB</option>
@@ -119,11 +120,12 @@ if(!empty($userInfo))
                                                   <option value="<?php echo $dept;?>"><?php echo $dept;?></option>
                                                   <option value="IT">IT</option>
                                                   <option value="CSE">CSE</option>
+                                                  <option value="CIVIL">CIVIL</option>
                                                   <option value="ECE">ECE</option>
                                                   <option value="EEE">EEE</option>
                                                   <option value="MECH">MECH</option>
                                                   <option value="PHYSICS">PHYSICS</option>
-                                                  <option value="CHEMSITRY">CHEMISTRY</option>
+                                                  <option value="CHEMISTRY">CHEMISTRY</option>
                                                   <option value="MATHS">MATHS</option>
                                                   <option value="ENGLISH">ENGLISH</option>
                                                   <option value="OFFICE">OFFICE</option>

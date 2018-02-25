@@ -36,6 +36,7 @@
                       <th>Id</th>
                       <th>Name</th>
                       <th>Staff ID</th>
+                      <th>Cadre</th>
                       <th>Dept</th>
                       <th>Email</th>
                       <th>Mobile</th>
@@ -47,11 +48,17 @@
                     {
                         foreach($userRecords as $record)
                         {
+                          if($record->cadre=='T')
+                            $str='Teaching';
+                          else if($record->cadre=='NT')
+                            $str='Non-Teaching'
+                          
                     ?>
                     <tr>
                       <td><?php echo $record->userId ?></td>
                       <td><?php echo $record->name ?></td>
                       <td><?php echo $record->staff_id ?></td>
+                      <td><?php echo $str; ?></td>
                       <td><?php echo $record->dept ?></td>
                       <td><?php echo $record->email ?></td>
                       <td><?php echo $record->mobile ?></td>

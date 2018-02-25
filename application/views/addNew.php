@@ -81,11 +81,12 @@
                                             <select class="form-control" name="dept">
                                                   <option value="IT">IT</option>
                                                   <option value="CSE">CSE</option>
+                                                  <option value="CIVIL">CIVIL</option>
                                                   <option value="ECE">ECE</option>
                                                   <option value="EEE">EEE</option>
                                                   <option value="MECH">MECH</option>
                                                   <option value="PHYSICS">PHYSICS</option>
-                                                  <option value="CHEMSITRY">CHEMISTRY</option>
+                                                  <option value="CHEMISTRY">CHEMISTRY</option>
                                                   <option value="MATHS">MATHS</option>
                                                   <option value="ENGLISH">ENGLISH</option>
                                                   <option value="OFFICE">OFFICE</option>
@@ -166,6 +167,7 @@
                                                           <option value="SYSTEM ADMIN">System Admin</option>
                                                           <option value="LAB INSTRUCTOR">Lab INSTRUCTOR</option>
                                                           <option value="LAB ATTENDER">Lab ATTENDER</option>
+                                                          <option value="CASHIER">CASHIER</option>
 
                                                     </select>
                                           </div>

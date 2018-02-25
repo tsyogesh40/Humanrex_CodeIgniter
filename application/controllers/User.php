@@ -206,7 +206,7 @@ class User extends BaseController
                 $mobile = $this->security->xss_clean($this->input->post('mobile'));
 
 
-                $userInfo = array('staff_id'=>$staff_id,'dept'=>$dept,'email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId, 'name'=> $name,
+                $userInfo = array('staff_id'=>$staff_id,'dept'=>$dept,'cadre'=>$cadre,'email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId, 'name'=> $name,
                                     'mobile'=>$mobile, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
                 $data = array(
                     'name' =>$name,
@@ -329,20 +329,20 @@ class User extends BaseController
 
                 if(empty($password))
                 {
-                    $userInfo = array('staff_id'=>$staff_id,'dept'=>$dept,'email'=>$email, 'roleId'=>$roleId, 'name'=>$name,
+                    $userInfo = array('staff_id'=>$staff_id,'dept'=>$dept,'cadre'=>$cadre,'email'=>$email, 'roleId'=>$roleId, 'name'=>$name,
                                     'mobile'=>$mobile, 'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
 
                 }
                 else
                 {
-                    $userInfo = array('staff_id'=>$staff_id,'dept'=>$dept,'email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId,
+                    $userInfo = array('staff_id'=>$staff_id,'dept'=>$dept,'cadre'=>$cadre,'email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId,
                         'name'=>ucwords($name), 'mobile'=>$mobile, 'updatedBy'=>$this->vendorId,
                         'updatedDtm'=>date('Y-m-d H:i:s'));
                 }
 
                 $data = array(
                     'name' =>$name,
-                    'staff_id'=>$staff_id,
+                    //'staff_id'=>$staff_id,
                     'store_id'=>$store_id,
                     'finger_preference'=>$finger_preference,
                     'department'=>$dept,
