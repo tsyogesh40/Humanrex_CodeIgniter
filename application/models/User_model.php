@@ -182,12 +182,13 @@ public function select_range($dept,$staff_id,$from,$to)
     //----------------------------login model end----------------
     function userListingCount($searchText = '')
     {
-        $this->db->select('BaseTbl.userId,BaseTbl.dept,BaseTbl.staff_id, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, Role.role');
+        $this->db->select('BaseTbl.userId,BaseTbl.dept,BaseTbl.cadre,BaseTbl.staff_id, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, Role.role');
         $this->db->from('tbl_users as BaseTbl');
         $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
         if(!empty($searchText)) {
             $likeCriteria = "(BaseTbl.email  LIKE '%".$searchText."%'
                             OR  BaseTbl.name  LIKE '%".$searchText."%'
+                            OR  BaseTbl.dept  LIKE '%".$searchText."%'
                             OR  BaseTbl.staff_id LIKE '%".$searchText."%'
                             OR  BaseTbl.mobile  LIKE '%".$searchText."%')";
             $this->db->where($likeCriteria);
@@ -208,12 +209,13 @@ public function select_range($dept,$staff_id,$from,$to)
      */
     function userListing($searchText = '', $page, $segment)
     {
-        $this->db->select('BaseTbl.userId,BaseTbl.dept,BaseTbl.staff_id, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, Role.role');
+        $this->db->select('BaseTbl.userId,BaseTbl.dept,BaseTbl.cadre,BaseTbl.staff_id, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, Role.role');
         $this->db->from('tbl_users as BaseTbl');
         $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
         if(!empty($searchText)) {
             $likeCriteria = "(BaseTbl.email  LIKE '%".$searchText."%'
                             OR  BaseTbl.name  LIKE '%".$searchText."%'
+                            OR  BaseTbl.dept  LIKE '%".$searchText."%'
                             OR  BaseTbl.staff_id LIKE '%".$searchText."%'
                             OR  BaseTbl.mobile  LIKE '%".$searchText."%')";
             $this->db->where($likeCriteria);

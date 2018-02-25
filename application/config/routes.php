@@ -82,7 +82,7 @@ $route['staff-permission']="hod/staff_permission";
 //principal and admin panel
 $route['today']='principal/today';
 $route['history-view']='principal/history_view';
-$route['history']='principal/history';
+$route['history-result']='principal/history';
 $route['consolidated-view']="prinicipal/consolidated_view";
 $route['consolidated']="principal/consolidated";
 $route['permission-view']="principal/permission_view";
