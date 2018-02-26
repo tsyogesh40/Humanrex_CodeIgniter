@@ -26,7 +26,7 @@
                       echo'
                       <div class="container">
                       <div class=" table-responsive">
-                      <caption><h3>Report for Teaching Staffs</h3><br></caption>
+                      <caption><h4>Report for '.$info['dept'].' department Generated on '.$info['date']. ' '.$info['time'].'</h4><br></caption>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
