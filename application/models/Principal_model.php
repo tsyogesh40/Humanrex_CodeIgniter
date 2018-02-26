@@ -2,16 +2,139 @@
 
 class Principal_model extends CI_Model
 {
+public function permission_T_or_NT($cadre,$dept,$date)
+{
+  if($dept=='ALL')
+  {
+    $IT=$this->db->get_where('IT_entry',array('cadre'=>$cadre,'date'=>$date));
+    $CSE=$this->db->get_where('CSE_entry',array('cadre'=>$cadre,'date'=>$date));
+    $EEE=$this->db->get_where('EEE_entry',array('cadre'=>$cadre,'date'=>$date));
+    $ECE=$this->db->get_where('ECE_entry',array('cadre'=>$cadre,'date'=>$date));
+    $MECH=$this->db->get_where('MECH_entry',array('cadre'=>$cadre,'date'=>$date));
+    $CIVIL=$this->db->get_where('CIVIL_entry',array('cadre'=>$cadre,'date'=>$date));
+    $PHYSICS=$this->db->get_where('PHYSICS_entry',array('cadre'=>$cadre,'date'=>$date));
+    $CHEMISTRY=$this->db->get_where('CHEMISTRY_entry',array('cadre'=>$cadre,'date'=>$date));
+    $MATHS=$this->db->get_where('MATHS_entry',array('cadre'=>$cadre,'date'=>$date));
+    $ENGLISH=$this->db->get_where('ENGLISH_entry',array('cadre'=>$cadre,'date'=>$date));
+    $OFFICE=$this->db->get_where('OFFICE_entry',array('cadre'=>$cadre,'date'=>$date));
+
+    $res=array(
+      'IT'=>$IT->result(),
+      'CSE'=>$CSE->result(),
+      'EEE'=>$EEE->result(),
+      'MECH'=>$MECH->result(),
+      'ECE'=>$ECE->result(),
+      'CIVIL'=>$CIVIL->result(),
+      'PHYSICS'=>$PHYSICS->result(),
+      'CHEMISTRY'=>$CHEMISTRY->result(),
+      'MATHS'=>$MATHS->result(),
+      'ENGLISH'=>$ENGLISH->result(),
+      'OFFICE'=>$OFFICE->result()
+    );
+
+    return $res;
+  }
+  else {
+    $table=$this->select_dept_table($dept);
+    $this->db->select('*');
+    $this->db->from($table);
+    $this->db->where('cadre',$cadre);
+    $this->db->where('date',$date);
+    if($res=$this->db->get())
+    {
+      $data=array($dept=>$res->result());
+      return $data;
+    }
+    else {
+        return false;
+    }
+
+  }
+}
+
+
+//permissions for both teaching and non teaching staffs
+  public function permission_T_and_NT($dept,$date)
+  {
+    if($dept=='ALL')
+    {
+      $IT=$this->db->get_where('IT_entry',array('date'=>$date));
+      $CSE=$this->db->get_where('CSE_entry',array('date'=>$date));
+      $EEE=$this->db->get_where('EEE_entry',array('date'=>$date));
+      $ECE=$this->db->get_where('ECE_entry',array('date'=>$date));
+      $MECH=$this->db->get_where('MECH_entry',array('date'=>$date));
+      $CIVIL=$this->db->get_where('CIVIL_entry',array('date'=>$date));
+      $PHYSICS=$this->db->get_where('PHYSICS_entry',array('date'=>$date));
+      $CHEMISTRY=$this->db->get_where('CHEMISTRY_entry',array('date'=>$date));
+      $MATHS=$this->db->get_where('MATHS_entry',array('date'=>$date));
+      $ENGLISH=$this->db->get_where('ENGLISH_entry',array('date'=>$date));
+      $OFFICE=$this->db->get_where('OFFICE_entry',array('date'=>$date));
+
+      $res=array(
+        'IT'=>$IT->result(),
+        'CSE'=>$CSE->result(),
+        'EEE'=>$EEE->result(),
+        'MECH'=>$MECH->result(),
+        'ECE'=>$ECE->result(),
+        'CIVIL'=>$CIVIL->result(),
+        'PHYSICS'=>$PHYSICS->result(),
+        'CHEMISTRY'=>$CHEMISTRY->result(),
+        'MATHS'=>$MATHS->result(),
+        'ENGLISH'=>$ENGLISH->result(),
+        'OFFICE'=>$OFFICE->result()
+      );
+
+      return $res;
+    }
+    else {
+      $table=$this->select_dept_table($dept);
+      $this->db->select('*');
+      $this->db->from($table);
+      $this->db->where('date',$date);
+      if($res=$this->db->get())
+      {
+        $data=array($dept=>$res->result());
+        return $data;
+      }
+      else {
+          return false;
+      }
+
+    }
+  }
+
+  //function to find the total days
+  public function total_days($dept,$cadre,$from,$to)
+  {
+    if($dept=='ALL')
+      $table='IT_entry';
+    else
+      $table=$this->select_dept_table($dept);
+
+    if($cadre=='TNT')
+      $cadre='T';
+
+    $condition = "cadre =" . "'" . $cadre . "'";
+    $this->db->select('date');
+    $this->db->distinct('date');
+    $this->db->from($table);
+    $this->db->where($condition);
+    $this->db->where('date >=',$from);
+    $this->db->where('date <=',$to);
+    if($res=$this->db->get())
+    {
+      return $res->num_rows();
+    }
+
+  }
+
 
   //generating unique names in the history Page
   public function unique_names()
   {
-    $this->db->select('name','staff_id','department','cadre');
-    $this->db->from('staff_details');
-    $this->db->where(1);
-    if($res=$this->db->get())
+    if($res=$this->db->get('staff_details'))
       return $res->result();
-    else 
+    else
       return false;
   }
 
@@ -23,13 +146,14 @@ class Principal_model extends CI_Model
     $this->db->from('IT_entry');
     $this->db->where('date>=',$from);
     $this->db->where('date<=',$to);
-
+    $this->db->order_by('date ASC');
     if($res=$this->db->get())
       return $res->result();
     else {
       return false;
     }
   }
+
   //function to fetch details for both teaching or Non-Teaching Staffs
   public function fetch_T_or_NT($cadre,$dept,$from,$to)
   {
@@ -72,7 +196,10 @@ class Principal_model extends CI_Model
       $this->db->where('date>=',$from);
       $this->db->where('date<=',$to);
       if($res=$this->db->get())
-        return $res->result();
+      {
+        $data=array($dept=>$res->result());
+        return $data;
+      }
       else {
           return false;
       }
@@ -84,17 +211,17 @@ class Principal_model extends CI_Model
   {
     if($dept=='ALL')
     {
-      $IT=$this->db->get('IT_entry',array('date>='=>$from,'date<='=>$to));
-      $CSE=$this->db->get('CSE_entry',array('date>='=>$from,'date<='=>$to));
-      $EEE=$this->db->get('EEE_entry',array('date>='=>$from,'date<='=>$to));
-      $ECE=$this->db->get('ECE_entry',array('date>='=>$from,'date<='=>$to));
-      $MECH=$this->db->get('MECH_entry',array('date>='=>$from,'date<='=>$to));
-      $CIVIL=$this->db->get('CIVIL_entry',array('date>='=>$from,'date<='=>$to));
-      $PHYSICS=$this->db->get('PHYSICS_entry',array('date>='=>$from,'date<='=>$to));
-      $CHEMISTRY=$this->db->get('CHEMISTRY_entry',array('date>='=>$from,'date<='=>$to));
-      $MATHS=$this->db->get('MATHS_entry',array('date>='=>$from,'date<='=>$to));
-      $ENGLISH=$this->db->get('ENGLISH_entry',array('date>='=>$from,'date<='=>$to));
-      $OFFICE=$this->db->get('OFFICE_entry',array('date>='=>$from,'date<='=>$to));
+      $IT=$this->db->get_where('IT_entry',array('date>='=>$from,'date<='=>$to));
+      $CSE=$this->db->get_where('CSE_entry',array('date>='=>$from,'date<='=>$to));
+      $EEE=$this->db->get_where('EEE_entry',array('date>='=>$from,'date<='=>$to));
+      $ECE=$this->db->get_where('ECE_entry',array('date>='=>$from,'date<='=>$to));
+      $MECH=$this->db->get_where('MECH_entry',array('date>='=>$from,'date<='=>$to));
+      $CIVIL=$this->db->get_where('CIVIL_entry',array('date>='=>$from,'date<='=>$to));
+      $PHYSICS=$this->db->get_where('PHYSICS_entry',array('date>='=>$from,'date<='=>$to));
+      $CHEMISTRY=$this->db->get_where('CHEMISTRY_entry',array('date>='=>$from,'date<='=>$to));
+      $MATHS=$this->db->get_where('MATHS_entry',array('date>='=>$from,'date<='=>$to));
+      $ENGLISH=$this->db->get_where('ENGLISH_entry',array('date>='=>$from,'date<='=>$to));
+      $OFFICE=$this->db->get_where('OFFICE_entry',array('date>='=>$from,'date<='=>$to));
 
       $res=array(
         'IT'=>$IT->result(),
@@ -122,10 +249,10 @@ class Principal_model extends CI_Model
         $this->db->from($table);
         $this->db->where('date>=',$from);
         $this->db->where('date<=',$to);
-
         if($res=$this->db->get())
         {
-          return $res->result();
+          $data=array($dept=>$res->result());
+          return $data;
         }
         else {
           return false;

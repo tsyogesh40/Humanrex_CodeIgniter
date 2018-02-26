@@ -13,7 +13,116 @@ class Principal extends BaseController
         $this->load->model('principal_model');
         $this->isLoggedIn();
     }
+    //renders the result for permission_view
+    public function permission()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Leave/OD/Permission/Late History';
+      $cadre=$this->input->post('cadre');
+      $dept=$this->input->post('dept');
+      $date=$this->input->post('date');
+      $info=array('cadre'=>$cadre,'dept'=>$dept,'date'=>$date);
 
+      if($cadre=='TNT')
+      {
+
+        $data=$this->principal_model->permission_T_and_NT($dept,$date);
+        if($data!=false)
+         {
+           $result['datas']=$data;
+           $result['info']=$info;
+         }
+         else {
+           $result['datas']='No record found !';
+           $result['info']=$info;
+         }
+
+        $this->loadViews("principal/permission_t_and_nt_result", $this->global,$result, NULL);
+      }
+      else {
+
+        $data=$this->principal_model->permission_T_or_NT($cadre,$dept,$date);
+        if($data!=false)
+         {
+           $result['datas']=$data;
+           $result['info']=$info;
+
+         }
+         else {
+           $result['datas']='No record found !';
+           $result['info']=$info;
+         }
+
+        $this->loadViews("principal/permission_t_or_nt_result", $this->global,$result, NULL);
+      }
+
+    }
+
+    //renders the view for permission report in principal panel
+    public function permission_view()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Leave/OD/Permission/Late History';
+      $this->loadViews("principal/permission_view", $this->global,NULL, NULL);
+    }
+
+
+    //renders the view for consolidated report in principal panel
+    public function consolidated_view()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Consolidated History';
+      $this->loadViews("principal/consolidated_view", $this->global,NULL, NULL);
+    }
+
+    //renders the result for consolidated datas
+    public function consolidated()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Consolidated History';
+      $cadre=$this->input->post('cadre');
+      $dept=$this->input->post('dept');
+      $from=$this->input->post('from_date');
+      $to=$this->input->post('to_date');
+      $info=array('cadre'=>$cadre,'dept'=>$dept,'from'=>$from,'to'=>$to);
+      $unique_names=$this->principal_model->unique_names();
+      $total_days=$this->principal_model->total_days($dept,$cadre,$from,$to);
+      if($cadre=='TNT')
+      {
+
+        $data=$this->principal_model->fetch_T_and_NT($dept,$from,$to);
+        if($data!=false)
+         {
+           $result['datas']=$data;
+           $result['info']=$info;
+           $result['names']=$unique_names;
+           $result['total_days']=$total_days;
+         }
+         else {
+           $result['datas']='No record found !';
+           $result['info']=$info;
+         }
+
+        $this->loadViews("principal/consolidated_t_and_nt_result", $this->global,$result, NULL);
+      }
+      else {
+
+        $data=$this->principal_model->fetch_T_or_NT($cadre,$dept,$from,$to);
+        if($data!=false)
+         {
+           $result['datas']=$data;
+           $result['info']=$info;
+           $result['names']=$unique_names;
+           $result['total_days']=$total_days;
+         }
+         else {
+           $result['datas']='No record found !';
+           $result['info']=$info;
+         }
+
+        $this->loadViews("principal/consolidated_t_or_nt_result", $this->global,$result, NULL);
+      }
+
+    }
+
+
+    //function to generate history for all the case( both T and NT)
     public function history()
     {
       $this->global['pageTitle'] = 'HumanRex: Staffs History';
@@ -49,6 +158,8 @@ class Principal extends BaseController
          {
            $result['data']=$data;
            $result['info']=$info;
+           $result['dates']=$unique_dates;
+           $result['names']=$unique_names;
          }
          else {
            $result['data']='No record found !';

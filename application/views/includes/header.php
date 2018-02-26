@@ -223,14 +223,14 @@
                   </li>
                   <br>
                   <li class="treeview">
-                    <a href="#" >
+                    <a href="<?php echo base_url()?>consolidated-view" >
                       <i class="fa fa-line-chart"></i>
                       <span>Consolidated</span>
                     </a>
                   </li>
                   <br>
                   <li class="treeview">
-                    <a href="<?php echo base_url()?>staff-permission-view" >
+                    <a href="<?php echo base_url()?>permission-view" >
                       <i class="fa fa-plane"></i>
                       <span>Leave / OD /Late /Permission</span>
                     </a>
