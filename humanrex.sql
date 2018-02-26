@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 25, 2018 at 08:25 AM
+-- Generation Time: Feb 26, 2018 at 05:52 PM
 -- Server version: 5.7.21-0ubuntu0.17.10.1
 -- PHP Version: 7.1.11-0ubuntu0.17.10.1
 
@@ -74,7 +74,10 @@ INSERT INTO `CHEMISTRY_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time
 ('NT', 'chemistrystaff2', 'chemistry2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-23', 'EVEN', 2018),
 ('T', 'Chemitryhod', 'CHEMISTRYHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
 ('T', 'chemistrystaff1', 'chemistry1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-24', 'EVEN', 2018),
-('NT', 'chemistrystaff2', 'chemistry2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018);
+('NT', 'chemistrystaff2', 'chemistry2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
+('T', 'Chemitryhod', 'CHEMISTRYHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('T', 'chemistrystaff1', 'chemistry1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-25', 'EVEN', 2018),
+('NT', 'chemistrystaff2', 'chemistry2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -101,14 +104,18 @@ CREATE TABLE `CIVIL_entry` (
 --
 
 INSERT INTO `CIVIL_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time`, `out_time`, `p_value`, `status`, `date`, `semester`, `year`) VALUES
-('T', 'civilhod', 'civilHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-23', 'EVEN', 2018),
+('T', 'civilhod', 'CIVILHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-23', 'EVEN', 2018),
 ('T', 'civilstaff1', 'civil1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-23', 'EVEN', 2018),
 ('T', 'civilstaff2', 'civil2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-23', 'EVEN', 2018),
 ('NT', 'civilstaff3', 'civil3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-23', 'EVEN', 2018),
-('T', 'civilhod', 'civilHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
+('T', 'civilhod', 'CIVILHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
 ('T', 'civilstaff1', 'civil1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-24', 'EVEN', 2018),
 ('T', 'civilstaff2', 'civil2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
-('NT', 'civilstaff3', 'civil3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-24', 'EVEN', 2018);
+('NT', 'civilstaff3', 'civil3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-24', 'EVEN', 2018),
+('T', 'civilhod', 'CIVILHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('T', 'civilstaff1', 'civil1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-25', 'EVEN', 2018),
+('T', 'civilstaff2', 'civil2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('NT', 'civilstaff3', 'civil3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-25', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -213,7 +220,11 @@ INSERT INTO `CSE_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time`, `ou
 ('T', 'csehod', 'CSEHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
 ('T', 'csestaff1', 'cse1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-24', 'EVEN', 2018),
 ('T', 'csestaff2', 'cse2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
-('NT', 'csestaff3', 'cse3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-24', 'EVEN', 2018);
+('NT', 'csestaff3', 'cse3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-24', 'EVEN', 2018),
+('T', 'csehod', 'CSEHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('T', 'csestaff1', 'cse1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-25', 'EVEN', 2018),
+('T', 'csestaff2', 'cse2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('NT', 'csestaff3', 'cse3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-25', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -263,14 +274,18 @@ CREATE TABLE `ECE_entry` (
 --
 
 INSERT INTO `ECE_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time`, `out_time`, `p_value`, `status`, `date`, `semester`, `year`) VALUES
-('T', 'ecehod', 'eceHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-23', 'EVEN', 2018),
+('T', 'ecehod', 'ecehod', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-23', 'EVEN', 2018),
 ('T', 'ecestaff1', 'ece1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-23', 'EVEN', 2018),
 ('T', 'ecestaff2', 'ece2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-23', 'EVEN', 2018),
 ('NT', 'ecestaff3', 'ece3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-23', 'EVEN', 2018),
-('T', 'ecehod', 'eceHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
+('T', 'ecehod', 'ecehod', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
 ('T', 'ecestaff1', 'ece1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-24', 'EVEN', 2018),
 ('T', 'ecestaff2', 'ece2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
-('NT', 'ecestaff3', 'ece3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-24', 'EVEN', 2018);
+('NT', 'ecestaff3', 'ece3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-24', 'EVEN', 2018),
+('T', 'ecehod', 'eceHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('T', 'ecestaff1', 'ece1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-25', 'EVEN', 2018),
+('T', 'ecestaff2', 'ece2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('NT', 'ecestaff3', 'ece3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-25', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -304,7 +319,11 @@ INSERT INTO `EEE_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time`, `ou
 ('T', 'eeehod', 'eeehod', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
 ('T', 'eeestaff1', 'eee1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-24', 'EVEN', 2018),
 ('T', 'eeestaff2', 'eee2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
-('NT', 'eeestaff3', 'eee3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-24', 'EVEN', 2018);
+('NT', 'eeestaff3', 'eee3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-24', 'EVEN', 2018),
+('T', 'eeehod', 'eeeHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('T', 'eeestaff1', 'eee1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-25', 'EVEN', 2018),
+('T', 'eeestaff2', 'eee2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('NT', 'eeestaff3', 'eee3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-25', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -336,7 +355,10 @@ INSERT INTO `ENGLISH_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time`,
 ('NT', 'englishstaff2', 'english2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-23', 'EVEN', 2018),
 ('T', 'Englishhod', 'ENGLISHHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
 ('T', 'englishstaff1', 'english1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-24', 'EVEN', 2018),
-('NT', 'englishstaff2', 'english2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018);
+('NT', 'englishstaff2', 'english2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
+('T', 'Englishhod', 'ENGLISHHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('T', 'englishstaff1', 'english1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-25', 'EVEN', 2018),
+('NT', 'englishstaff2', 'english2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -379,26 +401,18 @@ CREATE TABLE `IT_entry` (
 --
 
 INSERT INTO `IT_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time`, `out_time`, `p_value`, `status`, `date`, `semester`, `year`) VALUES
-('T', 'Yogesh', 'IT05', 2, '09:00:00', '04:00:00', 2, 'ONTIME', '2018-02-22', 'EVEN', 2018),
-('T', 'Prasanna', 'IT02', 3, '08:30:00', '13:00:00', 1, 'ONTIME', '2018-02-22', 'EVEN', 2018),
-('T', 'Ithod', 'ITHOD', 1, '09:00:00', '04:00:00', 2, 'ONTIME', '2018-02-22', 'EVEN', 2018),
-('NT', 'arun', 'IT04', 4, '08:30:00', '13:00:00', 1, 'ONTIME', '2018-02-22', 'EVEN', 2018),
-('T', 'Yogesh', 'IT05', 2, '09:00:00', '04:00:00', 2, 'ONTIME', '2018-02-21', 'EVEN', 2018),
-('T', 'Prasanna', 'IT02', 3, '08:30:00', '13:00:00', 1, 'ONTIME', '2018-02-21', 'EVEN', 2018),
-('T', 'Ithod', 'ITHOD', 1, '09:00:00', '04:00:00', 2, 'ONTIME', '2018-02-21', 'EVEN', 2018),
-('NT', 'arun', 'IT04', 4, '08:30:00', '13:00:00', 1, 'ONTIME', '2018-02-21', 'EVEN', 2018),
-('T', 'Yogesh', 'IT05', 2, '09:00:00', '04:00:00', 2, 'ONTIME', '2018-02-20', 'EVEN', 2018),
-('T', 'Prasanna', 'IT02', 3, '08:30:00', '13:00:00', 1, 'ONTIME', '2018-02-20', 'EVEN', 2018),
-('T', 'Ithod', 'ITHOD', 1, '09:00:00', '04:00:00', 2, 'ONTIME', '2018-02-20', 'EVEN', 2018),
-('NT', 'arun', 'IT04', 4, '08:30:00', '13:00:00', 1, 'ONTIME', '2018-02-20', 'EVEN', 2018),
+('T', 'Ithod', 'ITHOD', 1, '09:00:00', '16:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
+('T', 'Prasanna', 'IT02', 3, '09:15:00', '17:00:00', 2, 'LATE', '2018-02-24', 'EVEN', 2018),
+('T', 'Yogesh T S ', 'IT05', 2, '09:00:00', '12:00:00', 1, 'ONTIME', '2018-02-24', 'EVEN', 2018),
+('NT', 'arun', 'IT04', 4, '09:03:00', '17:00:00', 2, 'LATE', '2018-02-24', 'EVEN', 2018),
 ('T', 'Ithod', 'ITHOD', 1, '09:00:00', '16:00:00', 2, 'ONTIME', '2018-02-23', 'EVEN', 2018),
-('T', 'Prasanna', 'IT04', 3, '09:15:00', '17:00:00', 2, 'LATE', '2018-02-23', 'EVEN', 2018),
+('T', 'Prasanna', 'IT02', 3, '09:15:00', '17:00:00', 2, 'LATE', '2018-02-23', 'EVEN', 2018),
 ('T', 'Yogesh T S ', 'IT05', 2, '09:00:00', '12:00:00', 1, 'ONTIME', '2018-02-23', 'EVEN', 2018),
 ('NT', 'arun', 'IT04', 4, '09:03:00', '17:00:00', 2, 'LATE', '2018-02-23', 'EVEN', 2018),
-('T', 'Ithod', 'ITHOD', 1, '09:00:00', '16:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
-('T', 'Prasanna', 'IT04', 3, '09:15:00', '17:00:00', 2, 'LATE', '2018-02-24', 'EVEN', 2018),
-('T', 'Yogesh T S ', 'IT05', 2, '09:00:00', '12:00:00', 1, 'ONTIME', '2018-02-24', 'EVEN', 2018),
-('NT', 'arun', 'IT04', 4, '09:03:00', '17:00:00', 2, 'LATE', '2018-02-24', 'EVEN', 2018);
+('T', 'Ithod', 'ITHOD', 1, '09:00:00', '16:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('T', 'Prasanna', 'IT02', 3, '09:15:00', '17:00:00', 2, 'LATE', '2018-02-25', 'EVEN', 2018),
+('T', 'Yogesh T S ', 'IT05', 2, '09:00:00', '12:00:00', 1, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('NT', 'arun', 'IT04', 4, '09:03:00', '17:00:00', 2, 'LATE', '2018-02-25', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -430,7 +444,10 @@ INSERT INTO `MATHS_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time`, `
 ('NT', 'mathsstaff2', 'maths2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-23', 'EVEN', 2018),
 ('T', 'Mathshod', 'MATHSHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
 ('T', 'mathsstaff1', 'maths1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-24', 'EVEN', 2018),
-('NT', 'mathsstaff2', 'maths2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018);
+('NT', 'mathsstaff2', 'maths2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
+('T', 'Mathshod', 'MATHSHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('T', 'mathsstaff1', 'maths1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-25', 'EVEN', 2018),
+('NT', 'mathsstaff2', 'maths2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -464,7 +481,11 @@ INSERT INTO `MECH_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time`, `o
 ('T', 'mechhod', 'mechHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
 ('T', 'mechstaff1', 'mech1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-24', 'EVEN', 2018),
 ('T', 'mechstaff2', 'mech2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
-('NT', 'mechstaff3', 'mech3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-24', 'EVEN', 2018);
+('NT', 'mechstaff3', 'mech3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-24', 'EVEN', 2018),
+('T', 'mechhod', 'mechHOD', 37, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('T', 'mechstaff1', 'mech1', 38, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-25', 'EVEN', 2018),
+('T', 'mechstaff2', 'mech2', 39, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('NT', 'mechstaff3', 'mech3', 38, '10:00:00', '13:00:00', 0, 'LEAVE', '2018-02-25', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -491,7 +512,9 @@ CREATE TABLE `OFFICE_entry` (
 --
 
 INSERT INTO `OFFICE_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time`, `out_time`, `p_value`, `status`, `date`, `semester`, `year`) VALUES
-('NT', 'office1', 'office1', 45, '10:00:00', '17:00:00', 1, 'LATE', '2018-02-23', 'EVEN', 2018);
+('NT', 'office1', 'office1', 45, '10:00:00', '17:00:00', 1, 'LATE', '2018-02-23', 'EVEN', 2018),
+('NT', 'office1', 'office1', 45, '10:00:00', '17:00:00', 1, 'LATE', '2018-02-25', 'EVEN', 2018),
+('NT', 'office1', 'office1', 45, '10:00:00', '17:00:00', 1, 'LATE', '2018-02-25', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -600,7 +623,10 @@ INSERT INTO `PHYSICS_entry` (`cadre`, `name`, `staff_id`, `store_id`, `in_time`,
 ('NT', 'physicsstaff2', 'physics2', 35, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-23', 'EVEN', 2018),
 ('T', 'PhysicsHOD', 'PHYSICSHOD', 31, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
 ('T', 'physicsstaff1', 'physics1', 34, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-24', 'EVEN', 2018),
-('NT', 'physicsstaff2', 'physics2', 35, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018);
+('NT', 'physicsstaff2', 'physics2', 35, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-24', 'EVEN', 2018),
+('T', 'PhysicsHOD', 'PHYSICSHOD', 31, '09:00:00', '15:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
+('T', 'physicsstaff1', 'physics1', 34, '10:00:00', '13:00:00', 1, 'LATE', '2018-02-25', 'EVEN', 2018),
+('NT', 'physicsstaff2', 'physics2', 35, '08:30:00', '17:00:00', 2, 'ONTIME', '2018-02-25', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -752,7 +778,19 @@ INSERT INTO `tbl_last_login` (`id`, `userId`, `sessionData`, `machineIp`, `userA
 (62, 33, '{\"staff_id\":\"CIVILHOD\",\"in_time\":\"09:00:00\",\"out_time\":\"15:00:00\",\"date\":\"2018-02-24\",\"status\":\"ONTIME\",\"phone\":\"7373535614\",\"designation\":\"Professor\",\"email\":\"civilhod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Civilhod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-24 22:49:31'),
 (63, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":null,\"designation\":null,\"email\":null,\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-25 07:37:53'),
 (64, 25, '{\"staff_id\":\"eeehod\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"9876543209\",\"designation\":\"Professor\",\"email\":\"eeehod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Eeehod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-25 08:07:48'),
-(65, 25, '{\"staff_id\":\"eeehod\",\"in_time\":\"09:00:00\",\"out_time\":\"15:00:00\",\"date\":\"2018-02-25\",\"status\":\"ONTIME\",\"phone\":\"9876543209\",\"designation\":\"Professor\",\"email\":\"eeehod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Eeehod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-25 08:23:02');
+(65, 25, '{\"staff_id\":\"eeehod\",\"in_time\":\"09:00:00\",\"out_time\":\"15:00:00\",\"date\":\"2018-02-25\",\"status\":\"ONTIME\",\"phone\":\"9876543209\",\"designation\":\"Professor\",\"email\":\"eeehod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Eeehod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-25 08:23:02'),
+(66, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":null,\"designation\":null,\"email\":null,\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-25 08:29:38'),
+(67, 21, '{\"staff_id\":\"ecehod\",\"in_time\":\"09:00:00\",\"out_time\":\"15:00:00\",\"date\":\"2018-02-25\",\"status\":\"ONTIME\",\"phone\":\"7373535614\",\"designation\":\"Professor\",\"email\":\"ecehod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Ecehod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-25 08:41:59'),
+(68, 16, '{\"staff_id\":\"PRIN\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Professor\",\"email\":\"principal@vcet.ac.in\",\"role\":\"2\",\"roleText\":\"Principal\",\"name\":\"Principal\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-25 08:45:29'),
+(69, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":null,\"designation\":null,\"email\":null,\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-25 12:57:06'),
+(70, 16, '{\"staff_id\":\"PRIN\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"7373535614\",\"designation\":\"Professor\",\"email\":\"principal@vcet.ac.in\",\"role\":\"2\",\"roleText\":\"Principal\",\"name\":\"Principal\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-25 18:09:53'),
+(71, 12, '{\"staff_id\":\"ITHOD\",\"in_time\":\"09:00:00\",\"out_time\":\"16:00:00\",\"date\":\"2018-02-25\",\"status\":\"ONTIME\",\"phone\":\"9876543210\",\"designation\":\"Professor\",\"email\":\"hod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Ithod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-25 21:17:30'),
+(72, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":null,\"designation\":null,\"email\":null,\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-26 07:35:41'),
+(73, 12, '{\"staff_id\":\"ITHOD\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"9876543210\",\"designation\":\"Professor\",\"email\":\"hod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Ithod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-26 09:56:53'),
+(74, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":null,\"designation\":null,\"email\":null,\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-26 10:03:24'),
+(75, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":null,\"designation\":null,\"email\":null,\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-26 13:43:35'),
+(76, 12, '{\"staff_id\":\"ITHOD\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":\"9876543210\",\"designation\":\"Professor\",\"email\":\"hod@vcet.ac.in\",\"role\":\"3\",\"roleText\":\"HOD\",\"name\":\"Ithod\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-26 15:22:40'),
+(77, 1, '{\"staff_id\":\"IT01\",\"in_time\":null,\"out_time\":null,\"date\":null,\"status\":null,\"phone\":null,\"designation\":null,\"email\":null,\"role\":\"1\",\"roleText\":\"System Admin\",\"name\":\"System Administrator\"}', '::1', 'Chrome 64.0.3282.119', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36', 'Linux', '2018-02-26 15:43:57');
 
 -- --------------------------------------------------------
 
@@ -896,44 +934,44 @@ CREATE TABLE `temp_entry` (
 --
 
 INSERT INTO `temp_entry` (`cadre`, `name`, `staff_id`, `store_id`, `dept`, `in_time`, `out_time`, `p_value`, `no_of_entry`, `status`, `date`, `semester`, `year`) VALUES
-('T', 'Ithod', 'ITHOD', 1, 'IT', '09:00:00', '16:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'Prasanna', 'IT04', 3, 'IT', '09:15:00', '17:00:00', 2, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('T', 'Yogesh T S ', 'IT05', 2, 'IT', '09:00:00', '12:00:00', 1, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('NT', 'arun', 'IT04', 4, 'IT', '09:03:00', '17:00:00', 2, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('T', 'PhysicsHOD', 'PHYSICSHOD', 31, 'PHYSICS', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'physicsstaff1', 'physics1', 34, 'PHYSICS', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('NT', 'physicsstaff2', 'physics2', 35, 'PHYSICS', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'Chemitryhod', 'CHEMISTRYHOD', 37, 'CHEMISTRY', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'chemistrystaff1', 'chemistry1', 38, 'CHEMISTRY', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('NT', 'chemistrystaff2', 'chemistry2', 39, 'CHEMISTRY', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'Englishhod', 'ENGLISHHOD', 37, 'ENGLISH', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'englishstaff1', 'english1', 38, 'ENGLISH', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('NT', 'englishstaff2', 'english2', 39, 'ENGLISH', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'Mathshod', 'MATHSHOD', 37, 'MATHS', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'mathsstaff1', 'maths1', 38, 'MATHS', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('NT', 'mathsstaff2', 'maths2', 39, 'MATHS', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'csehod', 'CSEHOD', 37, 'CSE', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'csestaff1', 'cse1', 38, 'CSE', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('T', 'csestaff2', 'cse2', 39, 'CSE', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('NT', 'csestaff3', 'cse3', 38, 'CSE', '10:00:00', '13:00:00', 0, 2, 'LEAVE', '2018-02-25', 'EVEN', 2018),
-('T', 'ecehod', 'eceHOD', 37, 'ECE', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'ecestaff1', 'ece1', 38, 'ECE', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('T', 'ecestaff2', 'ece2', 39, 'ECE', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('NT', 'ecestaff3', 'ece3', 38, 'ECE', '10:00:00', '13:00:00', 0, 2, 'LEAVE', '2018-02-25', 'EVEN', 2018),
-('T', 'eeehod', 'eeeHOD', 37, 'EEE', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'eeestaff1', 'eee1', 38, 'EEE', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('T', 'eeestaff2', 'eee2', 39, 'EEE', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('NT', 'eeestaff3', 'eee3', 38, 'EEE', '10:00:00', '13:00:00', 0, 2, 'LEAVE', '2018-02-25', 'EVEN', 2018),
-('T', 'mechhod', 'mechHOD', 37, 'MECH', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'mechstaff1', 'mech1', 38, 'MECH', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('T', 'mechstaff2', 'mech2', 39, 'MECH', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('NT', 'mechstaff3', 'mech3', 38, 'MECH', '10:00:00', '13:00:00', 0, 2, 'LEAVE', '2018-02-25', 'EVEN', 2018),
-('T', 'civilhod', 'civilHOD', 37, 'CIVIL', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('T', 'civilstaff1', 'civil1', 38, 'CIVIL', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('T', 'civilstaff2', 'civil2', 39, 'CIVIL', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-25', 'EVEN', 2018),
-('NT', 'civilstaff3', 'civil3', 38, 'CIVIL', '10:00:00', '13:00:00', 0, 2, 'LEAVE', '2018-02-25', 'EVEN', 2018),
-('NT', 'office1', 'office1', 45, 'OFFICE', '10:00:00', '17:00:00', 1, 2, 'LATE', '2018-02-25', 'EVEN', 2018),
-('NT', 'office1', 'office1', 45, 'OFFICE', '10:00:00', '17:00:00', 1, 2, 'LATE', '2018-02-25', 'EVEN', 2018);
+('T', 'Ithod', 'ITHOD', 1, 'IT', '09:00:00', '16:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'Prasanna', 'IT02', 3, 'IT', '09:15:00', '17:00:00', 2, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('T', 'Yogesh T S ', 'IT05', 2, 'IT', '09:00:00', '12:00:00', 1, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('NT', 'arun', 'IT04', 4, 'IT', '09:03:00', '17:00:00', 2, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('T', 'PhysicsHOD', 'PHYSICSHOD', 31, 'PHYSICS', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'physicsstaff1', 'physics1', 34, 'PHYSICS', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('NT', 'physicsstaff2', 'physics2', 35, 'PHYSICS', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'Chemitryhod', 'CHEMISTRYHOD', 37, 'CHEMISTRY', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'chemistrystaff1', 'chemistry1', 38, 'CHEMISTRY', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('NT', 'chemistrystaff2', 'chemistry2', 39, 'CHEMISTRY', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'Englishhod', 'ENGLISHHOD', 37, 'ENGLISH', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'englishstaff1', 'english1', 38, 'ENGLISH', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('NT', 'englishstaff2', 'english2', 39, 'ENGLISH', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'Mathshod', 'MATHSHOD', 37, 'MATHS', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'mathsstaff1', 'maths1', 38, 'MATHS', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('NT', 'mathsstaff2', 'maths2', 39, 'MATHS', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'csehod', 'CSEHOD', 37, 'CSE', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'csestaff1', 'cse1', 38, 'CSE', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('T', 'csestaff2', 'cse2', 39, 'CSE', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('NT', 'csestaff3', 'cse3', 38, 'CSE', '10:00:00', '13:00:00', 0, 2, 'LEAVE', '2018-02-26', 'EVEN', 2018),
+('T', 'ecehod', 'eceHOD', 37, 'ECE', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'ecestaff1', 'ece1', 38, 'ECE', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('T', 'ecestaff2', 'ece2', 39, 'ECE', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('NT', 'ecestaff3', 'ece3', 38, 'ECE', '10:00:00', '13:00:00', 0, 2, 'LEAVE', '2018-02-26', 'EVEN', 2018),
+('T', 'eeehod', 'eeeHOD', 37, 'EEE', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'eeestaff1', 'eee1', 38, 'EEE', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('T', 'eeestaff2', 'eee2', 39, 'EEE', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('NT', 'eeestaff3', 'eee3', 38, 'EEE', '10:00:00', '13:00:00', 0, 2, 'LEAVE', '2018-02-26', 'EVEN', 2018),
+('T', 'mechhod', 'mechHOD', 37, 'MECH', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'mechstaff1', 'mech1', 38, 'MECH', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('T', 'mechstaff2', 'mech2', 39, 'MECH', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('NT', 'mechstaff3', 'mech3', 38, 'MECH', '10:00:00', '13:00:00', 0, 2, 'LEAVE', '2018-02-26', 'EVEN', 2018),
+('T', 'civilhod', 'CIVILHOD', 37, 'CIVIL', '09:00:00', '15:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('T', 'civilstaff1', 'civil1', 38, 'CIVIL', '10:00:00', '13:00:00', 1, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('T', 'civilstaff2', 'civil2', 39, 'CIVIL', '08:30:00', '17:00:00', 2, 2, 'ONTIME', '2018-02-26', 'EVEN', 2018),
+('NT', 'civilstaff3', 'civil3', 38, 'CIVIL', '10:00:00', '13:00:00', 0, 2, 'LEAVE', '2018-02-26', 'EVEN', 2018),
+('NT', 'office1', 'office1', 45, 'OFFICE', '10:00:00', '17:00:00', 1, 2, 'LATE', '2018-02-26', 'EVEN', 2018),
+('NT', 'office1', 'office1', 45, 'OFFICE', '10:00:00', '17:00:00', 1, 2, 'LATE', '2018-02-26', 'EVEN', 2018);
 
 -- --------------------------------------------------------
 
@@ -1114,7 +1152,7 @@ ALTER TABLE `user_credentials`
 -- AUTO_INCREMENT for table `tbl_last_login`
 --
 ALTER TABLE `tbl_last_login`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 --
 -- AUTO_INCREMENT for table `tbl_reset_password`
 --
