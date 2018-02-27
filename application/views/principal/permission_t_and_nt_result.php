@@ -21,7 +21,7 @@
                     <?php
 
                     //print_r($total_days);
-                    print_r($datas);
+                //    print_r($datas);
                     if($datas!='No records found !')
                     {
                       //selecting cadre

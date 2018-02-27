@@ -44,6 +44,11 @@
                         $leave=0;
                         $od=0;
                         $permission=0;
+                        $total_present=0;
+                        $total_late=0;
+                        $total_leave=0;
+                        $total_od=0;
+                        $total_permission=0;
                         $arr=array('IT','CSE','ECE','EEE','CIVIL','MECH','PHYSICS','CHEMISTRY','MATHS','ENGLISH','OFFICE');
                       foreach($arr as $dept)
                       {
@@ -53,15 +58,15 @@
                           if($val->dept==$dept)
                             {
                               if($val->status=='LATE')
-                                $late++;
+                                {$late++;$total_late++;}
                               if($val->p_value==1||$val->p_value==2)
-                                $present++;
+                                {$present++;$total_present++;}
                               else if($val->p_value==0)
-                                $leave++;
+                                {$leave++;$total_leave++;}
                               else if($val->p_value==-1)
-                                $permission++;
+                                {$permission++;$total_permission++;}
                               else if($val->p_value==-2)
-                                $od++;
+                                {$od++;$total_od++;}
                             }
                           }
 
@@ -83,6 +88,15 @@
                           $permission=0;
 
                         }
+                        echo '
+                        <tr>
+                        <td><b>TOTAL</b></td>
+                        <td>'.$total_present.'</td>
+                        <td>'.$total_late.'</td>
+                        <td>'.$total_leave.'</td>
+                        <td>'.$total_od.'</td>
+                        <td>'.$total_permission.'</td>
+                        </tr>';
                           echo '</tbody>
                           </table>
                         </div>

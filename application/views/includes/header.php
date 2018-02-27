@@ -272,11 +272,39 @@
               </ul>
             </div>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-unlink"></i>
-                <span>Alter College time</span>
+              <a href="#time" data-toggle="collapse">
+                <i class="fa fa-users"></i>
+                <span>Attendence Management</span>
               </a>
             </li>
+            <div id="time" class="collapse">
+              <ul>
+                <br>
+                <li class="treeview">
+                  <a href="#">
+                    <i class="fa fa-unlink"></i>
+                    <span>Alter College time</span>
+                  </a>
+                </li>
+
+                <br>
+                <li class="treeview">
+                  <a href="#">
+                    <i class="fa fa-file-text-o"></i>
+                    <span>User Counter </span>
+                  </a>
+                </li>
+                <br>
+                <li class="treeview">
+                  <a href="#">
+                    <i class="fa fa-file-text-o"></i>
+                    <span>Edit attendence </span>
+                  </a>
+                </li>
+                <br>
+              </ul>
+            </div>
+
             <?php
             }
             ?>

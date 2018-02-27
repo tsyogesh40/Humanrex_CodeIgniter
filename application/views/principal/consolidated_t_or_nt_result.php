@@ -87,7 +87,7 @@
                                   echo '<tr>';
                                   echo '<td>'.$name->name.' </td>';
                                   echo '<td>'.$name->staff_id.' </td>';
-                                  echo '<td>'.$info['dept'].' </td>';
+                                  echo '<td>'.$dept.' </td>';
                                   echo '<td>'.$total_days.' </td>';
 
                                   foreach($datas[$dept] as $data)
