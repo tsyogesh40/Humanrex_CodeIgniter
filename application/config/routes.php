@@ -63,6 +63,18 @@ $route['userListing'] = 'user/userListing';
 $route['userListing/(:num)'] = "user/userListing/$1";
 $route['addNew'] = "user/addNew";
 
+//admin panel
+$route['view-altered-time']="admin/view_altered_time";
+$route['add-edit-altered-time']="admin/add_edit_altered_time";
+$route['add-edit-altered-time/(:any)/(:any)']="admin/add_edit_altered_time/$1/$2";
+$route['update-altered-time']="admin/update_altered_time";
+$route['add-altered-time']="admin/add_altered_time";
+$route['delete-altered-time/(:any)/(:any)']="admin/delete_altered_time/$1/$2";
+
+//common
+$route['request-permission']="admin/request_permission_view";
+
+
 //staff panel
 $route['history']="user/select_by_id";
 $route['history_all']="user/select_by_range";
