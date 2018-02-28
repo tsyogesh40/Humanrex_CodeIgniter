@@ -132,17 +132,17 @@
               <div id="request" class="collapse">
               <ul>
                 <br>
-                <li class="treeview">
-                  <a href="<?php echo base_url();?>profile" >
+            <!--    <li class="treeview">
+                  <a href="<?php // echo base_url();?>request-permission" >
                     <i class="fa fa-edit"></i>
                     <span>Apply Permission/ OD / Leave</span>
                   </a>
                 </li>
-                <br>
+                <br>-->
                 <li class="treeview">
                   <a href="<?php echo base_url();?>profile" >
                     <i class="fa fa-spinner"></i>
-                    <span>Application Status</span>
+                    <span>Permission / OD / Leave status</span>
                   </a>
                 </li>
                 <br>
@@ -263,7 +263,7 @@
                 </li>
                 <br>
                 <li class="treeview">
-                  <a href="#">
+                  <a href="<?php echo base_url(); ?>request-permission">
                     <i class="fa fa-file-text-o"></i>
                     <span> Permission / OD / Leave </span>
                   </a>
@@ -273,7 +273,7 @@
             </div>
             <li class="treeview">
               <a href="#time" data-toggle="collapse">
-                <i class="fa fa-users"></i>
+                <i class="fa fa-cogs"></i>
                 <span>Attendence Management</span>
               </a>
             </li>
@@ -281,7 +281,7 @@
               <ul>
                 <br>
                 <li class="treeview">
-                  <a href="#">
+                  <a href="<?php echo base_url()?>view-altered-time">
                     <i class="fa fa-unlink"></i>
                     <span>Alter College time</span>
                   </a>
@@ -290,14 +290,14 @@
                 <br>
                 <li class="treeview">
                   <a href="#">
-                    <i class="fa fa-file-text-o"></i>
+                    <i class="fa fa-copyright"></i>
                     <span>User Counter </span>
                   </a>
                 </li>
                 <br>
                 <li class="treeview">
                   <a href="#">
-                    <i class="fa fa-file-text-o"></i>
+                    <i class="fa fa-exclamation-triangle"></i>
                     <span>Edit attendence </span>
                   </a>
                 </li>
