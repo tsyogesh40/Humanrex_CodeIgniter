@@ -23,7 +23,7 @@
                 <div class="box box-primary">
                     <div class="box-header">
                         <h3 class="box-title"> Counter List</h3>
-                    
+
                     </div><!-- /.box-header -->
                     <?php
                     $i=1;
