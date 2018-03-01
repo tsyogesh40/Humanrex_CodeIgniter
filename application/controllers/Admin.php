@@ -14,11 +14,83 @@ class Admin extends BaseController
         $this->isLoggedIn();
     }
 
+
     public function request_permission_view()
     {
       $this->global['pageTitle'] = 'HumanRex: Request Permission ';
       $this->loadViews("admin/request_permission_view",$this->global,NULL,NULL);
     }
+
+    //counter start
+
+    public function view_counter()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Counter OverView';
+      $res=$this->admin_model->view_counter();
+      if($res!=false)
+      {
+        $result['datas']=$res;
+      }
+      else {
+        $result['datas']="No records found!";
+      }
+
+      $this->loadViews("admin/view_counter",$this->global,$result,NULL);
+    }
+
+    //add counter view
+    public function add_counter()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Add counter';
+      $staff_id=$this->input->post('staff_id');
+      $name=$this->input->post('name');
+      $count=$this->input->post('count');
+      $late_days=$this->input->post('late_days');
+      $datas=array('staff_id'=>$staff_id,'name'=>$name,'count'=>$count,'late_days'=>$late_days);
+      $this->admin_model->add_counter($datas);
+      redirect('view-counter');
+    }
+
+    //update counter
+    public function update_counter()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Update counter';
+      $staff_id=$this->input->post('staff_id');
+      $name=$this->input->post('name');
+      $count=$this->input->post('count');
+      $late_days=$this->input->post('late_days');
+      $datas=array('staff_id'=>$staff_id,'name'=>$name,'count'=>$count,'late_days'=>$late_days);
+      $this->admin_model->update_counter($staff_id,$datas);
+      redirect('view-counter');
+    }
+    //deleting Counter
+    public function delete_counter($staff_id=NULL)
+    {
+      $this->global['pageTitle'] = 'HumanRex: Delete counter';
+    if($staff_id!=NULL)
+    {
+      $this->admin_model->delete_counter($staff_id);
+    }
+    redirect('view-counter');
+    }
+    public function add_edit_counter($staff_id=NULL)
+    {
+
+      if($staff_id==NULL)
+      {
+        $this->global['pageTitle'] = 'HumanRex: Add counter';
+        $this->loadViews("admin/add_counter",$this->global,NULL,NULL);
+      }
+      else {
+        $this->global['pageTitle'] = 'HumanRex: Edit Counter';
+        $res['counter']=$this->admin_model->fetch_counter($staff_id);
+        $this->loadViews("admin/update_counter",$this->global,$res,NULL);
+      }
+    }
+
+
+    //counter end
+
     //view all altered time from the altered time table
     public function view_altered_time()
     {

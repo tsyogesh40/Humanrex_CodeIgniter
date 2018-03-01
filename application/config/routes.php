@@ -71,6 +71,14 @@ $route['update-altered-time']="admin/update_altered_time";
 $route['add-altered-time']="admin/add_altered_time";
 $route['delete-altered-time/(:any)/(:any)']="admin/delete_altered_time/$1/$2";
 
+//counter
+$route['view-counter']="admin/view_counter";
+$route['delete-counter/(:any)']="admin/delete_counter/$1";
+$route['add-edit-counter']="admin/add_edit_counter";
+$route['add-edit-counter/(:any)']="admin/add_edit_counter/$1";
+$route['add-counter']="admin/add_counter";
+$route['update-counter']="admin/update_counter";
+
 //common
 $route['request-permission']="admin/request_permission_view";
 

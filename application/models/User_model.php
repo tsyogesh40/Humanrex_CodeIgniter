@@ -180,6 +180,7 @@ public function select_range($dept,$staff_id,$from,$to)
 
 
     //----------------------------login model end----------------
+
     function userListingCount($searchText = '')
     {
         $this->db->select('BaseTbl.userId,BaseTbl.dept,BaseTbl.cadre,BaseTbl.staff_id, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, Role.role');
