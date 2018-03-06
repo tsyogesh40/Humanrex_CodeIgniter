@@ -14,15 +14,173 @@ class Admin extends BaseController
         $this->isLoggedIn();
     }
 
+    //edit attendence section
+    public function view_attendence()
+    {
+      $this->global['pageTitle'] = 'HumanRex: View Attendence';
+      $res=$this->admin_model->view_attendence();
+      if($res!=false)
+      {
+        $result['datas']=$res;
+      }
+      else {
+        $result['datas']="No records found!";
+      }
+      $this->loadViews("admin/edit_attendence_view",$this->global,$result,NULL);
+    }
 
+    public function add_edit_attendence($staff_id=NULL,$date=NULL)
+    {
+      if($staff_id==NULL&&$date==NULL)
+      {
+        $this->global['pageTitle'] = 'HumanRex: Add attendence entry';
+        $this->loadViews("admin/add_attendence",$this->global,NULL,NULL);
+      }
+      else {
+        $this->global['pageTitle'] = 'HumanRex: Edit Attendence';
+        $res['data']=$this->admin_model->fetch_attendence($staff_id,$date);
+        $this->loadViews("admin/edit_attendence",$this->global,$res,NULL);
+      }
+    }
+
+    public function add_attendence()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Add Attendence';
+      $data=array(
+      'date'=>$this->input->post('date'),
+      'name'=>$this->input->post('name'),
+      'cadre'=>$this->input->post('cadre'),
+      'staff_id'=>$this->input->post('staff_id'),
+      'store_id'=>$this->input->post('store_id'),
+      'dept'=>$this->input->post('dept'),
+      'in_time'=>$this->input->post('in_time'),
+      'out_time'=>$this->input->post('out_time'),
+      'p_value'=>$this->input->post('p_value'),
+      'no_of_entry'=>$this->input->post('no_of_entry'),
+      'status'=>$this->input->post('status'),
+      'semester'=>$this->input->post('semester'),
+      'year'=>$this->input->post('year')
+    );
+    $this->admin_model->add_attendence($data);
+    redirect('view-attendence');
+    }
+
+    public function edit_attendence()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Edit Attendence';
+        $staff_id=$this->input->post('staff_id');
+        $date=$this->input->post('date');
+        $data=array(
+        'date'=>$this->input->post('date'),
+        'name'=>$this->input->post('name'),
+        'cadre'=>$this->input->post('cadre'),
+        'staff_id'=>$this->input->post('staff_id'),
+        'store_id'=>$this->input->post('store_id'),
+        'dept'=>$this->input->post('dept'),
+        'in_time'=>$this->input->post('in_time'),
+        'out_time'=>$this->input->post('out_time'),
+        'p_value'=>$this->input->post('p_value'),
+        'no_of_entry'=>$this->input->post('no_of_entry'),
+        'status'=>$this->input->post('status'),
+        'semester'=>$this->input->post('semester'),
+        'year'=>$this->input->post('year')
+      );
+      $this->admin_model->update_attendence($staff_id,$date,$data);
+      redirect('view-attendence');
+    }
+
+    public function delete_attendence($staff_id,$date)
+    {
+      $this->global['pageTitle'] = 'HumanRex: Delete Attendence';
+      $this->admin_model->delete_attendence($staff_id,$date);
+      redirect('view-attendence');
+    }
+
+    public function attendence_listing()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Search Attendence';
+    $searchtext = $this->security->xss_clean($this->input->post('searchtext'));
+    $res['data']=$this->admin_model->search_attencence($searchtext);
+    if($res!=false)
+    {
+      $result['datas']=$res['data'];
+      $result['searchtext']=$searchtext;
+    }
+    else {
+      $result['datas']="No records found!";
+    }
+    $this->loadViews("admin/edit_attendence_view",$this->global,$result,NULL);
+    }
+
+
+  //end of edit attendence section
     public function request_permission_view()
     {
       $this->global['pageTitle'] = 'HumanRex: Request Permission ';
       $this->loadViews("admin/request_permission_view",$this->global,NULL,NULL);
     }
 
-    //counter start
 
+    //select staff ID to view fingerprints
+    public function select_fingerprints()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Staffs fingerPrints ';
+      $this->loadViews("admin/select_fingerprints",$this->global,NULL,NULL);
+    }
+
+    //view the Fingerprints
+    public function view_fingerprints()
+    {
+      $staff_id=$this->input->post('staff_id');
+      $this->global['pageTitle'] = 'HumanRex: Staffs fingerPrints ';
+      $res=$this->admin_model->view_fingerprints($staff_id);
+      if($res!=false)
+      {
+        $result['datas']=$res;
+      }
+      else {
+        $result['datas']="No records found!";
+      }
+      $this->loadViews("admin/view_fingerprints",$this->global,$result,NULL);
+    }
+
+    //edit_fingerprint
+    function edit_fingerprint($staff_id,$finger_code)
+    {
+      $this->global['pageTitle'] = 'HumanRex: Update fingerprint';
+      $res['fingerprint']=$this->admin_model->fetch_fingerprint($staff_id,$finger_code);
+      $this->loadViews("admin/edit_fingerprint",$this->global,$res,NULL);
+    }
+    //update fingerPrints
+    function update_fingerprint()
+    {
+      $this->global['pageTitle'] = 'HumanRex: Update fingerprint';
+      $staff_id=$this->input->post('staff_id');
+      $name=$this->input->post('name');
+      $store_id=$this->input->post('store_id');
+      $finger_name=$this->input->post('finger_name');
+      $finger_code=$this->input->post('finger_code');
+      $datas=array('staff_id'=>$staff_id,'name'=>$name,'store_id'=>$store_id,'finger_name'=>$finger_name,'finger_code'=>$finger_code);
+      $this->admin_model->update_fingerprint($datas,$staff_id,$finger_code);
+      //redirect('select-fingerprints');
+      $res=$this->admin_model->view_fingerprints($staff_id);
+      if($res!=false)
+      {
+        $result['datas']=$res;
+      }
+      else {
+        $result['datas']="No records found!";
+      }
+      $this->loadViews("admin/view_fingerprints",$this->global,$result,NULL);
+    }
+    //delete fingerPrints
+    function delete_fingerprint($staff_id,$finger_code)
+    {
+      $this->admin_model->delete_fingerprint($staff_id,$finger_code);
+      redirect('select-fingerprints');
+    }
+
+    //counter start
     public function view_counter()
     {
       $this->global['pageTitle'] = 'HumanRex: Counter OverView';
@@ -88,8 +246,47 @@ class Admin extends BaseController
       }
     }
 
-
     //counter end
+
+/*
+Default Time section
+*/
+
+  public function view_default_time()
+  {
+    $this->global['pageTitle'] = 'HumanRex: View Default Time';
+    $res=$this->admin_model->view_default_time();
+    if($res!=false)
+    {
+      $result['datas']=$res;
+    }
+    else {
+      $result['datas']="No records found!";
+    }
+    $this->loadViews("admin/default_time_view",$this->global,$result,NULL);
+  }
+
+  public function edit_default_time($cadre)
+  {
+    $this->global['pageTitle'] = 'HumanRex: Edit Default Time';
+    $res['datas']=$this->admin_model->fetch_default_time($cadre);
+    $this->loadViews("admin/edit_default_time",$this->global,$res,NULL);
+  }
+  public function update_default_time()
+  {
+    $cadre=$this->input->post('cadre');
+    $in_time=$this->input->post('int_time');
+    $out_time=$this->input->post('out_time');
+    $half_wrk=$this->input->post('half_wrk');
+    $full_wrk=$this->input->post('full_wrk');
+    $data=array('cadre'=>$cadre,'in_time'=>$in_time,'out_time'=>$out_time,'half_wrk'=>$half_wrk,'full_wrk'=>$full_wrk);
+    $this->admin_model->update_default_time($cadre,$data);
+    redirect('view-default-time');
+  }
+
+/*
+Default Time section End
+*/
 
     //view all altered time from the altered time table
     public function view_altered_time()

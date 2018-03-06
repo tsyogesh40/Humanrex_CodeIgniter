@@ -64,12 +64,19 @@ $route['userListing/(:num)'] = "user/userListing/$1";
 $route['addNew'] = "user/addNew";
 
 //admin panel
+//altered time
 $route['view-altered-time']="admin/view_altered_time";
 $route['add-edit-altered-time']="admin/add_edit_altered_time";
 $route['add-edit-altered-time/(:any)/(:any)']="admin/add_edit_altered_time/$1/$2";
 $route['update-altered-time']="admin/update_altered_time";
 $route['add-altered-time']="admin/add_altered_time";
 $route['delete-altered-time/(:any)/(:any)']="admin/delete_altered_time/$1/$2";
+
+//default time
+$route['view-default-time']="admin/view_default_time";
+$route['edit-default-time/(:any)']="admin/edit_default_time/$1";
+$route['update-default-time']="admin/update_default_time";
+
 
 //counter
 $route['view-counter']="admin/view_counter";
@@ -79,8 +86,24 @@ $route['add-edit-counter/(:any)']="admin/add_edit_counter/$1";
 $route['add-counter']="admin/add_counter";
 $route['update-counter']="admin/update_counter";
 
+//admin_attendence
+$route['view-attendence']="admin/view_attendence";
+$route['delete-attendence/(:any)/(:any)']="admin/delete_attendence/$1/$2";
+$route['add-edit-attendence']="admin/add_edit_attendence";
+$route['add-edit-attendence/(:any)/(:any)']="admin/add_edit_attendence/$1/$2";
+$route['add-attendence']="admin/add_attendence";
+$route['edit-attendence']="admin/edit_attendence";
+$route['attendence-listing']="admin/attendence_listing";
 //common
 $route['request-permission']="admin/request_permission_view";
+
+
+//finger prints
+$route['select-fingerprints']="admin/select_fingerprints";
+$route['view-fingerprints']="admin/view_fingerprints";
+$route['update-fingerprint']="admin/update_fingerprint";
+$route['edit-fingerprint/(:any)/(:any)']="admin/edit_fingerprint/$1/$2";
+$route['delete-fingerprint/(:any)/(:any)']="admin/delete_fingerprint/$1/$2";
 
 
 //staff panel

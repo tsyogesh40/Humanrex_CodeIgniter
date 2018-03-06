@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-bar-chart"></i> Altered timing
-        <small>For Individual staff</small>
+        <i class="fa fa-bar-chart"></i> College Default time
+        <small>Edit College timing</small>
       </h1>
     </section>
 
@@ -11,7 +11,6 @@
     <div class="row">
         <div class="col-xs-12 text-right">
             <div class="form-group">
-                <a class="btn btn-primary" href="<?php echo base_url(); ?>add-edit-altered-time"><i class="fa fa-plus"></i> Add New</a>
             </div>
         </div>
     </div>
@@ -31,10 +30,9 @@
                       <div class="table-responsive">
                         <table class="table table-striped">
                         <thead>
-                        <th>Date</th>
+                        <th>Cadre</th>
                         <th>In_time</th>
                         <th>Out_time</th>
-                        <th>Cadre</th>
                         <th>Half working Hr</th>
                         <th>Full working Hr</th>
                         <th><b>Actions</b></th>
@@ -43,16 +41,14 @@
                         {
 
                           echo '<tr>
-                          <td>'.$data->date.'</td>
+                          <td>'.$data->cadre.'</td>
                           <td>'.$data->in_time.'</td>
                           <td>'.$data->out_time.'</td>
-                          <td>'.$data->cadre.'</td>
                           <td>'.$data->half_wrk.'</td>
                           <td>'.$data->full_wrk.'</td>';
                            ?>
                           <td class="text-center">
-                              <a class="btn btn-sm btn-info" href="<?= base_url().'add-edit-altered-time/'.$data->date.'/'.$data->cadre?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                              <a class="btn btn-sm btn-danger deleteUser" href="<?= base_url().'delete-altered-time/'.$data->date.'/'.$data->cadre?>"  title="Delete"><i class="fa fa-trash"></i></a>
+                              <a class="btn btn-sm btn-info" href="<?= base_url().'edit-default-time/'.$data->cadre?>" title="Edit"><i class="fa fa-pencil"></i></a>
                           </td>
                       <?php  echo'  </tr>';
                         }

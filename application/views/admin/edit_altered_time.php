@@ -60,14 +60,14 @@
                         <div class="form-group">
                             <label for="date" class="control-label col-sm-2 col-xs-4">Half working Hour:</label>
                             <div class="col-sm- col-xs-6">
-                            <input type="text" class="form-control" id="reason" value="<?php echo $data[0]->half_wrk;?>"name="half_wrk">
+                            <input type="time" class="form-control" id="reason" value="<?php echo $data[0]->half_wrk;?>"name="half_wrk">
                           </div>
                         </div>
 
                         <div class="form-group">
                             <label for="date" class="control-label col-sm-2 col-xs-4">Full working Hour:</label>
                             <div class="col-sm-4 col-xs-6">
-                            <input type="text" class="form-control" id="reason" value="<?php echo $data[0]->full_wrk;?>" name="full_wrk">
+                            <input type="time" class="form-control" id="reason" value="<?php echo $data[0]->full_wrk;?>" name="full_wrk">
                           </div>
                         </div>
 

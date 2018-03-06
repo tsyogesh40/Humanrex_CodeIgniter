@@ -269,6 +269,13 @@
                   </a>
                 </li>
                 <br>
+                <li class="treeview">
+                  <a href="<?php echo base_url(); ?>select-fingerprints">
+                    <i class="fa fa-thumbs-o-up"></i>
+                    <span> View Fingerprints </span>
+                  </a>
+                </li>
+                <br>
               </ul>
             </div>
             <li class="treeview">
@@ -281,8 +288,16 @@
               <ul>
                 <br>
                 <li class="treeview">
+                  <a href="<?php echo base_url()?>view-default-time">
+                    <i class="fa fa-cog fa-spin"></i>
+                    <span>Alter Default time</span>
+                  </a>
+                </li>
+
+                <br>
+                <li class="treeview">
                   <a href="<?php echo base_url()?>view-altered-time">
-                    <i class="fa fa-unlink"></i>
+                    <i class="fa fa-unlink fa-spin"></i>
                     <span>Alter College time</span>
                   </a>
                 </li>
@@ -296,7 +311,7 @@
                 </li>
                 <br>
                 <li class="treeview">
-                  <a href="#">
+                  <a href="<?php echo base_url()?>view-attendence">
                     <i class="fa fa-exclamation-triangle"></i>
                     <span>Edit attendence </span>
                   </a>
