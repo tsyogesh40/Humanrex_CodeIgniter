@@ -50,7 +50,7 @@
                           <select class="form-control" id="cadre" name="cadr e">
                             <option value="T">Teaching</option>
                             <option value="NT">Non-Teaching</option>
-                          </select>
+                        </select>
                         </div>
                         </div>
 
