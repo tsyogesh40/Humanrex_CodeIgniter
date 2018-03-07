@@ -61,12 +61,12 @@ function edit_permission($staff_id,$date)
   $this->loadViews("admin/edit_permission",$this->global,$res,NULL);
 
 }
-function update_permission()
+
+public function update_permission()
 {
   $this->global['pageTitle'] = 'HumanRex: Update Permission ';
-  $staff_id=$this->input->post('staff_id');
-  $date=$this->input->post('date');
-  print($date);
+  $staff_id=$this->input->post('staff_id_org');
+  $date=$this->input->post('date_org');
   $data=array(
     'date'=>$this->input->post('date'),
     'name'=>$this->input->post('name'),
@@ -82,10 +82,10 @@ function update_permission()
   redirect('view-permission');
 
 
-function delete_permission($staff_id,$date)
+ function delete_per($staff_id,$date)
 {
   $this->global['pageTitle'] = 'HumanRex: Delete Permission ';
-  $this->admin_model->delete_permission($staff_id,$date);
+  $this->admin_model->delete_per($staff_id,$date);
   redirect('view-permission');
 }
 

@@ -50,6 +50,9 @@
                                 </div>
                               </div>
 
+                              <input type="hidden" class="form-control" id="nm" name="staff_id_org" value="<?php echo $datas[0]->staff_id; ?>">
+                              <input type="hidden" class="form-control" id="date" name="date_org" value="<?php echo $datas[0]->date; ?>">
+
                             <div class="form-group">
                                 <label for="date" class="control-label col-sm-2 col-xs-4">Staff ID:&nbsp;</label>
                                 <div class="col-sm-4 col-xs-6">
