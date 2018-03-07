@@ -71,7 +71,7 @@ $route['request-permission']="admin/permission_view";
 $route['view-permission']="admin/viewall_permission";
 $route['edit-permission/(:any)/(:any)']="admin/edit_permission/$1/$2";
 $route['update-permission']="admin/update_permission";
-$route['delete-permission/(:any)/(:any)']="admin/delete_per/$1/$2";
+$route['delete-permission/(:any)/(:any)']="admin/delete_permission/$1/$2";
 
 //altered time
 $route['view-altered-time']="admin/view_altered_time";

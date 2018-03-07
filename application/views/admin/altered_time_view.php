@@ -39,9 +39,9 @@
                         <th>Full working Hr</th>
                         <th><b>Actions</b></th>
                         </thead>';
+
                         foreach($datas as $data)
                         {
-
                           echo '<tr>
                           <td>'.$data->date.'</td>
                           <td>'.$data->in_time.'</td>

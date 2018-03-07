@@ -47,7 +47,7 @@
                         <div class="form-group">
                           <label for="sel1" class="control-label col-sm-2 col-xs-4">Select Cadre:</label>
                           <div class="col-sm-4 col-xs-6">
-                          <select class="form-control" id="cadre" name="cadr e">
+                          <select class="form-control" id="cadre" name="cadre">
                             <option value="T">Teaching</option>
                             <option value="NT">Non-Teaching</option>
                         </select>

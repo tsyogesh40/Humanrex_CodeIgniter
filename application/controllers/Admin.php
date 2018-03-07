@@ -80,16 +80,16 @@ public function update_permission()
   );
   $this->admin_model->update_permission($staff_id,$date,$data);
   redirect('view-permission');
+}
 
-
- function delete_per($staff_id,$date)
+ function delete_permission($staff_id,$date)
 {
   $this->global['pageTitle'] = 'HumanRex: Delete Permission ';
-  $this->admin_model->delete_per($staff_id,$date);
+  $this->admin_model->delete_permission($staff_id,$date);
   redirect('view-permission');
 }
 
-}
+
 
 /*
 permission Section - End

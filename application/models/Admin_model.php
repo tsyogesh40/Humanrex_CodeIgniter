@@ -28,6 +28,7 @@ function fetch_permission($staff_id,$date)
   $res=$this->db->get();
   return $res->result();
 }
+
 function update_permission($staff_id,$date,$data)
 {
   $this->db->where('staff_id',$staff_id);
@@ -35,7 +36,7 @@ function update_permission($staff_id,$date,$data)
   $this->db->update('permission',$data);
 }
 
-function delete_per($staff_id,$date)
+function delete_permission($staff_id,$date)
 {
   $this->db->delete('permission',array('staff_id'=>$staff_id,'date'=>$date));
 }
