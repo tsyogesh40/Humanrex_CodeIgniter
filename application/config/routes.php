@@ -64,6 +64,15 @@ $route['userListing/(:num)'] = "user/userListing/$1";
 $route['addNew'] = "user/addNew";
 
 //admin panel
+
+//permission
+$route['add-permission']="admin/add_permission";
+$route['request-permission']="admin/permission_view";
+$route['view-permission']="admin/viewall_permission";
+$route['edit-permission/(:any)/(:any)']="admin/edit_permission/$1/$2";
+$route['update-permission']="admin/update_permission";
+$route['delete-permission/(:any)/(:any)']="admin/delete_permission/$1/$2";
+
 //altered time
 $route['view-altered-time']="admin/view_altered_time";
 $route['add-edit-altered-time']="admin/add_edit_altered_time";
@@ -94,8 +103,7 @@ $route['add-edit-attendence/(:any)/(:any)']="admin/add_edit_attendence/$1/$2";
 $route['add-attendence']="admin/add_attendence";
 $route['edit-attendence']="admin/edit_attendence";
 $route['attendence-listing']="admin/attendence_listing";
-//common
-$route['request-permission']="admin/request_permission_view";
+
 
 
 //finger prints

@@ -3,11 +3,48 @@
 class Admin_model extends CI_Model
 {
 
+/*Permission Section */
+function add_permission($datas)
+{
+  $this->db->insert('permission',$datas);
+}
+
+function viewall_permission()
+{
+  if($res=$this->db->get('permission'))
+  {
+    return $res->result();
+  }
+  else {
+    return false;
+  }
+}
+function fetch_permission($staff_id,$date)
+{
+  $this->db->select('*');
+  $this->db->from('permission');
+  $this->db->where('staff_id',$staff_id);
+  $this->db->where('date',$date);
+  $res=$this->db->get();
+  return $res->result();
+}
+function update_permission($staff_id,$date,$data)
+{
+  $this->db->where('staff_id',$staff_id);
+  $this->db->where('date',$date);
+  $this->db->update('permission',$data);
+}
+
+function delete_permission($staff_id,$date)
+{
+  $this->db->delete('permission',array('staff_id'=>$staff_id,'date'=>$date));
+}
+
+/*Permission Section End */
 
   /*
   Default Time section
   */
-
   function view_default_time()
   {
     if($res=$this->db->get('default_time'))

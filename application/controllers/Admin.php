@@ -13,18 +13,101 @@ class Admin extends BaseController
         $this->load->model('admin_model');
         $this->isLoggedIn();
     }
+/*
+Permission section
+*/
+public function permission_view()
+{
+  $this->global['pageTitle'] = 'HumanRex: Request Permission ';
+  $this->loadViews("admin/request_permission_view",$this->global,NULL,NULL);
+}
 
+public function add_permission()
+{
+$this->global['pageTitle'] = 'HumanRex: Add Permission ';
+$data=array(
+  'date'=>$this->input->post('date'),
+  'name'=>$this->input->post('name'),
+  'staff_id'=>$this->input->post('staff_id'),
+  'cadre'=>$this->input->post('cadre'),
+  'in_time'=>$this->input->post('in_time'),
+  'out_time'=>$this->input->post('out_time'),
+  'p_value'=>$this->input->post('type'),
+  'reason'=>$this->input->post('reason'),
+  'physical_presence'=>$this->input->post('physical_presence')
+);
+$this->admin_model->add_permission($data);
+redirect('request-permission');
+}
+
+function viewall_permission()
+{
+$this->global['pageTitle'] = 'HumanRex: Permission List ';
+$res=$this->admin_model->viewall_permission();
+if($res!=false)
+{
+  $result['datas']=$res;
+}
+else {
+  $result['datas']="No records found!";
+}
+$this->loadViews("admin/view_permission",$this->global,$result,NULL);
+}
+
+function edit_permission($staff_id,$date)
+{
+  $this->global['pageTitle'] = 'HumanRex: Edit Permission ';
+  $res['datas']=$this->admin_model->fetch_permission($staff_id,$date);
+  $this->loadViews("admin/edit_permission",$this->global,$res,NULL);
+
+}
+function update_permission()
+{
+  $this->global['pageTitle'] = 'HumanRex: Update Permission ';
+  $staff_id=$this->input->post('staff_id');
+  $date=$this->input->post('date');
+  print($date);
+  $data=array(
+    'date'=>$this->input->post('date'),
+    'name'=>$this->input->post('name'),
+    'staff_id'=>$this->input->post('staff_id'),
+    'cadre'=>$this->input->post('cadre'),
+    'in_time'=>$this->input->post('in_time'),
+    'out_time'=>$this->input->post('out_time'),
+    'p_value'=>$this->input->post('type'),
+    'reason'=>$this->input->post('reason'),
+    'physical_presence'=>$this->input->post('physical_presence')
+  );
+  $this->admin_model->update_permission($staff_id,$date,$data);
+  redirect('view-permission');
+
+
+function delete_permission($staff_id,$date)
+{
+  $this->global['pageTitle'] = 'HumanRex: Delete Permission ';
+  $this->admin_model->delete_permission($staff_id,$date);
+  redirect('view-permission');
+}
+
+}
+
+/*
+permission Section - End
+*/
     //edit attendence section
     public function view_attendence()
     {
       $this->global['pageTitle'] = 'HumanRex: View Attendence';
       $res=$this->admin_model->view_attendence();
+      $searchtext='';
       if($res!=false)
       {
         $result['datas']=$res;
+        $result['searchtext']=$searchtext;
       }
       else {
         $result['datas']="No records found!";
+
       }
       $this->loadViews("admin/edit_attendence_view",$this->global,$result,NULL);
     }
@@ -114,12 +197,6 @@ class Admin extends BaseController
 
 
   //end of edit attendence section
-    public function request_permission_view()
-    {
-      $this->global['pageTitle'] = 'HumanRex: Request Permission ';
-      $this->loadViews("admin/request_permission_view",$this->global,NULL,NULL);
-    }
-
 
     //select staff ID to view fingerprints
     public function select_fingerprints()
