@@ -4,6 +4,9 @@
         <div class="pull-right hidden-xs">
           <b>HumanRex</b> Version 1.0
         </div>
+        <div class="center">
+          <button id="print">Print</button>
+        </div>
         <strong>Copyright &copy; 2018-2019 <a href=""></a>.</strong> All rights reserved.
     </footer>
 
