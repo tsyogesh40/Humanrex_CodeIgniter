@@ -43,7 +43,7 @@
                         <div class=" table-responsive">
                         <caption><h4><i>Report generated for '.$str.' from '.$info['from'].' to '.$info['to'].'</h4></i><br></caption>
 
-                          <table class="table table-striped">
+                          <table class="table table-striped table-condensed">
 
                               <thead>
                                   <tr>

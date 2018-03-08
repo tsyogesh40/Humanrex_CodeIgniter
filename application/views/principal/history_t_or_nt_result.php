@@ -1,9 +1,5 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <script>
-    $('[rel=tooltip]').tooltip({container: 'body'});
-
-    </script>
     <section class="content-header">
       <h1>
         <i class="fa fa-bar-chart"></i> Staff's History
@@ -59,7 +55,7 @@
                           foreach($dep as $dept)
                           {
                             //Teaching
-                            echo '<table class="table table-striped">
+                            echo '<table class="table table-striped table-condensed">
                               <caption><h4>'.$dept.'-Teaching staffs </h4></caption>
                                 <thead>
                                     <tr>

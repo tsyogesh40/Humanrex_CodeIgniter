@@ -56,7 +56,7 @@
                       //For Teaching staffs
                         foreach($dep as $dept)
                         {
-                          echo '  <table class="table table-striped">
+                          echo '  <table class="table table-striped table-condensed">
                           <caption><h4>'.$dept.'-Teaching staffs </h4></caption>
                                 <thead class="bg-success">
                                     <tr>
