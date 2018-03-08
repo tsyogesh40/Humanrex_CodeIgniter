@@ -27,7 +27,7 @@
                       <div class="container">
                       <div class=" table-responsive">
                       <caption><h3>Report for Teaching Staffs</h3><br></caption>
-                        <table class="table table-striped">
+                        <table class="table table-striped table-condensed">
                             <thead>
                                 <tr>
                                   <th>Name</th>
@@ -71,7 +71,7 @@
                             <div class="container">
                             <div class=" table-responsive">
                             <caption><h3>Report for Non - Teaching Staffs</h3><br></caption>
-                              <table class="table table-striped">
+                              <table class="table table-striped table-condensed">
                                   <thead>
                                       <tr>
                                         <th>Name</th>

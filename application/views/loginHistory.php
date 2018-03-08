@@ -35,7 +35,7 @@
                 <div class="box-body  no-padding">
                   <div class="container">
                   <div class="table-responsive">
-                  <table class="table table-hover">
+                  <table class="table table-hover table-condensed">
                     <tr>
                       <th>Session Data</th>
                       <th>IP Address</th>

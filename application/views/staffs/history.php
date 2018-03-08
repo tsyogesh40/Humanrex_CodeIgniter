@@ -15,7 +15,7 @@
 
   echo'
   <div class="container">
-      <table class="table table-striped table-responsive">
+      <table class="table table-striped table-responsive table-condensed">
           <thead>
             <tr>
               <th>DATE</th>

@@ -22,7 +22,7 @@
                     {
               echo  '   <div class="container">
                       <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped table-condensed">
                         <thead>
                         <th>Date</th>
                         <th>Name</th>
