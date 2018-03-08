@@ -6,7 +6,20 @@
         <small>Control panel</small>
       </h1>
     </section>
-<?php if($role[0]->roleId!=ROLE_ADMIN ){?>
+<?php if($role[0]->roleId==ROLE_ADMIN )
+{
+  $total='N/A';
+  $leave='N/A';
+  $present='N/A';
+  $late='N/A';
+}
+else {
+  $total=$info[0]->total_days;
+  $leave=$info[0]->leave_days;
+  $present=$info[0]->present_days;
+  $late=$info[0]->late_days;
+}
+  ?>
     <section class="content">
         <div class="row">
             <div class="col-lg-3 col-xs-6">
@@ -15,7 +28,7 @@
 
               <div class="small-box bg-aqua">
                 <div class="inner">
-                  <h3><?php echo $info[0]->total_days?></h3>
+                  <h3><?php echo $total?></h3>
                   <p>Total Working Days</p>
                 </div>
                 <div class="icon">
@@ -28,7 +41,7 @@
               <!-- small box -->
               <div class="small-box bg-green">
                 <div class="inner">
-                  <h3><?php echo $info[0]->present_days?></h3>
+                  <h3><?php echo $present?></h3>
                   <p>Total Present Days</p>
                 </div>
                 <div class="icon">
@@ -41,7 +54,7 @@
               <!-- small box -->
               <div class="small-box bg-yellow">
                 <div class="inner">
-                  <h3><?php echo $info[0]->leave_days?></h3>
+                  <h3><?php echo $leave?></h3>
                   <p>Total Leave Days</p>
                 </div>
                 <div class="icon">
@@ -54,7 +67,7 @@
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3><?php echo $info[0]->late_days?></h3>
+                  <h3><?php echo $late?></h3>
                   <p>Total Late Days</p>
                 </div>
                 <div class="icon">
@@ -65,14 +78,13 @@
             </div><!-- ./col -->
           </div>
     </section>
-  <?php }?>
+
     <section class="content">
 
         <div class="row">
             <!-- left column -->
             <div class="col-md-12 text-center">
               <!-- general form elements -->
-
 
                 <div class="box box-primary">
                     <div class="box-header">
