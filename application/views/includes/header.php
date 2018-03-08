@@ -112,6 +112,7 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
               </a>
             </li>
+            <?php if($role!=ROLE_ADMIN) {?>
             <li class="treeview">
               <a href="<?php echo base_url();?>select" >
                 <i class="fa fa-bar-chart"></i>
@@ -149,6 +150,7 @@
               </ul>
               </div>
             </li>
+          <?php }?>
             <?php
             if($role==ROLE_HOD)
               {
