@@ -33,7 +33,9 @@
                       }
                       $i=1;
                         echo'
-                        <div>
+                        <div class="container">
+                        <div class="row">
+                        <div class="col-md-12 col-lg-12 col-xs-12 col-sm12">
                         <div class=" table-responsive">
                         <caption><h4><i>Report generated for '.$str.' for the date '.$info['date'].'</h4></i><br></caption>
 
@@ -109,7 +111,7 @@
                                 echo'        </tbody>
                                     </table>
                                     </div>
-                              </div>';
+                              </div></div></div>';
                       }
                       else
                       {

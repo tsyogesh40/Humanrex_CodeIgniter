@@ -8,4 +8,8 @@ Modules To be completed!
 3. Fix equal column width in Leave/OD report(in both principal and HOD panel)
 4. Add College Stamppad in All the Pages where datas r accumumating!
 5. Print option
- 
+
+Everything done.
+
+For printing, you have to add the class "print-this" to the container
+that you want to print. For an example, look at permission_result.php
