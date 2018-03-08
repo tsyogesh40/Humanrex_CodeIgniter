@@ -6,7 +6,7 @@
         <small>Control panel</small>
       </h1>
     </section>
-    
+
     <section class="content">
         <div class="row">
             <div class="col-lg-3 col-xs-6">
@@ -132,9 +132,9 @@
                       }
 
                          ?>
-                         <?php }?>
-                         <br><br><br>
 
+                         <br><br><br>
+<?php }?>
                         </div><!-- /.box-body -->
                 </div>
     </section>  <!--end of the section-->
