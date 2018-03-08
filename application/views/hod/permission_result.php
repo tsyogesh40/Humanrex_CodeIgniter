@@ -33,7 +33,7 @@
                       }
                       $i=1;
                         echo'
-                        <div class="container">
+                        <div class="container print-this">
                         <div class=" table-responsive">
                         <caption><h4><i>Report generated for '.$str.' for the date '.$info['date'].'</h4></i><br></caption>
 
