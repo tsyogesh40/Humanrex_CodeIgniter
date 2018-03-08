@@ -2,6 +2,29 @@
 
 class User_model extends CI_Model
 {
+// model for dashboard datas
+public function dashboard_data($staff_id)
+{
+  $this->db->select('*');
+  $this->db->from('overall_presence');
+  $this->db->where('staff_id',$staff_id);
+  if($res=$this->db->get())
+    return $res->result();
+  else {
+    return false;
+  }
+}
+public function get_role($staff_id)
+{
+  $this->db->select('roleId');
+  $this->db->from('tbl_users');
+  $this->db->where('staff_id',$staff_id);
+  if($res=$this->db->get())
+    return $res->result();
+  else {
+    return false;
+  }
+}
 
   // This Model is used to view the History about the staffs! In HOD panel
   public function view_dept($staff_id)

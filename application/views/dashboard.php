@@ -6,18 +6,20 @@
         <small>Control panel</small>
       </h1>
     </section>
-
+    
     <section class="content">
         <div class="row">
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
+              <?php if($role[0]->roleId!=ROLE_ADMIN ){?>
+
               <div class="small-box bg-aqua">
                 <div class="inner">
-                  <h3>150</h3>
-                  <p>New Tasks</p>
+                  <h3><?php echo $info[0]->total_days?></h3>
+                  <p>Total Working Days</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-bag"></i>
+                  <i class="ion ion-earth fa-spin"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
@@ -26,11 +28,11 @@
               <!-- small box -->
               <div class="small-box bg-green">
                 <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
-                  <p>Completed Tasks</p>
+                  <h3><?php echo $info[0]->present_days?></h3>
+                  <p>Total Present Days</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-stats-bars"></i>
+                  <i class="ion ion-arrow-graph-up-right"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
@@ -39,11 +41,11 @@
               <!-- small box -->
               <div class="small-box bg-yellow">
                 <div class="inner">
-                  <h3>44</h3>
-                  <p>New User</p>
+                  <h3><?php echo $info[0]->leave_days?></h3>
+                  <p>Total Leave Days</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-person-add"></i>
+                  <i class="ion ion-arrow-down-c"></i>
                 </div>
                 <a href="<?php echo base_url(); ?>userListing" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
@@ -52,15 +54,16 @@
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3>65</h3>
-                  <p>Reopened Issue</p>
+                  <h3><?php echo $info[0]->late_days?></h3>
+                  <p>Total Late Days</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
+                  <i class="ion ion-ios-bell"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
+
           </div>
 
     </section>
@@ -129,6 +132,7 @@
                       }
 
                          ?>
+                         <?php }?>
                          <br><br><br>
 
                         </div><!-- /.box-body -->

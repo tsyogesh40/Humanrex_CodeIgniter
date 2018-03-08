@@ -2,7 +2,7 @@
 
     <footer class="main-footer">
         <div>
-          <button style="display: block; margin: 0 auto;" type="button" class="btn btn-primary btn-lg" id="print">Print</button>
+          <button style="display: block; margin: 0 auto;" type="button" class="btn btn-primary btn-md" id="print">Print !</button>
         </div>
         <br />
         <div class="pull-right hidden-xs">

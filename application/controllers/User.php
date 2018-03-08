@@ -22,8 +22,10 @@ class User extends BaseController
     public function index()
     {
         $this->global['pageTitle'] = 'HumanRex: Dashboard';
-
-        $this->loadViews("dashboard", $this->global, NULL , NULL);
+        $staff_id=$this->session->userdata('staff_id');
+        $res['info']=$this->user_model->dashboard_data($staff_id);
+        $res['role']=$this->user_model->get_role($staff_id);
+        $this->loadViews("dashboard", $this->global, $res , NULL);
     }
 
     //This function is used to display the profile details
