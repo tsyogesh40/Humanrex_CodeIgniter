@@ -59,7 +59,7 @@
                           foreach($dep as $dept)
                           {
                             //Teaching
-                            echo '<table class="table table-striped">
+                            echo '<table class="table table-striped table-condensed">
                               <caption><h4>'.$dept.'-Teaching staffs </h4></caption>
                                 <thead>
                                     <tr>
@@ -115,7 +115,7 @@
                                       </table>';
 
                             //Non- Teaching
-                            echo '<table class="table table-striped">
+                            echo '<table class="table table-striped table-condensed">
                               <caption><h4>'.$dept.'-Non Teaching Staffs </h4></caption>
                                 <thead>
                                     <tr>

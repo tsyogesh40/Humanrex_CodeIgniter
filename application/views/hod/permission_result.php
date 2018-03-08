@@ -37,7 +37,7 @@
                         <div class=" table-responsive">
                         <caption><h4><i>Report generated for '.$str.' for the date '.$info['date'].'</h4></i><br></caption>
 
-                          <table class="table table-striped">
+                          <table class="table table-striped table-condensed">
 
                               <thead class="bg-success">
                                   <tr>
@@ -53,7 +53,7 @@
                                 echo '<tr>';
                                     echo '<td>'.$info['dept'].'</td>';
                                     //this element is for displaying leave
-                                    echo '<td>';
+                                    echo '<td class="col-lg-3">';
                                     echo '<ul class="list-group">';
                                     foreach($datas as $val)
                                       {
@@ -66,7 +66,7 @@
                                     echo '</td>';//end of leave element
 
                                     //this element is for d isplaying OD
-                                    echo '<td>';
+                                    echo '<td class="col-lg-3">';
                                     echo '<ul class="list-group">';
                                     foreach($datas as $val)
                                       {
@@ -79,7 +79,7 @@
                                     echo '</td>';//end of OD element
 
                                     //this element is for displaying Permission
-                                    echo '<td>';
+                                    echo '<td class="col-lg-3">';
                                     echo '<ul class="list-group">';
                                     foreach($datas as $val)
                                       {
@@ -92,7 +92,7 @@
                                     echo '</td>';//end of permission
 
                                     //this element is for displaying Late
-                                    echo '<td>';
+                                    echo '<td class="col-lg-3">';
                                     echo '<ul class="list-group">';
                                     foreach($datas as $val)
                                       {

@@ -25,7 +25,7 @@
                   <div class="container text-center">
                     <div class="table-responsive ">
                         <div class="col-*">
-                              <table class="table text-center table-bordered table-striped table-dark">
+                              <table class="table text-center table-bordered table-striped table-dark table-condensed">
                                 <tbody>
                                   <tr>
                                     <td><strong>Name<strong></td>

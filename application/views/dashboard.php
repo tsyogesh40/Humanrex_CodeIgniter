@@ -88,7 +88,7 @@
                             Your Entry on <?php echo $this->session->userdata('date');?> is at,
                           </h4>
                       <div class="table-responsive">
-                          <table class="table text-center table-bordered table-striped table-dark">
+                          <table class="table text-center table-bordered table-striped table-dark table-condensed">
                             <tbody>
                               <?php
                               $status=$this->session->userdata('status');

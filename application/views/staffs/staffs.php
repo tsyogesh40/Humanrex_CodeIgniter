@@ -58,7 +58,7 @@
                             Your Entry on <?php echo $date;?> is at,
                           </h4>
                       <div class="table-responsive">
-                          <table class="table text-center table-bordered table-striped table-dark">
+                          <table class="table text-center table-bordered table-striped table-dark table-condensed">
                             <tbody>
                               <?php
                               if($status=="ONTIME")
@@ -104,7 +104,7 @@
                           <?php echo $this->session->userdata('name');?>
 
                           <div class="table-responsive table-md">
-                              <table class="table text-center table-bordered table-striped">
+                              <table class="table text-center table-bordered table-striped table-condensed">
                                 <tbody>
                                   <tr>
                                     <td><strong>Staff ID<strong></td>

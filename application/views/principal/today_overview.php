@@ -26,7 +26,7 @@
                       echo '<div class="container">
                         <div class="table-responsive">
                         <caption><h4>Todays overview for all departments  ('.date('d-m-Y').')</h4><br></caption>
-                        <table class="table table-striped">
+                        <table class="table table-striped table-condensed">
                         <thead>
                           <tr>
                             <th>Department</th>
