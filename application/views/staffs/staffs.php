@@ -259,7 +259,7 @@
 
 <script type="text/javascript">
 $(function(){
-$('a[title]').tooltip();
+  $('a[title]').tooltip();
 });
 
 </script>
