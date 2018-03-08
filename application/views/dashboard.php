@@ -6,12 +6,12 @@
         <small>Control panel</small>
       </h1>
     </section>
-
+<?php if($role[0]->roleId!=ROLE_ADMIN ){?>
     <section class="content">
         <div class="row">
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <?php if($role[0]->roleId!=ROLE_ADMIN ){?>
+
 
               <div class="small-box bg-aqua">
                 <div class="inner">
@@ -63,10 +63,9 @@
                 <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
-
           </div>
-
     </section>
+  <?php }?>
     <section class="content">
 
         <div class="row">
@@ -125,16 +124,27 @@
                         <?php
                       }
                       else{
-                          echo '<br><br>
-                                <h3 class="head text-center">
-                                    Your Presence is not Yet confirmed Today!
-                                </h3> <br><br>';
+
+                        if($role[0]->roleId==ROLE_ADMIN)
+                          {
+                            echo '<br><br>
+                                  <h3 class="head text-center">
+                                      Welcome Back, Admin!
+                                  </h3> <br><br>';
+                          }
+                          else {
+                            echo '<br><br>
+                                  <h3 class="head text-center">
+                                      Your Presence is not Yet confirmed Today!
+                                  </h3> <br><br>';
+                          }
+
                       }
 
                          ?>
 
                          <br><br><br>
-<?php }?>
+
                         </div><!-- /.box-body -->
                 </div>
     </section>  <!--end of the section-->
