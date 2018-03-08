@@ -105,8 +105,8 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
           <!-- sidebar menu: : style can be found in sidebar.less
-          style="height:120vh;overflow-y:scroll auto;" -->
-          <ul class="sidebar-menu" >
+        style="height:120vh;overflow-y:scroll auto;" -->
+          <ul class="sidebar-menu"  style="max-height: 620px;overflow-y: auto;">
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
               <a href="<?php echo base_url(); ?>dashboard">
