@@ -702,3 +702,11 @@ function _init() {
     });
   };
 }(jQuery));
+<<<<<<< HEAD
+=======
+
+$(function(){
+  var par = $('[href="' + window.location.href + '"]').parents("li.treeview").last();
+  par.addClass("active").find(".collapse").slideDown();
+});
+>>>>>>> Persist-Tree
