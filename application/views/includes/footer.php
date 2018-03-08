@@ -1,6 +1,10 @@
 
 
     <footer class="main-footer">
+        <div>
+          <button style="display: block; margin: 0 auto;" type="button" class="btn btn-primary btn-lg" id="print">Print</button>
+        </div>
+        <br />
         <div class="pull-right hidden-xs">
           <b>HumanRex</b> Version 1.0
         </div>
@@ -15,6 +19,8 @@
     <script src="<?php echo base_url(); ?>assets/dist/js/app.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.validate.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/js/validation.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/js/print.js" type="text/javascript"></script>
+
     <script type="text/javascript">
         var windowURL = window.location.href;
         pageURL = windowURL.substring(0, windowURL.lastIndexOf('/'));
@@ -24,6 +30,16 @@
         var y= $('a[href="'+windowURL+'"]');
             y.addClass('active');
             y.parent().addClass('active');
+
+        $('#print').click(function(){
+          var printElm = $('.print-this');
+          if(printElm.length == 0) {
+            alert("Nothing to print!"); return;
+          }
+          printElm.printThis({
+            header:'<h3 style="text-align:center;">Velammal College Of Engineering & Technology<h3>'
+          });
+        });
     </script>
   </body>
 </html>
