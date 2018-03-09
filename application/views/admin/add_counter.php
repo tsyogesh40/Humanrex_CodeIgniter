@@ -18,7 +18,7 @@
                         <h3 class="box-title"> </h3>
                     </div><!-- /.box-header -->
                     <h3>&nbsp;Intialize the Counter for User</h3><br>
-                    <form class="form-horizontal" action="<?php echo base_url()?>add-counter" method="post">
+                    <form class="form-horizontal" action="<?php echo base_url()?>add_counter" method="post">
                       <div class="form-group">
                           <label for="date" class="control-label col-sm-2 col-xs-4">Staff ID:&nbsp;</label>
                           <div class="col-sm-4 col-xs-6">

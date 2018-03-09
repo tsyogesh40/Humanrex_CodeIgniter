@@ -20,7 +20,7 @@
                         <h3 class="box-title"> </h3>
                     </div><!-- /.box-header -->
 
-                    <form class="form-horizontal" action="<?php echo base_url()?>add-attendence" method="post">
+                    <form class="form-horizontal" action="<?php echo base_url()?>add_attendence" method="post">
 
                       <div class="form-group">
                           <label for="date" class="control-label col-sm-2 col-xs-4">Date:&nbsp;</label>

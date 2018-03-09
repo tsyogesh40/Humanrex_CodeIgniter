@@ -19,7 +19,7 @@
                         <h3 class="box-title"> </h3>
                     </div><!-- /.box-header -->
                     <br>
-                    <form class="form-horizontal" action="<?php echo base_url()?>update-default-time" method="post">
+                    <form class="form-horizontal" action="<?php echo base_url()?>update_default_time" method="post">
                       <div class="form-group">
 
                         <label for="sel1" class="control-label col-sm-2 col-xs-4">Select Cadre:</label>

@@ -9,7 +9,7 @@
     </section>
     <section class="content">
         <div class="row">
-          <form action="<?php echo base_url() ?>login-history" method="POST" id="searchList">
+          <form action="<?php echo base_url() ?>login_history" method="POST" id="searchList">
             <div class="col-md-2 col-md-offset-4 form-group">
               <input for="fromDate" type="text" name="fromDate" value="<?php echo $fromDate; ?>" class="form-control datepicker" placeholder="From Date"/>
             </div>

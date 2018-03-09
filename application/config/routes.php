@@ -5,9 +5,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | -------------------------------------------------------------------------
 | URI ROUTING
 | -------------------------------------------------------------------------
-| This file lets you re-map URI requests to specific controller functions.
+| This file lets you re_map URI requests to specific controller functions.
 |
-| Typically there is a one-to-one relationship between a URL string
+| Typically there is a one_to_one relationship between a URL string
 | and its corresponding controller class/method. The segments in a
 | URL normally follow this pattern:
 |
@@ -46,8 +46,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | When you set this option to TRUE, it will replace ALL dashes in the
 | controller and method URI segments.
 |
-| Examples:	my-controller/index	-> my_controller/index
-|		my-controller/my-method	-> my_controller/my_method
+| Examples:	my_controller/index	-> my_controller/index
+|		my_controller/my_method	-> my_controller/my_method
 */
 
 $route['default_controller'] = "login";
@@ -66,52 +66,52 @@ $route['addNew'] = "user/addNew";
 //admin panel
 
 //permission
-$route['add-permission']="admin/add_permission";
-$route['request-permission']="admin/permission_view";
-$route['view-permission']="admin/viewall_permission";
-$route['edit-permission/(:any)/(:any)']="admin/edit_permission/$1/$2";
-$route['update-permission']="admin/update_permission";
-$route['delete-permission/(:any)/(:any)']="admin/delete_permission/$1/$2";
+$route['add_permission']="admin/add_permission";
+$route['request_permission']="admin/permission_view";
+$route['view_permission']="admin/viewall_permission";
+$route['edit_permission/(:any)/(:any)']="admin/edit_permission/$1/$2";
+$route['update_permission']="admin/update_permission";
+$route['delete_permission/(:any)/(:any)']="admin/delete_permission/$1/$2";
 
 //altered time
-$route['view-altered-time']="admin/view_altered_time";
-$route['add-edit-altered-time']="admin/add_edit_altered_time";
-$route['add-edit-altered-time/(:any)/(:any)']="admin/add_edit_altered_time/$1/$2";
-$route['update-altered-time']="admin/update_altered_time";
-$route['add-altered-time']="admin/add_altered_time";
-$route['delete-altered-time/(:any)/(:any)']="admin/delete_altered_time/$1/$2";
+$route['view_altered_time']="admin/view_altered_time";
+$route['add_edit_altered_time']="admin/add_edit_altered_time";
+$route['add_edit_altered_time/(:any)/(:any)']="admin/add_edit_altered_time/$1/$2";
+$route['update_altered_time']="admin/update_altered_time";
+$route['add_altered_time']="admin/add_altered_time";
+$route['delete_altered_time/(:any)/(:any)']="admin/delete_altered_time/$1/$2";
 
 //default time
-$route['view-default-time']="admin/view_default_time";
-$route['edit-default-time/(:any)']="admin/edit_default_time/$1";
-$route['update-default-time']="admin/update_default_time";
+$route['view_default_time']="admin/view_default_time";
+$route['edit_default_time/(:any)']="admin/edit_default_time/$1";
+$route['update_default_time']="admin/update_default_time";
 
 
 //counter
-$route['view-counter']="admin/view_counter";
-$route['delete-counter/(:any)']="admin/delete_counter/$1";
-$route['add-edit-counter']="admin/add_edit_counter";
-$route['add-edit-counter/(:any)']="admin/add_edit_counter/$1";
-$route['add-counter']="admin/add_counter";
-$route['update-counter']="admin/update_counter";
+$route['view_counter']="admin/view_counter";
+$route['delete_counter/(:any)']="admin/delete_counter/$1";
+$route['add_edit_counter']="admin/add_edit_counter";
+$route['add_edit_counter/(:any)']="admin/add_edit_counter/$1";
+$route['add_counter']="admin/add_counter";
+$route['update_counter']="admin/update_counter";
 
 //admin_attendence
-$route['view-attendence']="admin/view_attendence";
-$route['delete-attendence/(:any)/(:any)']="admin/delete_attendence/$1/$2";
-$route['add-edit-attendence']="admin/add_edit_attendence";
-$route['add-edit-attendence/(:any)/(:any)']="admin/add_edit_attendence/$1/$2";
-$route['add-attendence']="admin/add_attendence";
-$route['edit-attendence']="admin/edit_attendence";
-$route['attendence-listing']="admin/attendence_listing";
+$route['view_attendence']="admin/view_attendence";
+$route['delete_attendence/(:any)/(:any)']="admin/delete_attendence/$1/$2";
+$route['add_edit_attendence']="admin/add_edit_attendence";
+$route['add_edit_attendence/(:any)/(:any)']="admin/add_edit_attendence/$1/$2";
+$route['add_attendence']="admin/add_attendence";
+$route['edit_attendence']="admin/edit_attendence";
+$route['attendence_listing']="admin/attendence_listing";
 
 
 
 //finger prints
-$route['select-fingerprints']="admin/select_fingerprints";
-$route['view-fingerprints']="admin/view_fingerprints";
-$route['update-fingerprint']="admin/update_fingerprint";
-$route['edit-fingerprint/(:any)/(:any)']="admin/edit_fingerprint/$1/$2";
-$route['delete-fingerprint/(:any)/(:any)']="admin/delete_fingerprint/$1/$2";
+$route['select_fingerprints']="admin/select_fingerprints";
+$route['view_fingerprints']="admin/view_fingerprints";
+$route['update_fingerprint']="admin/update_fingerprint";
+$route['edit_fingerprint/(:any)/(:any)']="admin/edit_fingerprint/$1/$2";
+$route['delete_fingerprint/(:any)/(:any)']="admin/delete_fingerprint/$1/$2";
 
 
 //staff panel
@@ -119,28 +119,28 @@ $route['history']="user/select_by_id";
 $route['history_all']="user/select_by_range";
 $route['select']="user/select";
 $route['profile']="user/profile";
-$route['edit-profile']="user/edit_profile";
+$route['edit_profile']="user/edit_profile";
 
 //hod Panel
-$route['staff-today']='hod/staff_today';
-$route['staff-history-view']='hod/staff_history_view';
-$route['staff-history']="hod/staff_history";
-$route['staff-consolidated-view']="hod/staff_consolidated_view";
-$route['staff-consolidated']="hod/staff_consolidated";
-$route['staff-permission-view']="hod/staff_permission_view";
-$route['staff-permission']="hod/staff_permission";
+$route['staff_today']='hod/staff_today';
+$route['staff_history_view']='hod/staff_history_view';
+$route['staff_history']="hod/staff_history";
+$route['staff_consolidated_view']="hod/staff_consolidated_view";
+$route['staff_consolidated']="hod/staff_consolidated";
+$route['staff_permission_view']="hod/staff_permission_view";
+$route['staff_permission']="hod/staff_permission";
 
 //principal and admin panel
 $route['today']='principal/today';
 $route['today/(:any)']="principal/today/$1";
-$route['history-view']='principal/history_view';
-$route['history-result']='principal/history';
-$route['consolidated-view']="principal/consolidated_view";
+$route['history_view']='principal/history_view';
+$route['history_result']='principal/history';
+$route['consolidated_view']="principal/consolidated_view";
 $route['consolidated']="principal/consolidated";
-$route['permission-view']="principal/permission_view";
+$route['permission_view']="principal/permission_view";
 $route['permission']="principal/permission";
 
-$route['permission-status']="user/permission_status";
+$route['permission_status']="user/permission_status";
 
 $route['addNewUser'] = "user/addNewUser";
 $route['editOld'] = "user/editOld";
@@ -151,9 +151,9 @@ $route['loadChangePass'] = "user/loadChangePass";
 $route['changePassword'] = "user/changePassword";
 $route['pageNotFound'] = "user/pageNotFound";
 $route['checkEmailExists'] = "user/checkEmailExists";
-$route['login-history'] = "user/loginHistoy";
-$route['login-history/(:num)'] = "user/loginHistoy/$1";
-$route['login-history/(:num)/(:num)'] = "user/loginHistoy/$1/$2";
+$route['login_history'] = "user/loginHistoy";
+$route['login_history/(:num)'] = "user/loginHistoy/$1";
+$route['login_history/(:num)/(:num)'] = "user/loginHistoy/$1/$2";
 
 $route['forgotPassword'] = "login/forgotPassword";
 $route['resetPasswordUser'] = "login/resetPasswordUser";

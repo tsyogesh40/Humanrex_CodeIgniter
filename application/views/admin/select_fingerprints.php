@@ -21,7 +21,7 @@
 
                     <div class="container">
                       <h3>Enter Staff ID</h3><br>
-                      <form class="form-horizontal" action="<?php echo base_url()?>view-fingerprints" method="post">
+                      <form class="form-horizontal" action="<?php echo base_url()?>view_fingerprints" method="post">
 
 
                         <div class="form-group">

@@ -61,8 +61,8 @@
                            ?>
 
                           <td class="text-center">
-                              <a class="btn btn-sm btn-info" href="<?= base_url().'edit-permission/'.$data->staff_id.'/'.$data->date?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                              <a class="btn btn-sm btn-danger deleteUser" href="<?= base_url().'delete-permission/'.$data->staff_id.'/'.$data->date?>"  title="Delete"><i class="fa fa-trash"></i></a>
+                              <a class="btn btn-sm btn-info" href="<?= base_url().'edit_permission/'.$data->staff_id.'/'.$data->date?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                              <a class="btn btn-sm btn-danger deleteUser" href="<?= base_url().'delete_permission/'.$data->staff_id.'/'.$data->date?>"  title="Delete"><i class="fa fa-trash"></i></a>
                           </td>
                       <?php  echo'  </tr>';
                         }

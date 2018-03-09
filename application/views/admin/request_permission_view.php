@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col-xs-12 text-right">
                                 <div class="form-group">
-                                    <a class="btn btn-primary" href="<?php echo base_url(); ?>view-permission"><i class="fa fa-file"></i> view All</a>
+                                    <a class="btn btn-primary" href="<?php echo base_url(); ?>view_permission"><i class="fa fa-file"></i> view All</a>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                     <div class="container">
                       <!--<h3>Please Provide the Details to apply permission</h3><br>-->
                       <br>
-                      <form class="form-horizontal" action="<?php echo base_url()?>add-permission" method="post">
+                      <form class="form-horizontal" action="<?php echo base_url()?>add_permission" method="post">
 
 
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>CodeInsect | Admin System Log in</title>
+    <title>HumanRex | Admin System Log in</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -18,7 +18,7 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="#"><b>CodeInsect</b><br>Admin System</a>
+        <a href="#"><b>HumanRex</b><br>Admin System</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Forgot Password</p>
@@ -40,7 +40,7 @@
             ?>
             <div class="alert alert-danger alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <?php echo $this->session->flashdata('error'); ?>                    
+                <?php echo $this->session->flashdata('error'); ?>
             </div>
         <?php }
 
@@ -49,7 +49,7 @@
             ?>
             <div class="alert alert-success alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <?php echo $send; ?>                    
+                <?php echo $send; ?>
             </div>
         <?php }
 
@@ -58,16 +58,16 @@
             ?>
             <div class="alert alert-danger alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <?php echo $notsend; ?>                    
+                <?php echo $notsend; ?>
             </div>
         <?php }
-        
+
         if($unable)
         {
             ?>
             <div class="alert alert-danger alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <?php echo $unable; ?>                    
+                <?php echo $unable; ?>
             </div>
         <?php }
 
@@ -76,16 +76,16 @@
             ?>
             <div class="alert alert-warning alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <?php echo $invalid; ?>                    
+                <?php echo $invalid; ?>
             </div>
         <?php } ?>
-        
+
         <form action="<?php echo base_url(); ?>resetPasswordUser" method="post">
           <div class="form-group has-feedback">
             <input type="email" class="form-control" placeholder="Email" name="login_email" required />
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
-          
+
           <div class="row">
             <div class="col-xs-8">
             </div><!-- /.col -->

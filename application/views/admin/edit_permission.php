@@ -33,7 +33,7 @@
                     <div class="container">
                       <!--<h3>Please Provide the Details to apply permission</h3><br>-->
                       <br>
-                      <form class="form-horizontal" action="<?php echo base_url()?>update-permission" method="post">
+                      <form class="form-horizontal" action="<?php echo base_url()?>update_permission" method="post">
 
 
                           <div class="form-group">

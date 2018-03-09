@@ -23,9 +23,11 @@
                     </div><!-- /.box-header -->
                     <br><br><br>
                   <div class="container text-center">
-                    <div class="table-responsive ">
+                    <div class="row">
+                      <div class="col-lg-6 col-lg-offset-3 col-md-offset-3  col-xs-12 col-sm-10 col-md-6">
+                    <div class="table-responsive">
                         <div class="col-*">
-                              <table class="table text-center table-bordered table-striped table-dark table-condensed">
+                              <table class="table text-centered table-bordered table-striped table-hover table-condensed">
                                 <tbody>
                                   <tr>
                                     <td><strong>Name<strong></td>
@@ -36,20 +38,22 @@
                                     <td><?php echo $this->session->userdata('staff_id');?></td>
                                   </tr>
                                   <tr>
-                                    <td><strong>Designation:</strong></td>
+                                    <td><strong>Designation</strong></td>
                                     <td><?php echo $this->session->userdata('designation');?></td>
                                   </tr>
                                   <tr>
-                                    <td><strong>Phone Number:</strong></td>
+                                    <td><strong>Phone Number</strong></td>
                                     <td><?php echo $this->session->userdata('phone');?></td>
                                   </tr>
                                   <tr>
-                                    <td><strong>Email ID:</strong></td>
+                                    <td><strong>Email ID</strong></td>
                                     <td><?php echo $this->session->userdata('email')?></td>
                                   </tr>
                                 </tbody>
                               </table>
                             </div>
+                          </div>
+                        </div>
                             </div>
                           </div>
                           <br>

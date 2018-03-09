@@ -45,8 +45,8 @@
                            ?>
 
                           <td class="text-center">
-                              <a class="btn btn-sm btn-info" href="<?= base_url().'edit-fingerprint/'.$data->staff_id.'/'.$data->finger_code?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                              <a class="btn btn-sm btn-danger deleteUser" href="<?= base_url().'delete-fingerprint/'.$data->staff_id.'/'.$data->finger_code?>"  title="Delete"><i class="fa fa-trash"></i></a>
+                              <a class="btn btn-sm btn-info" href="<?= base_url().'edit_fingerprint/'.$data->staff_id.'/'.$data->finger_code?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                              <a class="btn btn-sm btn-danger deleteUser" href="<?= base_url().'delete_fingerprint/'.$data->staff_id.'/'.$data->finger_code?>"  title="Delete"><i class="fa fa-trash"></i></a>
                           </td>
                       <?php  echo'  </tr>';
                         }

@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-xs-12 text-right">
             <div class="form-group">
-                <a class="btn btn-primary" href="<?php echo base_url(); ?>add-edit-attendence"><i class="fa fa-plus"></i> Add New</a>
+                <a class="btn btn-primary" href="<?php echo base_url(); ?>add_edit_attendence"><i class="fa fa-plus"></i> Add New</a>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
                     <div class="box-header">
                         <h3 class="box-title"> Attendence List</h3>
                         <div class="box-tools">
-                        <form action="<?php echo base_url()?>attendence-listing" method="POST" id="searchList">
+                        <form action="<?php echo base_url()?>attendence_listing" method="POST" id="searchList">
                             <div class="input-group">
                               <input type="text" name="searchtext" value="<?php echo $searchtext; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
                               <div class="input-group-btn">

@@ -21,7 +21,7 @@
 
                     <div class="container">
                       <h3>Choose Date and Cadre</h3><br>
-                      <form class="form-horizontal" action="<?php echo base_url()?>staff-history" method="post">
+                      <form class="form-horizontal" action="<?php echo base_url()?>staff_history" method="post">
                         <div class="form-group">
                           <label for="sel1" class="control-label col-sm-2 col-xs-4">Select Cadre:</label>
                           <div class="col-sm-4 col-xs-6">

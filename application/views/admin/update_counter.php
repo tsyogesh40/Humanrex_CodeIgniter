@@ -18,7 +18,7 @@
                     </div><!-- /.box-header -->
 
                     <h3>&nbsp;Update the Counter for User</h3><br>
-                    <form class="form-horizontal" action="<?php echo base_url()?>update-counter" method="post">
+                    <form class="form-horizontal" action="<?php echo base_url()?>update_counter" method="post">
                       <div class="form-group">
                           <label for="date" class="control-label col-sm-2 col-xs-4">Staff ID:&nbsp;</label>
                           <div class="col-sm-4 col-xs-6">

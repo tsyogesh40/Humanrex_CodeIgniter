@@ -18,7 +18,7 @@
                     </div><!-- /.box-header -->
 
                     <h4>&nbsp;Update fingerprint details </h4><br>
-                    <form class="form-horizontal" action="<?php echo base_url()?>update-fingerprint" method="post">
+                    <form class="form-horizontal" action="<?php echo base_url()?>update_fingerprint" method="post">
                       <div class="form-group">
                           <label for="date" class="control-label col-sm-2 col-xs-4">Name:&nbsp;</label>
                           <div class="col-sm-4 col-xs-6">

@@ -20,7 +20,7 @@
                     </div><!-- /.box-header -->
 
                     <h3>Enter the details to alter the college timings</h3><br>
-                    <form class="form-horizontal" action="<?php echo base_url()?>update-altered-time" method="post">
+                    <form class="form-horizontal" action="<?php echo base_url()?>update_altered_time" method="post">
                       <div class="form-group">
                           <label for="date" class="control-label col-sm-2 col-xs-4">Date:&nbsp;</label>
                           <div class="col-sm-4 col-xs-6">

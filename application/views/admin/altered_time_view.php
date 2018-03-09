@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-xs-12 text-right">
             <div class="form-group">
-                <a class="btn btn-primary" href="<?php echo base_url(); ?>add-edit-altered-time"><i class="fa fa-plus"></i> Add New</a>
+                <a class="btn btn-primary" href="<?php echo base_url(); ?>add_edit_altered_time"><i class="fa fa-plus"></i> Add New</a>
             </div>
         </div>
     </div>
@@ -51,8 +51,8 @@
                           <td>'.$data->full_wrk.'</td>';
                            ?>
                           <td class="text-center">
-                              <a class="btn btn-sm btn-info" href="<?= base_url().'add-edit-altered-time/'.$data->date.'/'.$data->cadre?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                              <a class="btn btn-sm btn-danger deleteUser" href="<?= base_url().'delete-altered-time/'.$data->date.'/'.$data->cadre?>"  title="Delete"><i class="fa fa-trash"></i></a>
+                              <a class="btn btn-sm btn-info" href="<?= base_url().'add_edit_altered_time/'.$data->date.'/'.$data->cadre?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                              <a class="btn btn-sm btn-danger deleteUser" href="<?= base_url().'delete_altered_time/'.$data->date.'/'.$data->cadre?>"  title="Delete"><i class="fa fa-trash"></i></a>
                           </td>
                       <?php  echo'  </tr>';
                         }

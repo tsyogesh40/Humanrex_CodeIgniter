@@ -48,7 +48,7 @@
                           <td>'.$data->full_wrk.'</td>';
                            ?>
                           <td class="text-center">
-                              <a class="btn btn-sm btn-info" href="<?= base_url().'edit-default-time/'.$data->cadre?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                              <a class="btn btn-sm btn-info" href="<?= base_url().'edit_default_time/'.$data->cadre?>" title="Edit"><i class="fa fa-pencil"></i></a>
                           </td>
                       <?php  echo'  </tr>';
                         }

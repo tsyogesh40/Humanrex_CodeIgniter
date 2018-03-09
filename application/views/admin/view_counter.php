@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-xs-12 text-right">
             <div class="form-group">
-                <a class="btn btn-primary" href="<?php echo base_url(); ?>add-edit-counter"><i class="fa fa-plus"></i> Add New</a>
+                <a class="btn btn-primary" href="<?php echo base_url(); ?>add_edit_counter"><i class="fa fa-plus"></i> Add New</a>
             </div>
         </div>
     </div>
@@ -52,8 +52,8 @@
                            ?>
 
                           <td class="text-center">
-                              <a class="btn btn-sm btn-info" href="<?= base_url().'add-edit-counter/'.$data->staff_id ?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                              <a class="btn btn-sm btn-danger deleteUser" href="<?= base_url().'delete-counter/'.$data->staff_id ?>"  title="Delete"><i class="fa fa-trash"></i></a>
+                              <a class="btn btn-sm btn-info" href="<?= base_url().'add_edit_counter/'.$data->staff_id ?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                              <a class="btn btn-sm btn-danger deleteUser" href="<?= base_url().'delete_counter/'.$data->staff_id ?>"  title="Delete"><i class="fa fa-trash"></i></a>
                           </td>
                       <?php  echo'  </tr>';
                         }
