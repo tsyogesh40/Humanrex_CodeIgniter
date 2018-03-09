@@ -2,6 +2,23 @@
 
 class User_model extends CI_Model
 {
+//permission Status
+public function permission_status($staff_id)
+{
+  $this->db->select('*');
+  $this->db->from('permission');
+  $this->db->where('staff_id',$staff_id);
+  if($res=$this->db->get())
+  {
+    return $res->result();
+  }
+  else {
+    return false;
+  }
+
+}
+
+
 // model for dashboard datas
 public function dashboard_data($staff_id)
 {

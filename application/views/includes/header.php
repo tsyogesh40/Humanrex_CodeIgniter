@@ -45,7 +45,6 @@
   </head>
   <body class="skin-blue sidebar-mini">
     <div class="wrapper">
-
       <header class="main-header">
         <!-- Logo -->
         <a href="<?php echo base_url(); ?>" class="logo">
@@ -106,7 +105,7 @@
         <section class="sidebar">
           <!-- sidebar menu: : style can be found in sidebar.less
         style="height:120vh;overflow-y:scroll auto;" -->
-          <ul class="sidebar-menu"  style="max-height: 620px;overflow-y: auto;">
+          <ul class="sidebar-menu" style="" >
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
               <a href="<?php echo base_url(); ?>dashboard">
@@ -142,7 +141,7 @@
                 </li>
                 <br>-->
                 <li class="treeview">
-                  <a href="<?php echo base_url();?>profile" >
+                  <a href="<?php echo base_url();?>permission-status" >
                     <i class="fa fa-spinner"></i>
                     <span>Permission / OD / Leave status</span>
                   </a>

@@ -140,6 +140,7 @@ $route['consolidated']="principal/consolidated";
 $route['permission-view']="principal/permission_view";
 $route['permission']="principal/permission";
 
+$route['permission-status']="user/permission_status";
 
 $route['addNewUser'] = "user/addNewUser";
 $route['editOld'] = "user/editOld";

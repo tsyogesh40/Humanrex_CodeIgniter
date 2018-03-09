@@ -28,6 +28,23 @@ class User extends BaseController
         $this->loadViews("dashboard", $this->global, $res , NULL);
     }
 
+    /*permission status
+    */
+    public function permission_status()
+    {
+      $this->global['pageTitle'] = 'HumanRex:Permission Status';
+      $staff_id=$this->session->userdata('staff_id');
+      $res=$this->user_model->permission_status($staff_id);
+      if($res!=false)
+        {
+          $result['datas']=$res;
+        }
+      else {
+        $result['datas']='No records found!';
+      }
+      $this->loadViews("permission_status", $this->global, $result , NULL);
+    }
+
     //This function is used to display the profile details
     public function profile()
     {
