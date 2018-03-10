@@ -32,14 +32,15 @@
                       }
 
                         echo'
-                        <div class="container">
-                        <div class=" table-responsive">
+                        <div class="container print-this">
+                        <div class="row">
                         <caption><h4><i>Report generated for '.$str.' from '.$info['from'].' to '.$info['to'].'</h4></i><br></caption>
-
-                          <table class="table table-striped table-condensed">
-                              <thead>
-                                  <tr>
-                                    <th>Staff Name</th>
+                        <div class=" table-responsive">
+                        <div class="col-lg-12 col-lg-offset-0 col-xs-12 col-sm-10 col-md-10">
+                          <table class="table table-striped table-bordered table-condensed">
+                              <thead class="bg-primary">
+                                  <tr class="table-danger">
+                                    <th>Name</th>
                                     <th>Staff Id</th>';
                                   foreach($dates as $value)
                                   {
@@ -53,7 +54,7 @@
 
                                 foreach($staff_id as $val)
                                 {
-                                  echo '<tr>
+                                  echo '<tr class="bg-info">
                                    <td>'.$val->name.'</td>';
                                   echo '<td>'.$val->staff_id.'</td>';
                                     foreach($dates as $val1)
@@ -91,6 +92,8 @@
 
                                 echo'        </tbody>
                                     </table>
+                                    </div>
+                                    </div>
                                     </div>
                               </div>';
                       }

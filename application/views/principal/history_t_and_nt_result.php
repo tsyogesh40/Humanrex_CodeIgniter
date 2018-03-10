@@ -41,9 +41,12 @@
                         $department=$info['dept'];
 
                         echo'
-                        <div class="container">
+                        <div class="container print-this">
+                        <div class="row">
+                        <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-10 col-md-10">
+                        <caption><u><h4><i>Report generated for '.$department.' '.$str.' ['.$info['from'].' - '.$info['to'].']</h4></i></u><br></caption>
                         <div class=" table-responsive">
-                        <caption><h4><i>Report generated for '.$department.' '.$str.' ['.$info['from'].' - '.$info['to'].']</h4></i><br></caption>';
+                        ';
 
                         $str='';$status='';
                         if($info['dept']=='ALL')
@@ -55,12 +58,12 @@
                           foreach($dep as $dept)
                           {
                             //Teaching
-                            echo '<table class="table table-striped table-condensed">
-                              <caption><h4>'.$dept.'-Teaching staffs </h4></caption>
-                                <thead>
+                            echo '<table class="table table-striped table-condensed table-bordered">
+                              <caption><b><h4>'.$dept.'-Teaching staffs </h4></b></caption>
+                                <thead class="bg-primary">
                                     <tr>
-                                      <th>Staff Name</th>
-                                      <th>Staff Id</th>';
+                                      <th>Name</th>
+                                      <th>StaffID</th>';
                                   foreach($dates as $date)
                                     {
                                       echo '<td><b>'.$date->date.'</b></td>';
@@ -72,7 +75,7 @@
                                   {
                                     if($name->department==$dept&&$name->cadre=='T')
                                     {
-                                      echo '<tr>
+                                      echo '<tr class="bg-info">
                                           <td>'.$name->name.'</td>
                                           <td>'.$name->staff_id.'</td>';
                                         foreach($dates as $date)
@@ -82,8 +85,8 @@
                                               switch($datas->p_value)
                                               {
                                                 case 0:$str='leave';break;
-                                                case 1:$str='Halfday Present';break;
-                                                case 2:$str='Fullday Present';break;
+                                                case 1:$str='Half Day';break;
+                                                case 2:$str='Full Day';break;
                                                 case -1:$str='Permission';break;
                                                 case -2:$str='OD';break;
                                               }
@@ -108,15 +111,17 @@
                                   }
 
                                   echo'   </tbody>
-                                      </table>';
+                                      </table>
+
+                                      ';
 
                             //Non- Teaching
-                            echo '<table class="table table-striped table-condensed">
+                            echo '<table class="table table-striped table-condensed table-bordered">
                               <caption><h4>'.$dept.'-Non Teaching Staffs </h4></caption>
-                                <thead>
+                                <thead class="bg-primary">
                                     <tr>
-                                      <th>Staff Name</th>
-                                      <th>Staff Id</th>';
+                                      <th>Name</th>
+                                      <th>StaffID</th>';
                                   foreach($dates as $date)
                                     {
                                       echo '<td><b>'.$date->date.'</b></td>';
@@ -127,7 +132,7 @@
                                   {
                                     if($name->department==$dept&&$name->cadre=='NT')
                                     {
-                                      echo '<tr>
+                                      echo '<tr class="bg-info">
                                           <td>'.$name->name.'</td>
                                           <td>'.$name->staff_id.'</td>';
                                         foreach($dates as $date)
@@ -137,8 +142,8 @@
                                               switch($datas->p_value)
                                               {
                                                 case 0:$str='leave';break;
-                                                case 1:$str='Halfday Present';break;
-                                                case 2:$str='Fullday Present';break;
+                                                case 1:$str='Half Day';break;
+                                                case 2:$str='Full Day';break;
                                                 case -1:$str='Permission';break;
                                                 case -2:$str='OD';break;
                                               }
@@ -168,6 +173,8 @@
                           }
 
                         echo ' </div>
+                            </div>
+                            </div>
                             </div>';
 
 

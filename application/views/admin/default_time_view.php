@@ -26,10 +26,12 @@
                     <?php
                     if($datas!='No records found!')
                     {
-              echo  '   <div class="container">
+              echo  '   <div class="container print-this">
+                        <div class="row">
+                      <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-10 col-md-10">
                       <div class="table-responsive">
-                        <table class="table table-striped table-condensed">
-                        <thead>
+                        <table class="table table-striped table-bordered table-condensed">
+                        <thead class="bg-primary">
                         <th>Cadre</th>
                         <th>In_time</th>
                         <th>Out_time</th>
@@ -40,7 +42,7 @@
                         foreach($datas as $data)
                         {
 
-                          echo '<tr>
+                          echo '<tr class="bg-info">
                           <td>'.$data->cadre.'</td>
                           <td>'.$data->in_time.'</td>
                           <td>'.$data->out_time.'</td>

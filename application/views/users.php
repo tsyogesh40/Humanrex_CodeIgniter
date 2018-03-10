@@ -31,8 +31,8 @@
                     </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover table-condensed">
-                    <tr>
+                  <table class="table table-hover table-condensed table-bordered">
+                    <tr class="bg-primary">
                       <th>Id</th>
                       <th>Name</th>
                       <th>Staff ID</th>
@@ -54,7 +54,7 @@
                             $str='Non-Teaching'
 
                     ?>
-                    <tr>
+                    <tr class="bg-info">
                       <td><?php echo $record->userId ?></td>
                       <td><?php echo $record->name ?></td>
                       <td><?php echo $record->staff_id ?></td>

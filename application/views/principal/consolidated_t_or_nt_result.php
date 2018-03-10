@@ -50,9 +50,12 @@
 
 
                         echo'
-                        <div class="container">
+                        <div class="container print-this">
+                        <div classs="row">
+                      <u>  <caption><h4><i>Report generated for '.$department.' '.$str.' ['.$info['from'].' - '.$info['to'].']</h4></i><br></caption></u>
+                      <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-10 col-md-10">
                         <div class=" table-responsive">
-                        <caption><h4><i>Report generated for '.$department.' '.$str.' ['.$info['from'].' - '.$info['to'].']</h4></i><br></caption>';
+                      ';
 
                             $str='';$status='';
                           if($info['dept']=='ALL')
@@ -63,9 +66,9 @@
                             foreach($dep as $dept)
                             {
 
-                          echo'    <table class="table table-striped table-dark table-condensed">
+                          echo'    <table class="table table-striped table-dark table-condensed table-bordered">
                           <caption><h4>'.$dept.'-Teaching staffs </h4></caption>
-                          <thead>
+                          <thead class="bg-primary">
                           <tr>
                           <th>Staff Name</th>
                           <th>Staff Id</th>
@@ -84,7 +87,7 @@
                               {
                                 if($dept==$name->department&&$name->cadre==$info['cadre'])
                                 {
-                                  echo '<tr>';
+                                  echo '<tr class="bg-info">';
                                   echo '<td>'.$name->name.' </td>';
                                   echo '<td>'.$name->staff_id.' </td>';
                                   echo '<td>'.$dept.' </td>';
@@ -135,6 +138,8 @@
                             }
 
                              echo'</div>
+                              </div>
+                              </div>
                               </div>';
                       }
                       else

@@ -24,11 +24,14 @@
                   {
 
                       echo'
-                      <div class="container">
+                      <div class="container print-this">
+                      <div class="row">
+                      <caption><u><h4>Report for '.$info['dept'].' department Generated on '.$info['date']. ' '.$info['time'].'</h4></u><br></caption>
+                      <caption><h4>Report for Teaching Staffs</h4><br></caption>
+                      <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-10 col-md-10">
                       <div class=" table-responsive">
-                      <caption><h4>Report for '.$info['dept'].' department Generated on '.$info['date']. ' '.$info['time'].'</h4><br></caption>
-                        <table class="table table-striped table-condensed">
-                            <thead>
+                        <table class="table table-striped table-condensed table-bordered ">
+                            <thead class="bg-primary">
                                 <tr>
                                   <th>Name</th>
                                   <th>DATE</th>
@@ -50,7 +53,7 @@
                                       $str="Full day present";
                                     if ($value->cadre=='T')
                                     {
-                                    echo'  <tr>
+                                    echo'  <tr class="bg-info">
                                               <td><b>'.$value->name.'</b></td>
                                               <td>'.$value->date.'</td>
                                               <td>'.$value->in_time.'</td>
@@ -63,16 +66,21 @@
                                     echo'        </tbody>
                                   </table>
                                   </div>
+                                  </div>
+                                  </div>
                             </div>';
 
 
                             //for Non- teaching staffs
                             echo'
-                            <div class="container">
+                            <div class="container print-this">
+                            <div class="row">
+                            <caption><h4>Report for Non - Teaching Staffs</h4><br></caption>
+                            <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-10 col-md-10">
                             <div class=" table-responsive">
-                            <caption><h3>Report for Non - Teaching Staffs</h3><br></caption>
-                              <table class="table table-striped table-condensed">
-                                  <thead>
+
+                              <table class="table table-striped table-condensed table-bordered">
+                                  <thead class="bg-primary">
                                       <tr>
                                         <th>Name</th>
                                         <th>DATE</th>
@@ -94,7 +102,7 @@
                                             $str="Full day present";
                                           if ($value->cadre=='NT')
                                           {
-                                          echo'  <tr>
+                                          echo'  <tr class="bg-info">
                                                     <td><b>'.$value->name.'</b></td>
                                                     <td>'.$value->date.'</td>
                                                     <td>'.$value->in_time.'</td>
@@ -126,6 +134,5 @@
             </div>
         </div>
     </section>
-
 
 </div>

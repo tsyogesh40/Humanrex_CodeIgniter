@@ -25,7 +25,7 @@
                     <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-10 col-md-10">
                       <div class="table-responsive">
                         <table class="table table-striped table-condensed table-bordered">
-                        <thead>
+                        <thead class="bg-primary">
                         <th>Date</th>
                         <th>Name</th>
                         <th>Staff ID</th>
@@ -49,7 +49,7 @@
                           else if($data->p_value==2)
                                 $str='Fullday Present';
 
-                          echo '<tr>
+                          echo '<tr class="bg-info">
                           <td>'.$data->date.'</td>
                           <td>'.$data->name.'</td>
                           <td>'.$data->staff_id.'</td>

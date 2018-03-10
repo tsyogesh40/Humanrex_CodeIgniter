@@ -41,10 +41,12 @@
                         $department=$info['dept'];
 
                         echo'
-                        <div class="container">
+                        <div class="container print-this">
+                        <div class="row">
+                        <caption><u><h4><i>Report generated for '.$department.' '.$str.' ['.$info['from'].' - '.$info['to'].']</h4></i></u><br></caption>
+                        <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-10 col-md-10">
                         <div class=" table-responsive">
-                        <caption><h4><i>Report generated for '.$department.' '.$str.' ['.$info['from'].' - '.$info['to'].']</h4></i><br></caption>';
-
+                        ';
                         $str='';$status='';
                         if($info['dept']=='ALL')
                         $dep=array('IT','CSE','ECE','EEE','MECH','CIVIL','PHYSICS','CHEMISTRY','MATHS','ENGLISH','OFFICE');
@@ -55,9 +57,9 @@
                           foreach($dep as $dept)
                           {
                             //Teaching
-                            echo '<table class="table table-striped table-condensed">
+                            echo '<table class="table table-striped table-condensed table-bordered">
                               <caption><h4>'.$dept.'-Teaching staffs </h4></caption>
-                                <thead>
+                                <thead class="bg-primary">
                                     <tr>
                                       <th>Staff Name</th>
                                       <th>Staff Id</th>';
@@ -72,7 +74,7 @@
                                   {
                                     if($name->department==$dept&&$name->cadre==$info['cadre'])
                                     {
-                                      echo '<tr>
+                                      echo '<tr class="bg-info">
                                           <td>'.$name->name.'</td>
                                           <td>'.$name->staff_id.'</td>';
                                         foreach($dates as $date)
@@ -82,8 +84,8 @@
                                               switch($datas->p_value)
                                               {
                                                 case 0:$str='leave';break;
-                                                case 1:$str='Halfday Present';break;
-                                                case 2:$str='Fullday Present';break;
+                                                case 1:$str='Half Day';break;
+                                                case 2:$str='Full Day ';break;
                                                 case -1:$str='Permission';break;
                                                 case -2:$str='OD';break;
                                               }

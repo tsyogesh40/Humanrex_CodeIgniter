@@ -22,8 +22,8 @@
                     {
               echo  '   <div class="container">
                       <div class="table-responsive">
-                        <table class="table table-striped table-condensed">
-                        <thead>
+                        <table class="table table-bordered table-striped table-condensed">
+                        <thead class="bg-primary">
                         <th>Date</th>
                         <th>Name</th>
                         <th>Staff ID</th>
@@ -48,7 +48,7 @@
                           else if($data->p_value==2)
                                 $str='Fullday Present';
 
-                          echo '<tr>
+                          echo '<tr class="bg-info">
                           <td>'.$data->date.'</td>
                           <td>'.$data->name.'</td>
                           <td>'.$data->staff_id.'</td>

@@ -39,34 +39,35 @@
                       }
 
                         echo'
-                        <div class="container">
-                        <div class=" table-responsive">
+                        <div class="container print-this">
+                        <div class="row">
+
                         <caption><h4><i>Report generated for '.$str.' from '.$info['from'].' to '.$info['to'].'</h4></i><br></caption>
-
-                          <table class="table table-striped table-condensed">
-
+                        <div class=" table-responsive">
+                        <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-12 col-md-10">
+                        <table class="table table-striped table-bordered table-condensed">
                               <thead>
-                                  <tr>
-                                    <th>Staff Name</th>
-                                    <th>Staff Id</th>
-                                    <th>Department</th>
+                                  <tr class="bg-primary">
+                                    <th>&nbsp;Name</th>
+                                    <th>&nbsp;Staff Id</th>
+                                    <th>&nbsp;Dept.</th>
                                     <th>Total Days</th>
-                                    <th>Full Day Present</th>
-                                    <th>Half Day Present</th>
-                                    <th>Leave Days</th>
-                                    <th>Permission </th>
-                                    <th>OD</th>
-                                    <th>Late</th>';
+                                    <th>&nbsp;Full Day Present</th>
+                                    <th>&nbsp;Half Day Present</th>
+                                    <th>&nbsp;Leave Days</th>
+                                    <th>&nbsp;Permission </th>
+                                    <th>&nbsp;OD</th>
+                                    <th>&nbsp;Late</th>';
                                 echo '</tr>
                                 </thead>
                                 <tbody>';
                                 foreach($details as $val)
                                 {
-                                  echo '<tr>';
-                                  echo '<td>'.$val->name.' </td>';
-                                  echo '<td>'.$val->staff_id.' </td>';
-                                  echo '<td>'.$info['dept'].' </td>';
-                                  echo '<td>'.$total_days.' </td>';
+                                  echo '<tr class="bg-info">';
+                                  echo '<td>&nbsp;'.$val->name.' </td>';
+                                  echo '<td>&nbsp;'.$val->staff_id.' </td>';
+                                  echo '<td>&nbsp;'.$info['dept'].' </td>';
+                                  echo '<td>&nbsp;'.$total_days.' </td>';
                                     foreach($datas as $data)
                                     {
                                       if($val->staff_id==$data->staff_id)
@@ -88,12 +89,12 @@
                                           $od++;
                                       }
                                     }
-                                    echo '<td>'.$full.' </td>';
-                                    echo '<td>'.$half.' </td>';
-                                    echo '<td>'.$leave.' </td>';
-                                    echo '<td>'.$permission.' </td>';
-                                    echo '<td>'.$od.'</td>';
-                                    echo '<td>'.$late.' </td>';
+                                    echo '<td>&nbsp;'.$full.' </td>';
+                                    echo '<td>&nbsp;'.$half.' </td>';
+                                    echo '<td>&nbsp;'.$leave.' </td>';
+                                    echo '<td>&nbsp;'.$permission.' </td>';
+                                    echo '<td>&nbsp;'.$od.'</td>';
+                                    echo '<td>&nbsp;'.$late.' </td>';
                                     $total=0;
                                     $full=0;
                                     $half=0;

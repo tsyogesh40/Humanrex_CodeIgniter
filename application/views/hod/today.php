@@ -19,16 +19,19 @@
                         <h3 class="box-title"> </h3>
                     </div><!-- /.box-header -->
                     <?php
-                    
+
                   if($today!="No record found !")
                   {
 
                       echo'
-                      <div class="container">
-                      <div class=" table-responsive">
-                      <caption><h3>Report for Teaching Staffs</h3><br></caption>
-                        <table class="table table-striped table-condensed">
-                            <thead>
+                      <div class="container print-this">
+                      <div class="container ">
+                      <div class="row">
+                      <caption><i><h4>Report for Teaching Staffs</h4></i><br></caption>
+                      <div class="col-lg-8 col-lg-offset-2 col-xs-12 col-sm-10 col-md-10">
+                      <div class=" table-responsive ">
+                        <table class="table table-striped table-bordered table-condensed">
+                            <thead class="bg-primary">
                                 <tr>
                                   <th>Name</th>
                                   <th>DATE</th>
@@ -40,9 +43,10 @@
                               </thead>
                               <tbody>';
                               //print_r($history);
-
+                              $x=0;
                                 foreach($today as $value)
                                   {
+
                                     $val=$value->p_value;
                                     if($val==1)
                                       $str="Half day present";
@@ -50,7 +54,7 @@
                                       $str="Full day present";
                                     if ($value->cadre=='T')
                                     {
-                                    echo'  <tr>
+                                    echo'  <tr class="bg-info">
                                               <td><b>'.$value->name.'</b></td>
                                               <td>'.$value->date.'</td>
                                               <td>'.$value->in_time.'</td>
@@ -63,17 +67,21 @@
                                     echo'        </tbody>
                                   </table>
                                   </div>
+                                  </div>
+                                  </div>
                             </div>';
 
 
                             //for Non- teaching staffs
                             echo'
                             <div class="container">
+                            <div class="row">
+                            <caption><i><h4>Report for Non-Teaching Staffs</h4></i><br></caption>
+                            <div class="col-lg-8 col-lg-offset-2 col-xs-12 col-sm-10 col-md-10">
                             <div class=" table-responsive">
-                            <caption><h3>Report for Non - Teaching Staffs</h3><br></caption>
-                              <table class="table table-striped table-condensed">
+                              <table class="table table-striped table-condensed table-bordered">
                                   <thead>
-                                      <tr>
+                                      <tr class="bg-primary">
                                         <th>Name</th>
                                         <th>DATE</th>
                                         <th>IN_TIME</th>
@@ -94,7 +102,7 @@
                                             $str="Full day present";
                                           if ($value->cadre=='NT')
                                           {
-                                          echo'  <tr>
+                                          echo'  <tr class="bg-info">
                                                     <td><b>'.$value->name.'</b></td>
                                                     <td>'.$value->date.'</td>
                                                     <td>'.$value->in_time.'</td>
@@ -107,6 +115,9 @@
                                           echo'        </tbody>
                                         </table>
                                         </div>
+                                        </div>
+                                        </div>
+                                        </div>
                                   </div>';
                     }
                     else
@@ -115,7 +126,8 @@
                             <h3 class="head text-center">
                                 Sorry, No Datas Available for '.date('d-m-Y').'!
                                 Please try  for some other Dates.
-                            </h3> <br><br>';
+                            </h3> <br><br>
+                            ';
                     }
                       ?>
 

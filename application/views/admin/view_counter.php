@@ -30,9 +30,11 @@
                     if($datas!='No records found!')
                     {
               echo  '   <div class="container">
+                        <div class="row">
+                        <div class="col-lg-12 col-lg-offset-0 col-xs-12 col-sm-10 col-md-10">
                       <div class="table-responsive">
-                        <table class="table table-striped table-condensed">
-                        <thead>
+                        <table class="table table-striped table-condensed table-hover table-bordered">
+                        <thead class="bg-primary">
                         <th>No</th>
                         <th>Staff ID</th>
                         <th>Name</th>
@@ -43,9 +45,9 @@
                         foreach($datas as $data)
                         {
 
-                          echo '<tr>
+                          echo '<tr class="bg-info">
                           <td>'.$i++.'</td>
-                          <td>'.$data->staff_id.'</td>
+                          <td><b>'.$data->staff_id.'</b></td>
                           <td>'.$data->name.'</td>
                           <td>'.$data->count.'</td>
                           <td>'.$data->late_days.'</td> ';

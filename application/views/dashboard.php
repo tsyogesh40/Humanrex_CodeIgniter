@@ -97,11 +97,14 @@ else {
                           if($this->session->userdata('date')!='')
                           {
                             ?>
-                          <h3 class="head text-center">Welcome, <?php echo $this->session->userdata('name'); ?><sup>™</sup> <span style="color:#f48260;">♥</span></h3>
+                          <h3 class="head text-center">Welcome, <?php echo $this->session->userdata('name'); ?></h3>
                           <h4 class="narrow text-center">
                             Your Entry on <?php echo $this->session->userdata('date');?> is at,
                           </h4>
+                        <div class="container print-this">
+                        <div class="row">
                       <div class="table-responsive">
+                        <div class="col-lg-8 col-lg-offset-2 col-xs-12 col-sm-12 col-md-10">
                           <table class="table text-center table-bordered table-striped table-dark table-condensed">
                             <tbody>
                               <?php
@@ -133,6 +136,8 @@ else {
                             </tbody>
                           </table>
                         </div>
+                      </div>
+                    </div>
                         <?php
                       }
                       else{

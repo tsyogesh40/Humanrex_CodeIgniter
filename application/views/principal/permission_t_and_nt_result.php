@@ -46,8 +46,11 @@
                       $i=1;
                         echo'
                         <div class="container print-this">
+                        <div class="row">
+                        <u><caption><h4><i>Report generated for '.$department.' '.$str.'  - [ '.$info['date'].']</h4></i><br></caption></u>
+                        <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-10 col-md-10">
                         <div class=" table-responsive">
-                        <caption><h4><i>Report generated for '.$department.' '.$str.'  - [ '.$info['date'].']</h4></i><br></caption>';
+                        ';
 
                         if($info['dept']=='ALL')
                             $dep=array('IT','CSE','ECE','EEE','MECH','CIVIL','PHYSICS','CHEMISTRY','MATHS','ENGLISH','OFFICE');
@@ -56,9 +59,9 @@
                       //For Teaching staffs
                         foreach($dep as $dept)
                         {
-                          echo '  <table class="table table-striped table-condensed">
+                          echo '  <table class="table table-striped table-condensed table-bordered">
                           <caption><h4>'.$dept.'-Teaching staffs </h4></caption>
-                                <thead class="bg-success">
+                                <thead class="bg-primary">
                                     <tr>
                                     <th>&nbsp;Dept.</th>
                                     <th>&nbsp;Leave</th>
@@ -70,9 +73,9 @@
                                   <tbody>';
 
                                   echo '<tr>';
-                                      echo '<td>&nbsp;&nbsp;'.$dept.'</td>';
+                                      echo '<td class="col-lg-1 col-md-1 col-xs-1 col-sm-1">&nbsp;&nbsp;'.$dept.'</td>';
                                       //this element is for displaying leave
-                                      echo '<td class="col-lg-3 col-md-3 col-xs-3 col-sm-3>';
+                                      echo '<td class="col-lg-2 col-md-2 col-xs-2 col-sm-2">';
                                       echo '<ul class="list-group">';
                                       foreach($datas[$dept] as $val)
                                         {
@@ -85,7 +88,7 @@
                                       echo '</td>';//end of leave element
 
                                       //this element is for d isplaying OD
-                                      echo '<td class="col-lg-3 col-md-3 col-xs-3 col-sm-3>';
+                                      echo '<td class="col-lg-2 col-md-2 col-xs-2 col-sm-2>';
                                       echo '<ul class="list-group">';
                                       foreach($datas[$dept] as $val)
                                         {
@@ -98,7 +101,7 @@
                                       echo '</td>';//end of OD element
 
                                       //this element is for displaying Permission
-                                      echo '<td class="col-lg-3 col-md-3 col-xs-3 col-sm-3>';
+                                      echo '<td class="col-lg-2 col-md-2 col-xs-2 col-sm-2>';
                                       echo '<ul class="list-group">';
                                       foreach($datas[$dept] as $val)
                                         {
@@ -111,7 +114,7 @@
                                       echo '</td>';//end of permission
 
                                       //this element is for displaying Late
-                                      echo '<td class="col-lg-3 col-md-3 col-xs-3 col-sm-3>';
+                                      echo '<td class="col-lg-2 col-md-2 col-xs-2 col-sm-2>';
                                       echo '<ul class="list-group">';
                                       foreach($datas[$dept] as $val)
                                         {
@@ -130,9 +133,9 @@
 
                           //For Non teaching staffs
 
-                          echo '  <table class="table table-striped table-condensed">
+                          echo '  <table class="table table-striped table-condensed table-bordered">
                           <caption><h4>'.$dept.'-Non-Teaching staffs </h4></caption>
-                                <thead class="bg-success">
+                                <thead class="bg-primary">
                                     <tr>
                                     <th>&nbsp;Dept.</th>
                                     <th>&nbsp;Leave</th>
@@ -144,9 +147,9 @@
                                   <tbody>';
 
                                   echo '<tr>';
-                                      echo '<td>&nbsp;&nbsp;'.$dept.'</td>';
+                                      echo '<td class="col-lg-1 col-md-1 col-xs-1 col-sm-1">&nbsp;&nbsp;'.$dept.'</td>';
                                       //this element is for displaying leave
-                                      echo '<td class="col-lg-3 col-md-3 col-xs-3 col-sm-3>';
+                                      echo '<td class="col-lg-2 col-md-2 col-xs-2 col-sm-2">';
                                       echo '<ul class="list-group">';
                                       foreach($datas[$dept] as $val)
                                         {
@@ -159,7 +162,7 @@
                                       echo '</td>';//end of leave element
 
                                       //this element is for d isplaying OD
-                                      echo '<td class="col-lg-3 col-md-3 col-xs-3 col-sm-3>';
+                                      echo '<td class="col-lg-2 col-md-2 col-xs-2 col-sm-2">';
                                       echo '<ul class="list-group">';
                                       foreach($datas[$dept] as $val)
                                         {
@@ -172,7 +175,7 @@
                                       echo '</td>';//end of OD element
 
                                       //this element is for displaying Permission
-                                      echo '<td class="col-lg-3 col-md-3 col-xs-3 col-sm-3>';
+                                      echo '<td class="col-lg-2 col-md-2 col-xs-2 col-sm-2">';
                                       echo '<ul class="list-group">';
                                       foreach($datas[$dept] as $val)
                                         {
@@ -185,7 +188,7 @@
                                       echo '</td>';//end of permission
 
                                       //this element is for displaying Late
-                                      echo '<td class="col-lg-3 col-md-3 col-xs-3 col-sm-3>';
+                                      echo '<td class="col-lg-2 col-md-2 col-xs-2 col-sm-2">';
                                       echo '<ul class="list-group">';
                                       foreach($datas[$dept] as $val)
                                         {

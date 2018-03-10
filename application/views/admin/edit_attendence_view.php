@@ -37,10 +37,12 @@
                     <?php
                     if($datas!='No records found!')
                     {
-              echo  '   <div class="container">
+              echo  '   <div class="container print-this">
+                      <div class="row">
+                      <div class="col-lg-12 col-lg-offset-0 col-xs-12 col-sm-10 col-md-10">
                       <div class="table-responsive">
-                        <table class="table table-striped table-condensed">
-                        <thead>
+                        <table class="table table-hover table-bordered table-striped table-condensed">
+                        <thead class="bg-primary">
                         <th>Date</th>
                         <th>Cadre</th>
                         <th>Name</th>
@@ -71,7 +73,7 @@
                                 $str='Fullday Present';
 
 
-                          echo '<tr>
+                          echo '<tr bg-info>
                           <td>'.$data->date.'</td>
                           <td>'.$data->cadre.'</td>
                           <td><b>'.$data->name.'</b></td>

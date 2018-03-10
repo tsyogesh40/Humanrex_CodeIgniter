@@ -22,8 +22,8 @@
                     {
               echo  '   <div class="container">
                       <div class="table-responsive">
-                        <table class="table table-striped table-condensed">
-                        <thead>
+                        <table class="table table-striped table-condensed table-bordered">
+                        <thead class="bg-primary">
                         <th>Name</th>
                         <th>Staff ID</th>
                         <th>Store ID</th>
@@ -35,7 +35,7 @@
                         foreach($datas as $data)
                         {
 
-                          echo '<tr>
+                          echo '<tr class="bg-info">
                           <td>'.$data->name.'</td>
                           <td>'.$data->staff_id.'</td>
                           <td>'.$data->store_id.'</td>

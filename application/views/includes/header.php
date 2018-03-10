@@ -22,7 +22,8 @@
     /* Don't print link hrefs */
     @media print {
       a[href]:after {
-          content: none
+          content: none !important;
+          visibility: hidden;
         }
       }
 

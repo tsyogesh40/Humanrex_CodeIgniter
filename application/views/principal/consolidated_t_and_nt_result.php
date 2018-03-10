@@ -50,9 +50,12 @@
 
 
                         echo'
-                        <div class="container">
+                        <div class="container print-this">
+                        <div class="row">
+                        <u><caption><h4><i>Report generated for '.$department.' '.$str.' ['.$info['from'].' - '.$info['to'].']</h4></i><br></caption></u>
+                        <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-10 col-md-10">
                         <div class=" table-responsive">
-                        <caption><h4><i>Report generated for '.$department.' '.$str.' ['.$info['from'].' - '.$info['to'].']</h4></i><br></caption>';
+                        ';
 
                             $str='';$status='';
                           if($info['dept']=='ALL')
@@ -63,11 +66,11 @@
                             foreach($dep as $dept)
                             {
 
-                          echo'    <table class="table table-striped table-dark table-condensed">
+                          echo'  <table class="table table-striped table-dark table-bordered table-condensed">
                           <caption><h4>'.$dept.'-Teaching staffs </h4></caption>
-                          <thead>
+                          <thead class="bg-primary">
                           <tr>
-                          <th>Staff Name</th>
+                          <th>Name</th>
                           <th>Staff Id</th>
                           <th>Department</th>
                           <th>Total Days</th>
@@ -84,7 +87,7 @@
                               {
                                 if($dept==$name->department&&$name->cadre=='T')
                                 {
-                                  echo '<tr>';
+                                  echo '<tr class="bg-info">';
                                   echo '<td>'.$name->name.' </td>';
                                   echo '<td>'.$name->staff_id.' </td>';
                                   echo '<td>'.$dept.' </td>';
@@ -133,11 +136,11 @@
                                   </table>';
 
                               //For non teaching staffs
-                              echo'    <table class="table table-striped table-dark table-condensed">
+                              echo'    <table class="table table-striped table-bordered table-dark table-condensed">
                               <caption><h4>'.$dept.'-Non Teaching staffs </h4></caption>
-                              <thead>
+                              <thead class="bg-primary">
                               <tr>
-                              <th>Staff Name</th>
+                              <th>Name</th>
                               <th>Staff Id</th>
                               <th>Department</th>
                               <th>Total Days</th>
@@ -154,7 +157,7 @@
                                   {
                                     if($dept==$name->department&&$name->cadre=='NT')
                                     {
-                                      echo '<tr>';
+                                      echo '<tr class="bg-info">';
                                       echo '<td>'.$name->name.' </td>';
                                       echo '<td>'.$name->staff_id.' </td>';
                                       echo '<td>'.$dept.' </td>';
@@ -206,7 +209,8 @@
                             }
 
                              echo'</div>
-                              </div>';
+                              </div>
+                              </div></div>';
                       }
                       else
                       {
