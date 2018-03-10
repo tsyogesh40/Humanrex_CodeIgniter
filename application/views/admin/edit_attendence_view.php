@@ -73,7 +73,7 @@
                                 $str='Fullday Present';
 
 
-                          echo '<tr bg-info>
+                          echo '<tr class="bg-info">
                           <td>'.$data->date.'</td>
                           <td>'.$data->cadre.'</td>
                           <td><b>'.$data->name.'</b></td>
