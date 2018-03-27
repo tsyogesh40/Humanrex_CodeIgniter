@@ -329,7 +329,7 @@ class User extends BaseController
             }
             else
             {
-                $name = ucwords(strtolower($this->security->xss_clean($this->input->post('fname'))));
+                $name = $this->security->xss_clean($this->input->post('fname'));
                 $email = $this->security->xss_clean($this->input->post('email'));
                 $password = $this->input->post('password');
                 $roleId = $this->input->post('role');
